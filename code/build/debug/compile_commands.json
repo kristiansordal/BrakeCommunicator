@@ -1,0 +1,8 @@
+[
+{
+  "directory": "/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug",
+  "command": "/Library/Developer/CommandLineTools/usr/bin/c++ -DBOOST_MPI_DYN_LINK -DBOOST_MPI_NO_LIB -DBOOST_PROGRAM_OPTIONS_DYN_LINK -DBOOST_PROGRAM_OPTIONS_NO_LIB -DBOOST_SERIALIZATION_DYN_LINK -DBOOST_SERIALIZATION_NO_LIB -I/Users/kristiansordal/dev/uib/fall23/inf339A/code/include -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -fcolor-diagnostics -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/mat_vec_mult.dir/main.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/code/main.cpp",
+  "file": "/Users/kristiansordal/dev/uib/fall23/inf339A/code/main.cpp",
+  "output": "CMakeFiles/mat_vec_mult.dir/main.cpp.o"
+}
+]

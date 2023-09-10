@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named mat_vec_mult
+# Target rules for targets named cpp_mpi
 
 # Build rule for target.
-mat_vec_mult: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 mat_vec_mult
-.PHONY : mat_vec_mult
+cpp_mpi: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 cpp_mpi
+.PHONY : cpp_mpi
 
 # fast build rule for target.
-mat_vec_mult/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_vec_mult.dir/build.make CMakeFiles/mat_vec_mult.dir/build
-.PHONY : mat_vec_mult/fast
+cpp_mpi/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_mpi.dir/build.make CMakeFiles/cpp_mpi.dir/build
+.PHONY : cpp_mpi/fast
 
 main.o: main.cpp.o
 .PHONY : main.o
 
 # target to build an object file
 main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_vec_mult.dir/build.make CMakeFiles/mat_vec_mult.dir/main.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_mpi.dir/build.make CMakeFiles/cpp_mpi.dir/main.cpp.o
 .PHONY : main.cpp.o
 
 main.i: main.cpp.i
@@ -142,7 +142,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_vec_mult.dir/build.make CMakeFiles/mat_vec_mult.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_mpi.dir/build.make CMakeFiles/cpp_mpi.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -150,7 +150,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/mat_vec_mult.dir/build.make CMakeFiles/mat_vec_mult.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cpp_mpi.dir/build.make CMakeFiles/cpp_mpi.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 # Help Target
@@ -161,7 +161,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... mat_vec_mult"
+	@echo "... cpp_mpi"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

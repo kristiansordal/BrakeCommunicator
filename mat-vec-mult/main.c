@@ -54,6 +54,7 @@ int main(int argc, char **argv) {
             vector[i] = i + 1;
         }
     }
+    double start = MPI_Wtime();
 
     MPI_Bcast(vector, n, MPI_DOUBLE, 0, world);
 
@@ -65,7 +66,11 @@ int main(int argc, char **argv) {
 
     double *res = mat_mul(matrix, vector, matSize, n);
 
-    for (int i = 0; i < matSize / n; i++) {
+    double end = MPI_Wtime();
+
+    printf("Scale: %d\nTime taken: %f", scale, end - start);
+
+    for (int i = 0; i < 10 / n; i++) {
         printf("%2.2f ", res[i]);
     }
 

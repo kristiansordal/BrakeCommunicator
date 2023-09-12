@@ -1,12 +1,11 @@
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
+
 int main(int argc, char **argv) {
     int myrank;
     int np;
-    int x;
     MPI_Status status;
-    int i;
     double start, end;
     int *data;
 
@@ -20,28 +19,21 @@ int main(int argc, char **argv) {
         return 0;
     }
 
-    // if (myrank == 0) {
-    //     printf("Give data size to send: ");
-    //     scanf("%d", &ss);
-    // }
+    int size = 2000000;
 
-    for (int ss = 0; ss < 1000; ss++) {
-        MPI_Bcast(&ss, 1, MPI_INT, 0, MPI_COMM_WORLD);
-        data = (int *)malloc(sizeof(int) * ss * 1000);
+    data = (int *)malloc(sizeof(int) * size);
 
-        if (myrank == 0) {
+    if (myrank == 0) {
+        for (int i = 1; i < size; i *= 2) {
             start = MPI_Wtime();
-
-            MPI_Send(data, ss, MPI_INT, 1, 1, MPI_COMM_WORLD);
-            MPI_Recv(data, ss, MPI_INT, 1, 1, MPI_COMM_WORLD, &status);
-
+            MPI_Send(data, i, MPI_INT, 1, 0, MPI_COMM_WORLD);
             end = MPI_Wtime();
 
-            printf("Data size is: %d\n", *data);
-            printf("Total time is %f\n\n", end - start);
-        } else {
-            MPI_Recv(data, ss, MPI_INT, 0, 1, MPI_COMM_WORLD, &status);
-            MPI_Send(data, ss, MPI_INT, 0, 1, MPI_COMM_WORLD);
+            printf("Message size: %d\nTime taken: %f seconds\n\n", i, (end - start));
+        }
+    } else {
+        for (int i = 1; i < size; i *= 2) {
+            MPI_Recv(data, i, MPI_INT, 0, 0, MPI_COMM_WORLD, &status);
         }
     }
 

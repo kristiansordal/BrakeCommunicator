@@ -626,3 +626,88 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_f0d6a/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_f0d6a.dir/build.make CMakeFiles/cmTC_f0d6a.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU'
+        Building CXX object CMakeFiles/cmTC_f0d6a.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_f0d6a.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_f0d6a.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_f0d6a.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU/test_mpi.cpp
+        Linking CXX executable cmTC_f0d6a
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f0d6a.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_f0d6a.dir/test_mpi.cpp.o -o cmTC_f0d6a  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-iAwlWU'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_10942/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_10942.dir/build.make CMakeFiles/cmTC_10942.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc'
+        Building CXX object CMakeFiles/cmTC_10942.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_10942.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_10942.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_10942.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc/test_mpi.cpp
+        Linking CXX executable cmTC_10942
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_10942.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_10942.dir/test_mpi.cpp.o -o cmTC_10942  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/code/build/debug/CMakeFiles/CMakeScratch/TryCompile-8N9Kgc'
+        
+      exitCode: 0
+...

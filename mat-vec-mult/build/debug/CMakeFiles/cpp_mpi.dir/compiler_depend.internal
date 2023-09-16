@@ -3,6 +3,7 @@
 
 CMakeFiles/cpp_mpi.dir/main.cpp.o
  /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/main.cpp
+ /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/rowmult.cpp
  /opt/homebrew/include/boost/mpi.hpp
  /opt/homebrew/include/boost/mpi/allocator.hpp
  /opt/homebrew/include/boost/mpi/config.hpp

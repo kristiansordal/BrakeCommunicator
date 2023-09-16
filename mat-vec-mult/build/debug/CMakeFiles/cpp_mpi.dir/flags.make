@@ -6,7 +6,7 @@ CXX_DEFINES = -DBOOST_MPI_DYN_LINK -DBOOST_MPI_NO_LIB -DBOOST_PROGRAM_OPTIONS_DY
 
 CXX_INCLUDES = -I/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/include -isystem /opt/homebrew/include -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include
 
-CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -fcolor-diagnostics -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGSarm64 = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -fcolor-diagnostics -Wall -Wextra -Werror
 
-CXX_FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -fcolor-diagnostics -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGS = -g -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -fcolor-diagnostics -Wall -Wextra -Werror
 

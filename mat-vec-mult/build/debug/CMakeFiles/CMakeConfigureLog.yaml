@@ -448,3 +448,258 @@ events:
         
       exitCode: 0
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_bd06f/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_bd06f.dir/build.make CMakeFiles/cmTC_bd06f.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS'
+        Building CXX object CMakeFiles/cmTC_bd06f.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_bd06f.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_bd06f.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_bd06f.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS/test_mpi.cpp
+        Linking CXX executable cmTC_bd06f
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_bd06f.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_bd06f.dir/test_mpi.cpp.o -o cmTC_bd06f  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-rQKowS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_071cb/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_071cb.dir/build.make CMakeFiles/cmTC_071cb.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1'
+        Building CXX object CMakeFiles/cmTC_071cb.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_071cb.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_071cb.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_071cb.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1/test_mpi.cpp
+        Linking CXX executable cmTC_071cb
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_071cb.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_071cb.dir/test_mpi.cpp.o -o cmTC_071cb  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-WNfHS1'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_ff222/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_ff222.dir/build.make CMakeFiles/cmTC_ff222.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ'
+        Building CXX object CMakeFiles/cmTC_ff222.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_ff222.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_ff222.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_ff222.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ/test_mpi.cpp
+        Linking CXX executable cmTC_ff222
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_ff222.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_ff222.dir/test_mpi.cpp.o -o cmTC_ff222  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-k4IsKZ'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_09497/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_09497.dir/build.make CMakeFiles/cmTC_09497.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj'
+        Building CXX object CMakeFiles/cmTC_09497.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_09497.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_09497.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_09497.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj/test_mpi.cpp
+        Linking CXX executable cmTC_09497
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_09497.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_09497.dir/test_mpi.cpp.o -o cmTC_09497  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-DaeUBj'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_b6ed6/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_b6ed6.dir/build.make CMakeFiles/cmTC_b6ed6.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS'
+        Building CXX object CMakeFiles/cmTC_b6ed6.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_b6ed6.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_b6ed6.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_b6ed6.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS/test_mpi.cpp
+        Linking CXX executable cmTC_b6ed6
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b6ed6.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_b6ed6.dir/test_mpi.cpp.o -o cmTC_b6ed6  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-GZiMzS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake:76 (find_package)"
+      - "/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake:118 (find_dependency)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:141 (find_package)"
+      - "/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake:262 (boost_find_component)"
+      - "/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake:594 (find_package)"
+      - "CMakeLists.txt:10 (find_package)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O"
+      binary: "/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: "13.1"
+      CMAKE_OSX_SYSROOT: "/Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O
+        
+        Run Build Command(s):/opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E env VERBOSE=1 /opt/homebrew/bin/gmake -f Makefile cmTC_cf8e8/fast && gmake[1]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O'
+        /opt/homebrew/bin/gmake  -f CMakeFiles/cmTC_cf8e8.dir/build.make CMakeFiles/cmTC_cf8e8.dir/build
+        gmake[2]: Entering directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O'
+        Building CXX object CMakeFiles/cmTC_cf8e8.dir/test_mpi.cpp.o
+        /Library/Developer/CommandLineTools/usr/bin/c++  -isystem /opt/homebrew/Cellar/open-mpi/4.1.5/include -std=gnu++20 -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -MD -MT CMakeFiles/cmTC_cf8e8.dir/test_mpi.cpp.o -MF CMakeFiles/cmTC_cf8e8.dir/test_mpi.cpp.o.d -o CMakeFiles/cmTC_cf8e8.dir/test_mpi.cpp.o -c /Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O/test_mpi.cpp
+        Linking CXX executable cmTC_cf8e8
+        /opt/homebrew/Cellar/cmake/3.26.3/bin/cmake -E cmake_link_script CMakeFiles/cmTC_cf8e8.dir/link.txt --verbose=1
+        /Library/Developer/CommandLineTools/usr/bin/c++  -arch arm64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX13.3.sdk -mmacosx-version-min=13.1 -Wl,-search_paths_first -Wl,-headerpad_max_install_names -L/opt/homebrew/Cellar/libevent/2.1.12/lib CMakeFiles/cmTC_cf8e8.dir/test_mpi.cpp.o -o cmTC_cf8e8  /opt/homebrew/Cellar/open-mpi/4.1.5/lib/libmpi.dylib 
+        gmake[2]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O'
+        gmake[1]: Leaving directory '/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/debug/CMakeFiles/CMakeScratch/TryCompile-BPty0O'
+        
+      exitCode: 0
+...

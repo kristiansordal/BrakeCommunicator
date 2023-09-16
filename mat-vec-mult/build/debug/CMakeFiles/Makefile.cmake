@@ -71,5 +71,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/cpp_mpi.dir/DependInfo.cmake"
+  "CMakeFiles/mat_vec_mult.dir/DependInfo.cmake"
   )

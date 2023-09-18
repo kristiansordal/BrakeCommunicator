@@ -1,4 +1,4 @@
-#include "rowmult.cpp"
+#include "rowmult2.cpp"
 
 int main() {
     rowmult();

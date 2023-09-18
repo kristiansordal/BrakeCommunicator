@@ -6,7 +6,6 @@ namespace mpi = boost::mpi;
 
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
-
     // Value of j is set in order to achieve index(i,j) = i + j
     for (int i = 0, j = rank * matrix_size / n; i < matrix_size; i++) {
         if (i > 0 && i % n == 0) {
@@ -16,16 +15,16 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
     }
 }
 
-void mat_mult(double *matrix, double *vector, double *res, int rows, int n) {
+void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
 
-    for (int i = 0; i < rows; i++) {
-        double sum = 0;
+    for (int i = 0; i < cols; i++) {
+        double partial_sum = 0;
 
         for (int j = 0; j < n; j++) {
-            sum += matrix[i * n + j] * vector[j];
+            partial_sum += matrix[i * n + j] * vector[j];
         }
 
-        res[i] = sum;
+        res[i] = partial_sum;
     }
 }
 

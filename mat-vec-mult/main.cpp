@@ -1,6 +1,8 @@
-#include "rowmult2.cpp"
+#include "colmult.cpp"
+#include "rowmult.cpp"
 
 int main() {
-    rowmult();
+    rowmult::rowmult();
+    // colmult::colmult();
     return 0;
 }

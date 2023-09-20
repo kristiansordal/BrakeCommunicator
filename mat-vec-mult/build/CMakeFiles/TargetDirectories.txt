@@ -1,3 +1,0 @@
-/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/CMakeFiles/cpp_mpi.dir
-/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/CMakeFiles/edit_cache.dir
-/Users/kristiansordal/dev/uib/fall23/inf339A/mat-vec-mult/build/CMakeFiles/rebuild_cache.dir

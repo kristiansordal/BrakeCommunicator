@@ -4,6 +4,7 @@
 
 namespace mpi = boost::mpi;
 
+namespace rowmult {
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 
@@ -78,3 +79,4 @@ void rowmult() {
     }
     delete[] gathered_res;
 }
+} // namespace rowmult

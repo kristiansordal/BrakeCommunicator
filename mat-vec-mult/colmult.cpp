@@ -2,8 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+namespace colmult {
 namespace mpi = boost::mpi;
-
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
     // Value of j is set in order to achieve index(i,j) = i + j
@@ -16,19 +16,15 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 }
 
 void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
+    for (int i = 0; i < n; i++) {
 
-    for (int i = 0; i < cols; i++) {
-        double partial_sum = 0;
-
-        for (int j = 0; j < n; j++) {
-            partial_sum += matrix[i * n + j] * vector[j];
+        for (int j = 0; j < cols; j++) {
+            res[i] += matrix[j * n + i] * vector[j];
         }
-
-        res[i] = partial_sum;
     }
 }
 
-void rowmult() {
+void colmult() {
     mpi::environment env;
     mpi::communicator world;
     mpi::timer time;
@@ -37,13 +33,14 @@ void rowmult() {
     int np = world.size();
     int scale = 15;
     int n = 1 << scale;
-    int rows = n / np;
+    int cols = n / np;
     int matrix_size = (n * n) / np;
 
     double start;
     double end;
     double *vector = new double[n];
-    double *res = new double[rows];
+    double *vector_slice = new double[cols];
+    double *res = new double[cols];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
 
@@ -54,15 +51,18 @@ void rowmult() {
         start = time.elapsed();
     }
 
-    mpi::broadcast(world, vector, n, 0);
+    // Scatter part of the vector to each process
+    mpi::scatter(world, vector, vector_slice, cols, 0);
 
     init_matrix_segment(matrix, matrix_size, n, rank);
-    mat_mult(matrix, vector, res, rows, n);
+    mat_mult(matrix, vector_slice, res, cols, n);
 
-    mpi::gather(world, res, rows, gathered_res, 0);
+    // Reduce the result into the gathered result vector
+    mpi::reduce(world, res, n, gathered_res, std::plus<double>(), 0);
 
     delete[] matrix;
     delete[] vector;
+    delete[] vector_slice;
     delete[] res;
 
     if (rank == 0) {
@@ -77,3 +77,5 @@ void rowmult() {
     }
     delete[] gathered_res;
 }
+
+} // namespace colmult

@@ -63,9 +63,7 @@ void rowmult() {
 
     mpi::gather(world, res, rows, gathered_res, 0);
 
-    delete[] matrix;
-    delete[] vector;
-    delete[] res;
+    delete[] matrix, delete[] vector, delete[] res;
 
     if (rank == 0) {
         end = time.elapsed();

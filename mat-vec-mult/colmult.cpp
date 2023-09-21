@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-namespace colmult {
 namespace mpi = boost::mpi;
+
+namespace colmult {
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
     // Value of j is set in order to achieve index(i,j) = i + j
@@ -31,7 +32,7 @@ void colmult() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 15;
+    int scale = 3;
     int n = 1 << scale;
     int cols = n / np;
     int matrix_size = (n * n) / np;
@@ -69,9 +70,9 @@ void colmult() {
         end = time.elapsed();
         std::cout << "Time taken: " << end - start << std::endl;
 
-        // for (int i = 0; i < n; i++) {
-        //     std::cout << gathered_res[i] << " ";
-        // }
+        for (int i = 0; i < n; i++) {
+            std::cout << gathered_res[i] << " ";
+        }
 
         std::cout << std::endl;
     }

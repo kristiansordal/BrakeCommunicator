@@ -74,6 +74,7 @@ void scatter_vector(MPI_Env *env, mpi::communicator col_comm, double *vector_sli
     }
 
     if (env->cart_comm->coordinates(env->rank)[0] == env->cart_comm->coordinates(0)[0]) {
+        std::cout << "Rank " << env->rank << " is getting a slice." << std::endl;
         mpi::scatter(col_comm, vector, vector_slice, cols, 0);
     }
 }

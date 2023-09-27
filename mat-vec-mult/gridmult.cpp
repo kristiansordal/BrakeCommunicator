@@ -1,6 +1,5 @@
 #include <boost/mpi.hpp>
 #include <boost/mpi/cartesian_communicator.hpp>
-#include <numeric>
 #include <stdio.h>
 #include <stdlib.h>
 

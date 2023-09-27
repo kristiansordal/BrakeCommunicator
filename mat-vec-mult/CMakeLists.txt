@@ -9,8 +9,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 find_package(Boost REQUIRED
              COMPONENTS
-                 program_options
                  mpi
+                 program_options
              REQUIRED)
 
 add_executable(mat_vec_mult main.cpp)

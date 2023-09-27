@@ -1,5 +1,4 @@
 #include "rowmult.c"
-// #include "rowmult_seq.c"
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>

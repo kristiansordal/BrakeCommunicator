@@ -54,27 +54,29 @@ void init_cell(double *cell, MPI_Env *env) {
         }
     }
 
-    std::cout << "I am: " << env->rank << std::endl;
-    for (int i = 1; i <= env->cell_size; i++) {
-        std::cout << cell[i - 1] << " ";
-        if (i % cw == 0) {
-            std::cout << std::endl;
-        }
-    }
-    std::cout << std::endl;
+    // std::cout << "I am: " << env->rank << std::endl;
+    // for (int i = 1; i <= env->cell_size; i++) {
+    //     std::cout << cell[i - 1] << " ";
+    //     if (i % cw == 0) {
+    //         std::cout << std::endl;
+    //     }
+    // }
+    // std::cout << std::endl;
 }
 
-// void mat_mult(double *cell, double *vector, double *res, MPI_Env *env) {
-//     // appearently i need to do some communication here
-//     for (int i = 0; i < n; i++) {
+// Scatter the vector to the ranks with 0 as their x-coordinate
+void scatter_vector(MPI_Env *env, mpi::communicator col_comm, double *vector_slice) {
+    int cols = env->n / env->np;
+    double *vector = new double[env->n];
 
-//         for (int j = 0; j < cell_width; j++) {
-//             res[i] += cell[j * n + i] * vector[j];
-//         }
-//     }
-// }
+    for (int i = 0; i < env->n; i++) {
+        vector[i] = i + 1;
+    }
 
-// void scatter_vector(mpi::communicator world)
+    if (env->cart_comm->coordinates(env->rank)[0] == env->cart_comm->coordinates(0)[0]) {
+        mpi::scatter(col_comm, vector, vector_slice, cols, 0);
+    }
+}
 
 void gridmult() {
 
@@ -89,28 +91,23 @@ void gridmult() {
     int cols = env.n / env.cell_size;
     double start;
     double end;
-    double *vector = new double[env.n];
     double *cell = new double[env.cell_size];
     double *vector_slice = new double[cols];
 
     init_cell(cell, &env);
 
+    mpi::communicator col_comm = env.world.split(env.coords[0]);
+
+    scatter_vector(&env, col_comm, vector_slice);
     if (env.rank == 0) {
-        for (int i = 0; i < env.n; i++) {
-            vector[i] = i + 1;
-        }
         start = env.time.elapsed();
     }
 
-    std::vector<int> rank_subset;
-
-    for (int i = 0; i < cols; i++) {
-        rank_subset.push_back(i);
+    std::cout << "Rank: " << env.rank << " has in the vector slice: ";
+    for (int i = 0; i < 2; i++) {
+        std::cout << " " << vector_slice[i];
     }
-
-    // Create commincator for commincating subset of
-    mpi::communicator col_comm = env.world.split(env.world.rank() < rank_subset.size());
-    mpi::scatter(col_comm, vector, vector_slice, cols, 0);
+    std::cout << std::endl;
 }
 
 } // namespace gridmult

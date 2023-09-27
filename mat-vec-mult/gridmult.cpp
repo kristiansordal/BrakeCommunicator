@@ -1,5 +1,6 @@
 #include <boost/mpi.hpp>
 #include <boost/mpi/cartesian_communicator.hpp>
+#include <numeric>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -86,10 +87,12 @@ void gridmult() {
         return;
     }
 
+    int cols = env.n / env.cell_size;
     double start;
     double end;
     double *vector = new double[env.n];
     double *cell = new double[env.cell_size];
+    double *vector_slice = new double[cols];
 
     init_cell(cell, &env);
 
@@ -99,6 +102,16 @@ void gridmult() {
         }
         start = env.time.elapsed();
     }
+
+    std::vector<int> rank_subset;
+
+    for (int i = 0; i < cols; i++) {
+        rank_subset.push_back(i);
+    }
+
+    // Create commincator for commincating subset of
+    mpi::communicator col_comm = env.world.split(env.world.rank() < rank_subset.size());
+    mpi::scatter(col_comm, vector, vector_slice, cols, 0);
 }
 
 } // namespace gridmult

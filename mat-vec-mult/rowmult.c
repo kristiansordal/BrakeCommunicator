@@ -38,7 +38,7 @@ void rowmult(int argc, char **argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &np);
 
-    const int scale = 15;
+    const int scale = 10;
     const int n = 1 << scale;
 
     double *vector = (double *)malloc(n * sizeof(double));

@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "mat_vec_mult::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-mat_vec_mult-06f6853c81dc29a4baed.json",
+					"jsonFile" : "target-mat_vec_mult-e2a4adb6105f7bed8407.json",
 					"name" : "mat_vec_mult",
 					"projectIndex" : 0
 				}
@@ -55,6 +55,6 @@
 	"version" : 
 	{
 		"major" : 2,
-		"minor" : 5
+		"minor" : 6
 	}
 }

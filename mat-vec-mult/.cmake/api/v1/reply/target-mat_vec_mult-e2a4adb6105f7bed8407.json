@@ -24,9 +24,9 @@
 			"CMakeLists.txt",
 			"/opt/homebrew/lib/cmake/boost_mpi-1.82.0/boost_mpi-config.cmake",
 			"/opt/homebrew/lib/cmake/Boost-1.82.0/BoostConfig.cmake",
-			"/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindBoost.cmake",
-			"/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/FindMPI.cmake",
-			"/opt/homebrew/Cellar/cmake/3.26.3/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
+			"/opt/homebrew/Cellar/cmake/3.27.6/share/cmake/Modules/FindBoost.cmake",
+			"/opt/homebrew/Cellar/cmake/3.27.6/share/cmake/Modules/FindMPI.cmake",
+			"/opt/homebrew/Cellar/cmake/3.27.6/share/cmake/Modules/CMakeFindDependencyMacro.cmake"
 		],
 		"nodes" : 
 		[

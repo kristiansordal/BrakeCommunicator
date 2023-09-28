@@ -67,13 +67,16 @@ void rowmult() {
 
     if (rank == 0) {
         end = time.elapsed();
+
+        if (n < 64) {
+
+            for (int i = 0; i < n; i++) {
+                std::cout << gathered_res[i] << " ";
+            }
+            std::cout << std::endl;
+        }
+
         std::cout << "Time taken: " << end - start << std::endl;
-
-        // for (int i = 0; i < n; i++) {
-        //     std::cout << gathered_res[i] << " ";
-        // }
-
-        std::cout << std::endl;
     }
     delete[] gathered_res;
 }

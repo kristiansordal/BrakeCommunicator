@@ -3,8 +3,8 @@
 #include "rowmult.cpp"
 
 int main() {
-    // rowmult::rowmult();
+    rowmult::rowmult();
     // colmult::colmult();
-    gridmult::gridmult();
+    // gridmult::gridmult();
     return 0;
 }

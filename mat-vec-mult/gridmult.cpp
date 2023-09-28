@@ -64,8 +64,10 @@ void init_cell(double *cell, MPI_Env *env) {
     std::cout << std::endl;
 }
 
+// void grid_mult(MPI_Env *env, )
+
 // Scatter the vector to the ranks with 0 as their x-coordinate
-void scatter_vector(MPI_Env *env, mpi::communicator col_comm, double *vector_slice) {
+void scatter_vector(MPI_Env *env, mpi::communicator *row_comm, double *vector_slice) {
     double *vector = new double[env->n];
 
     for (int i = 0; i < env->n; i++) {
@@ -73,9 +75,13 @@ void scatter_vector(MPI_Env *env, mpi::communicator col_comm, double *vector_sli
     }
 
     if (env->cart_comm->coordinates(env->rank)[0] == env->cart_comm->coordinates(0)[0]) {
-        std::cout << "Rank " << env->rank << " is getting a slice." << std::endl;
-        mpi::scatter(col_comm, vector, vector_slice, env->cell_width, 0);
+        mpi::scatter(*row_comm, vector, vector_slice, env->cell_width, 0);
     }
+}
+
+void propagate_downwards(MPI_Env *env, double *vector_slice) {
+    mpi::communicator col_comm = env->world.split(env->coords[1]);
+    mpi::broadcast(col_comm, vector_slice, env->cell_width, 0);
 }
 
 void gridmult() {
@@ -95,12 +101,14 @@ void gridmult() {
 
     init_cell(cell, &env);
 
-    mpi::communicator col_comm = env.world.split(env.coords[0]);
+    mpi::communicator row_comm = env.world.split(env.coords[0]);
 
-    scatter_vector(&env, col_comm, vector_slice);
+    scatter_vector(&env, &row_comm, vector_slice);
     if (env.rank == 0) {
         start = env.time.elapsed();
     }
+
+    propagate_downwards(&env, vector_slice);
 
     std::cout << "Rank: " << env.rank << " has in the vector slice: ";
     for (int i = 0; i < env.cell_width; i++) {

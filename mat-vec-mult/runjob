@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Initialize variables with default values
+NUM_NODES=1
+TASKS_PER_NODE=8
+OUTPUT_DIR="colmult_res"
+JOB_NAME="col_mult"
+PROGRAM="col_mult"  # Default program to run
+
 # Parse command-line arguments
 while [[ $# -gt 0 ]]; do
     key="$1"
@@ -16,6 +23,14 @@ while [[ $# -gt 0 ]]; do
             OUTPUT_DIR="$2"
             shift 2
             ;;
+        -j|--job-name)
+            JOB_NAME="$2"
+            shift 2
+            ;;
+        -p|--program)
+            PROGRAM="$2"
+            shift 2
+            ;;
         *)
             echo "Unknown option: $1"
             exit 1
@@ -30,7 +45,8 @@ done
 #SBATCH -t 2-12:00
 #SBATCH -o "$OUTPUT_DIR/outputs/%j.out"
 #SBATCH --exclusive
+#SBATCH --job-name="$JOB_NAME"
 
 # Load necessary modules and execute your program
 module load openmpi-4.0.5
-srun build/debug/col_mult
+srun "build/debug/$PROGRAM"

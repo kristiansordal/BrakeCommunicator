@@ -32,7 +32,7 @@ void colmult() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 3;
+    int scale = 15;
     int n = 1 << scale;
     int cols = n / np;
     int matrix_size = (n * n) / np;
@@ -70,8 +70,11 @@ void colmult() {
         end = time.elapsed();
         std::cout << "Time taken: " << end - start << std::endl;
 
-        for (int i = 0; i < n; i++) {
-            std::cout << gathered_res[i] << " ";
+        if (world.size() < 64) {
+
+            // for (int i = 0; i < n; i++) {
+            //     std::cout << gathered_res[i] << " ";
+            // }
         }
 
         std::cout << std::endl;

@@ -45,7 +45,6 @@ done
 #SBATCH -t 2-12:00
 #SBATCH -o "$OUTPUT_DIR/outputs/%j.out"
 #SBATCH --exclusive
-#SBATCH --job-name="$JOB_NAME"
 
 # Load necessary modules and execute your program
 module load openmpi-4.0.5

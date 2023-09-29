@@ -97,7 +97,6 @@ int main() {
     delete[] matrix, delete[] vector, delete[] res;
 
     if (rank == 0) {
-
         std::cout << end_matmult - start_matmult << std::endl;
         std::cout << bcast_avg << std::endl;
         std::cout << gather_avg << std::endl;

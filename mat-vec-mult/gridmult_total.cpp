@@ -135,9 +135,6 @@ int main() {
     delete[] res, delete[] gathered_res;
 
     if (env.rank == 0) {
-        for (int i = 0; i < env.n; i++) {
-            std::cout << final_res[i] << std::endl;
-        }
         end_total = env.time.elapsed();
         std::cout << end_total - start_total << std::endl;
     }

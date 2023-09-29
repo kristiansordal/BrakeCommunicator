@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Parse command-line arguments
+while [[ $# -gt 0 ]]; do
+    key="$1"
+    case $key in
+        -n|--nodes)
+            NUM_NODES="$2"
+            shift 2
+            ;;
+        -t|--tasks-per-node)
+            TASKS_PER_NODE="$2"
+            shift 2
+            ;;
+        -o|--output-dir)
+            OUTPUT_DIR="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
+
+# Set SLURM options based on the provided arguments
+#SBATCH -p rome16q
+#SBATCH -N "$NUM_NODES"
+#SBATCH --ntasks-per-node "$TASKS_PER_NODE"
+#SBATCH -t 2-12:00
+#SBATCH -o "$OUTPUT_DIR/outputs/%j.out"
+#SBATCH --exclusive
+
+# Load necessary modules and execute your program
+module load openmpi-4.0.5
+srun build/debug/col_mult

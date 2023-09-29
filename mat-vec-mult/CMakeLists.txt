@@ -13,10 +13,23 @@ find_package(Boost REQUIRED
                  program_options
              REQUIRED)
 
-add_executable(mat_vec_mult main.cpp)
-target_include_directories(mat_vec_mult PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
-target_include_directories(mat_vec_mult PRIVATE ${Boost_INCLUDE_DIRS})
-target_link_libraries(mat_vec_mult PRIVATE ${Boost_LIBRARIES})
-target_compile_options(mat_vec_mult PRIVATE #[[ -Wall -Wextra -Wpedantic -Werror ]])
+add_executable(row_mult rowmult.cpp)
+add_executable(col_mult colmult.cpp)
+add_executable(grid_mult gridmult.cpp)
+
+target_include_directories(grid_mult PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(grid_mult PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(grid_mult PRIVATE ${Boost_LIBRARIES})
+target_compile_options(grid_mult PRIVATE #[[ -Wall -Wextra -Wpedantic -Werror ]])
+
+target_include_directories(row_mult PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(row_mult PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(row_mult PRIVATE ${Boost_LIBRARIES})
+target_compile_options(row_mult PRIVATE #[[ -Wall -Wextra -Wpedantic -Werror ]])
+
+target_include_directories(col_mult PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(col_mult PRIVATE ${Boost_INCLUDE_DIRS})
+target_link_libraries(col_mult PRIVATE ${Boost_LIBRARIES})
+target_compile_options(col_mult PRIVATE #[[ -Wall -Wextra -Wpedantic -Werror ]])
 
 set(CMAKE_COLOR_DIAGNOSTICS On)

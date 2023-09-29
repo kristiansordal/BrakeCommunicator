@@ -4,7 +4,6 @@
 
 namespace mpi = boost::mpi;
 
-namespace rowmult {
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 
@@ -30,7 +29,7 @@ void mat_mult(double *matrix, double *vector, double *res, int rows, int n) {
     }
 }
 
-void rowmult() {
+int main() {
     mpi::environment env;
     mpi::communicator world;
     mpi::timer time;
@@ -79,5 +78,5 @@ void rowmult() {
         std::cout << "Time taken: " << end - start << std::endl;
     }
     delete[] gathered_res;
+    return 0;
 }
-} // namespace rowmult

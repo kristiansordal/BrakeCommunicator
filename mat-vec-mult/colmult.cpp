@@ -4,7 +4,6 @@
 
 namespace mpi = boost::mpi;
 
-namespace colmult {
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
     // Value of j is set in order to achieve index(i,j) = i + j
@@ -25,7 +24,7 @@ void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
     }
 }
 
-void colmult() {
+int main() {
     mpi::environment env;
     mpi::communicator world;
     mpi::timer time;
@@ -77,6 +76,5 @@ void colmult() {
         std::cout << std::endl;
     }
     delete[] gathered_res;
+    return 0;
 }
-
-} // namespace colmult

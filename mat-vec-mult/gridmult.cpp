@@ -40,8 +40,6 @@ struct MPI_Env {
     }
 };
 
-namespace gridmult {
-
 void init_cell(double *cell, MPI_Env *env) {
     int n = env->n;
     int cells = n * n / env->cell_size;
@@ -97,14 +95,14 @@ void gather_result(MPI_Env *env, double *gathered_res, double *final_res) {
     mpi::gather(col_comm, gathered_res, env->cell_width, final_res, 0);
 }
 
-void gridmult() {
+int main() {
 
     MPI_Env env(15);
     auto squares = {1, 4, 16, 64};
 
     if (std::find(squares.begin(), squares.end(), env.np) == squares.end()) {
         std::cout << "Number of processes must be quadratic" << std::endl;
-        return;
+        return 0;
     }
 
     double start;
@@ -149,6 +147,5 @@ void gridmult() {
     }
 
     delete[] final_res;
+    return 0;
 }
-
-} // namespace gridmult

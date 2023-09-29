@@ -52,13 +52,17 @@ void colmult() {
         start = time.elapsed();
     }
 
+    init_matrix_segment(matrix, matrix_size, n, rank);
+    std::cout << "Rank: " << rank << " is gonna scatter" << std::endl;
     // Scatter part of the vector to each process
     mpi::scatter(world, vector, vector_slice, cols, 0);
 
-    init_matrix_segment(matrix, matrix_size, n, rank);
+    std::cout << "Rank: " << rank << " is done scattering" << std::endl;
+
     mat_mult(matrix, vector_slice, res, cols, n);
 
     // Reduce the result into the gathered result vector
+    world.barrier();
     mpi::reduce(world, res, n, gathered_res, std::plus<double>(), 0);
 
     delete[] matrix;
@@ -69,13 +73,6 @@ void colmult() {
     if (rank == 0) {
         end = time.elapsed();
         std::cout << "Time taken: " << end - start << std::endl;
-
-        if (world.size() < 64) {
-
-            // for (int i = 0; i < n; i++) {
-            //     std::cout << gathered_res[i] << " ";
-            // }
-        }
 
         std::cout << std::endl;
     }

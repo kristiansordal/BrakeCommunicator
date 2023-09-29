@@ -162,9 +162,9 @@ int main() {
     delete[] res, delete[] gathered_res;
 
     if (env.rank == 0) {
-        std::cout << end_matmult - start_matmult << std::endl;
-        std::cout << bcast_avg << std::endl;
-        std::cout << gather_avg << std::endl;
+        std::cout << "Mat mult:  " << end_matmult - start_matmult << std::endl;
+        std::cout << "Broadcast: " << bcast_avg << std::endl;
+        std::cout << "Gather:    " << gather_avg << std::endl;
     }
 
     delete[] final_res;

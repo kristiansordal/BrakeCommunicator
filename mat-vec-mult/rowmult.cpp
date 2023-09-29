@@ -36,7 +36,7 @@ int main() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 16;
+    int scale = 15;
     int n = 1 << scale;
     int rows = n / np;
     int matrix_size = (n * n) / np;

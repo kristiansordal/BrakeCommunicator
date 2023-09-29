@@ -36,23 +36,14 @@ int main() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 16;
+    int scale = 15;
     int n = 1 << scale;
     int rows = n / np;
     int matrix_size = (n * n) / np;
 
     // timing variables
-    int comm_reps = 100;
-    double time_sum = 0;
-    double bcast_avg;
-    double gather_avg;
-    double matmult_avg;
-    double start_bcast;
-    double end_bcast;
-    double start_matmult;
-    double end_matmult;
-    double start_gather;
-    double end_gather;
+    double start_total;
+    double end_total;
 
     double *vector = new double[n];
     double *res = new double[rows];
@@ -65,42 +56,20 @@ int main() {
         for (int i = 0; i < n; i++) {
             vector[i] = i + 1;
         }
+        start_total = time.elapsed();
     }
 
-    world.barrier();
-    for (int i = 0; i < comm_reps; i++) {
-        start_bcast = time.elapsed();
-        mpi::broadcast(world, vector, n, 0);
-        end_bcast = time.elapsed();
-        time_sum += end_bcast - start_bcast;
-    }
+    mpi::broadcast(world, vector, n, 0);
 
-    bcast_avg = time_sum / comm_reps;
-    time_sum = 0;
-    world.barrier();
-
-    start_matmult = time.elapsed();
     mat_mult(matrix, vector, res, rows, n);
-    end_matmult = time.elapsed();
 
-    world.barrier();
-
-    for (int i = 0; i < comm_reps; i++) {
-        start_gather = time.elapsed();
-        mpi::gather(world, res, rows, gathered_res, 0);
-        end_gather = time.elapsed();
-        time_sum += end_gather - start_gather;
-    }
-
-    gather_avg = time_sum / comm_reps;
+    mpi::gather(world, res, rows, gathered_res, 0);
 
     delete[] matrix, delete[] vector, delete[] res;
 
     if (rank == 0) {
-
-        std::cout << end_matmult - start_matmult << std::endl;
-        std::cout << bcast_avg << std::endl;
-        std::cout << gather_avg << std::endl;
+        end_total = time.elapsed();
+        std::cout << end_total - start_total << std::endl;
     }
     delete[] gathered_res;
     return 0;

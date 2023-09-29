@@ -106,65 +106,40 @@ int main() {
     }
 
     // timing variables
-    int comm_reps = 100;
-    double time_sum = 0;
-    double start_bcast;
-    double end_bcast;
-    double start_matmult;
-    double end_matmult;
-    double start_gather;
-    double end_gather;
-    double bcast_avg;
-    double gather_avg;
-
+    double start_total;
+    double end_total;
     double *cell = new double[env.cell_size];
     double *vector_slice = new double[env.cell_width];
 
     init_cell(cell, &env);
 
-    for (int i = 0; i < comm_reps; i++) {
-        start_bcast = env.time.elapsed();
-
-        scatter_vector(&env, vector_slice);
-        propagate_downwards(&env, vector_slice);
-
-        end_bcast = env.time.elapsed();
-        time_sum += end_bcast - start_bcast;
+    if (env.rank == 0) {
+        start_total = env.time.elapsed();
     }
 
-    bcast_avg = time_sum / comm_reps;
-    time_sum = 0;
-    env.world.barrier();
+    scatter_vector(&env, vector_slice);
+    propagate_downwards(&env, vector_slice);
 
     double *res = new double[env.cell_width];
 
-    start_matmult = env.time.elapsed();
     mat_mult(&env, cell, vector_slice, res);
-    end_matmult = env.time.elapsed();
 
     delete[] cell, delete[] vector_slice;
 
     double *gathered_res = new double[env.cell_width];
     double *final_res = new double[env.n];
 
-    for (int i = 0; i < comm_reps; i++) {
-        start_gather = env.time.elapsed();
-
-        reduce_rows(&env, res, gathered_res);
-        gather_result(&env, gathered_res, final_res);
-
-        end_gather = env.time.elapsed();
-        time_sum += end_gather - start_gather;
-    }
-
-    gather_avg = time_sum / comm_reps;
+    reduce_rows(&env, res, gathered_res);
+    gather_result(&env, gathered_res, final_res);
 
     delete[] res, delete[] gathered_res;
 
     if (env.rank == 0) {
-        std::cout << end_matmult - start_matmult << std::endl;
-        std::cout << bcast_avg << std::endl;
-        std::cout << gather_avg << std::endl;
+        for (int i = 0; i < env.n; i++) {
+            std::cout << final_res[i] << std::endl;
+        }
+        end_total = env.time.elapsed();
+        std::cout << end_total - start_total << std::endl;
     }
 
     delete[] final_res;

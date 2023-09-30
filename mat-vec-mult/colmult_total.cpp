@@ -17,7 +17,6 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 
 void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
     for (int i = 0; i < n; i++) {
-
         for (int j = 0; j < cols; j++) {
             res[i] += matrix[j * n + i] * vector[j];
         }
@@ -66,7 +65,7 @@ int main() {
 
     if (rank == 0) {
         end_total = time.elapsed();
-        std::cout << "Time taken: " << end_total - start_total << std::endl;
+        std::cout << "Time:      " << end_total - start_total << std::endl;
     }
 
     delete[] gathered_res;

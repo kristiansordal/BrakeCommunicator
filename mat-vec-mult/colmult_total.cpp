@@ -67,10 +67,6 @@ int main() {
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time:      " << end_total - start_total << std::endl;
-
-        // for (int i = 0; i < n; i++) {
-        //     std::cout << gathered_res[i] << std::endl;
-        // }
     }
 
     delete[] gathered_res;

@@ -40,7 +40,6 @@ int main() {
     double time_sum = 0;
     double scatter_avg;
     double reduce_avg;
-    double matmult_avg;
     double start_scatter;
     double end_scatter;
     double start_matmult;

@@ -46,7 +46,6 @@ int main() {
     double time_sum = 0;
     double bcast_avg;
     double gather_avg;
-    double matmult_avg;
     double start_bcast;
     double end_bcast;
     double start_matmult;

@@ -30,7 +30,7 @@ int main() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 15;
+    int scale = 3;
     int n = 1 << scale;
     int cols = n / np;
     int matrix_size = (n * n) / np;
@@ -38,9 +38,10 @@ int main() {
     // timing variables
     double start_total;
     double end_total;
+
     double *vector = new double[n];
     double *vector_slice = new double[cols];
-    double *res = new double[cols];
+    double *res = new double[n];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
 
@@ -66,6 +67,10 @@ int main() {
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time:      " << end_total - start_total << std::endl;
+
+        for (int i = 0; i < n; i++) {
+            std::cout << gathered_res[i] << std::endl;
+        }
     }
 
     delete[] gathered_res;

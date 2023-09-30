@@ -1,0 +1,44 @@
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+srun: error: n052: tasks 0-3: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+srun: error: n052: tasks 0-3: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+otal: Exec format error
+srun: error: n057: tasks 0-3: Exited with exit code 8
+srun: error: n052: tasks 0-3: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+otal: Exec format error
+srun: error: n049: tasks 0-3: Exited with exit code 8
+srun: error: n052: tasks 0-3: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+otal: Exec format error
+srun: error: n049: tasks 0-3: Exited with exit code 8
+srun: error: n053: tasks 0-3: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+ 0-3: Exited with exit code 8
+srun: error: n049: tasks 0-3: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
+otal: Exec format error
+srun: error: n051: tasks 0-3: Exited with exit code 8
+srun: error: n052: tasks 0-3: Exited with exit code 8

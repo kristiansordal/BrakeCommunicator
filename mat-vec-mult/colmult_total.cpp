@@ -39,17 +39,13 @@ int main() {
     // timing variables
     double start_total;
     double end_total;
-    double start_total_bcast;
-    double end_bcast;
-    double start_total_matmult;
-    double end_matmult;
-    double start_total_gather;
-    double end_gather;
     double *vector = new double[n];
     double *vector_slice = new double[cols];
     double *res = new double[cols];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
+
+    init_matrix_segment(matrix, matrix_size, n, rank);
 
     if (rank == 0) {
         for (int i = 0; i < n; i++) {
@@ -58,16 +54,9 @@ int main() {
         start_total = time.elapsed();
     }
 
-    init_matrix_segment(matrix, matrix_size, n, rank);
-    std::cout << "Rank: " << rank << " is gonna scatter" << std::endl;
-    // Scatter part of the vector to each process
     mpi::scatter(world, vector, vector_slice, cols, 0);
-
-    std::cout << "Rank: " << rank << " is done scattering" << std::endl;
-
     mat_mult(matrix, vector_slice, res, cols, n);
 
-    // Reduce the result into the gathered result vector
     mpi::reduce(world, res, n, gathered_res, std::plus<double>(), 0);
 
     delete[] matrix;
@@ -78,9 +67,9 @@ int main() {
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time taken: " << end_total - start_total << std::endl;
-
-        std::cout << std::endl;
     }
+
     delete[] gathered_res;
+
     return 0;
 }

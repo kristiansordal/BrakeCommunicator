@@ -31,7 +31,7 @@ int main() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 15;
+    int scale = 2;
     int n = 1 << scale;
     int cols = n / np;
     int matrix_size = (n * n) / np;
@@ -59,11 +59,8 @@ int main() {
     }
 
     init_matrix_segment(matrix, matrix_size, n, rank);
-    std::cout << "Rank: " << rank << " is gonna scatter" << std::endl;
     // Scatter part of the vector to each process
     mpi::scatter(world, vector, vector_slice, cols, 0);
-
-    std::cout << "Rank: " << rank << " is done scattering" << std::endl;
 
     mat_mult(matrix, vector_slice, res, cols, n);
 
@@ -78,8 +75,9 @@ int main() {
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time taken: " << end_total - start_total << std::endl;
-
-        std::cout << std::endl;
+        for (int i = 0; i < n; i++) {
+            std::cout << gathered_res[i] << std::endl;
+        }
     }
     delete[] gathered_res;
     return 0;

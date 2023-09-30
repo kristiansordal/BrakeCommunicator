@@ -4,8 +4,8 @@
 
 namespace mpi = boost::mpi;
 
-// Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
+
     // Value of j is set in order to achieve index(i,j) = i + j
     for (int i = 0, j = rank * matrix_size / n; i < matrix_size; i++) {
         if (i > 0 && i % n == 0) {
@@ -17,7 +17,6 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 
 void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
     for (int i = 0; i < n; i++) {
-
         for (int j = 0; j < cols; j++) {
             res[i] += matrix[j * n + i] * vector[j];
         }
@@ -31,7 +30,7 @@ int main() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 15;
+    int scale = 10;
     int n = 1 << scale;
     int cols = n / np;
     int matrix_size = (n * n) / np;
@@ -39,12 +38,6 @@ int main() {
     // timing variables
     double start_total;
     double end_total;
-    double start_total_bcast;
-    double end_bcast;
-    double start_total_matmult;
-    double end_matmult;
-    double start_total_gather;
-    double end_gather;
     double *vector = new double[n];
     double *vector_slice = new double[cols];
     double *res = new double[cols];
@@ -59,15 +52,11 @@ int main() {
     }
 
     init_matrix_segment(matrix, matrix_size, n, rank);
-    std::cout << "Rank: " << rank << " is gonna scatter" << std::endl;
-    // Scatter part of the vector to each process
-    mpi::scatter(world, vector, vector_slice, cols, 0);
 
-    std::cout << "Rank: " << rank << " is done scattering" << std::endl;
+    mpi::scatter(world, vector, vector_slice, cols, 0);
 
     mat_mult(matrix, vector_slice, res, cols, n);
 
-    // Reduce the result into the gathered result vector
     mpi::reduce(world, res, n, gathered_res, std::plus<double>(), 0);
 
     delete[] matrix;
@@ -78,9 +67,9 @@ int main() {
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time taken: " << end_total - start_total << std::endl;
-
-        std::cout << std::endl;
     }
+
     delete[] gathered_res;
+
     return 0;
 }

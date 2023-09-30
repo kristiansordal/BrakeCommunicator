@@ -42,7 +42,6 @@ struct MPI_Env {
 
 void init_cell(double *cell, MPI_Env *env) {
     int n = env->n;
-    int cells = n * n / env->cell_size;
     int cw = env->cell_width;
     int x = env->coords[0], y = env->coords[1];
 

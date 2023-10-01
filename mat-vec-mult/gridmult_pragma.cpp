@@ -143,7 +143,7 @@ int main() {
     env.world.barrier();
     if (env.rank == 0) {
         end_total = env.time.elapsed();
-        std::cout << "Time:      " << end_total - start_total << std::endl;
+        std::cout << "Pragma:    " << end_total - start_total << std::endl;
     }
 
     delete[] final_res;

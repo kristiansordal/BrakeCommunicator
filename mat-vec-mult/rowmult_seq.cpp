@@ -1,3 +1,4 @@
+#include <chrono>
 #include <iostream>
 void init_matrix(double *matrix, int n) {
     for (int i = 0; i < n; i++) {
@@ -20,7 +21,7 @@ void mat_mult(double *matrix, double *vector, double *res, int n) {
 
 int main() {
 
-    int scale = 2;
+    int scale = 15;
     int n = 1 << scale;
 
     double *vector = new double[n];
@@ -32,13 +33,17 @@ int main() {
     }
 
     init_matrix(matrix, n);
+    auto start = std::chrono::system_clock::now();
     mat_mult(matrix, vector, res, n);
 
     delete[] vector, delete[] matrix;
+    auto end = std::chrono::system_clock::now();
 
-    for (int i = 0; i < n; i++) {
-        std::cout << res[i] << " ";
-    }
+    auto time = std::chrono::duration<double>(end - start);
+    std::cout << time.count() << std::endl;
+    // for (int i = 0; i < n; i++) {
+    //     std::cout << res[i] << " ";
+    // }
     delete[] res;
 
     return 0;

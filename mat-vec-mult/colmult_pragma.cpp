@@ -1,4 +1,5 @@
 #include <boost/mpi.hpp>
+#include <omp.h>
 #include <stdio.h>
 #include <stdlib.h>
 

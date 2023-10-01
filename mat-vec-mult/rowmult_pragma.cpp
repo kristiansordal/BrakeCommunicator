@@ -9,7 +9,6 @@ namespace mpi = boost::mpi;
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 
     // Value of j is set in order to achieve index(i,j) = i + j
-#pragma omp parallel for
     for (int i = 0, j = rank * matrix_size / n; i < matrix_size; i++) {
         if (i > 0 && i % n == 0) {
             j++;

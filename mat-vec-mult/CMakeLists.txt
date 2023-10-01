@@ -12,6 +12,7 @@ find_package(Boost REQUIRED
                  mpi
                  program_options
              REQUIRED)
+find_package(OpenMP REQUIRED)
 
 add_executable(row_mult rowmult.cpp)
 add_executable(col_mult colmult.cpp)
@@ -60,14 +61,17 @@ target_include_directories(grid_mult_pragma PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/i
 target_include_directories(grid_mult_pragma PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(grid_mult_pragma PRIVATE ${Boost_LIBRARIES})
 target_compile_options(grid_mult_pragma PRIVATE  -Wall -Wextra -Wpedantic -Werror )
+target_link_libraries(grid_mult_pragma PRIVATE OpenMP::OpenMP_CXX)
 
 target_include_directories(row_mult_pragma PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(row_mult_pragma PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(row_mult_pragma PRIVATE ${Boost_LIBRARIES})
 target_compile_options(row_mult_pragma PRIVATE  -Wall -Wextra -Wpedantic -Werror )
+target_link_libraries(row_mult_pragma PRIVATE OpenMP::OpenMP_CXX)
 
 target_include_directories(col_mult_pragma PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(col_mult_pragma PRIVATE ${Boost_INCLUDE_DIRS})
 target_link_libraries(col_mult_pragma PRIVATE ${Boost_LIBRARIES})
 target_compile_options(col_mult_pragma PRIVATE  -Wall -Wextra -Wpedantic -Werror )
+target_link_libraries(col_mult_pragma PRIVATE OpenMP::OpenMP_CXX)
 set(CMAKE_COLOR_DIAGNOSTICS On)

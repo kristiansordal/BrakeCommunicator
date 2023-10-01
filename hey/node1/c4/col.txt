@@ -1,0 +1,6 @@
+Mat mult:  7.48291
+Broadcast: 0.000205071
+Gather:    0.000399525
+Comm:      0.000604595
+Time:      7.59175
+Pragma:    2.45381

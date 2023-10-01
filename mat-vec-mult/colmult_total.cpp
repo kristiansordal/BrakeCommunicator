@@ -41,11 +41,13 @@ int main() {
 
     double *vector = new double[n];
     double *vector_slice = new double[cols];
-    double *res = new double[n];
+    double *res = new double[cols];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
 
     init_matrix_segment(matrix, matrix_size, n, rank);
+
+    world.barrier();
 
     if (rank == 0) {
         for (int i = 0; i < n; i++) {
@@ -59,16 +61,17 @@ int main() {
 
     mpi::reduce(world, res, n, gathered_res, std::plus<double>(), 0);
 
-    delete[] matrix;
-    delete[] vector;
-    delete[] vector_slice;
-    delete[] res;
+    world.barrier();
 
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time:      " << end_total - start_total << std::endl;
     }
 
+    delete[] matrix;
+    delete[] vector;
+    delete[] vector_slice;
+    delete[] res;
     delete[] gathered_res;
 
     return 0;

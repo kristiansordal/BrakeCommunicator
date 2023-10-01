@@ -1,0 +1,2 @@
+srun: error: n056: tasks 2,8: Segmentation fault (core dumped)
+srun: error: n049: task 0: Segmentation fault (core dumped)

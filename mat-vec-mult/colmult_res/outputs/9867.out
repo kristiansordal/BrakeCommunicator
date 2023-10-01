@@ -1,0 +1,134 @@
+[n049:1646467] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646469] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646470] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646468] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646465] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646464] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646471] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646466] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646469] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646470] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646467] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646468] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646465] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646464] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646471] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1646466] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Time taken: 0.228319
+double free or corruption (out)
+[n049:1646464] *** Process received signal ***
+[n049:1646464] Signal: Aborted (6)
+[n049:1646464] Signal code:  (-6)
+[n049:1646467] *** Process received signal ***
+[n049:1646467] Signal: Segmentation fault (11)
+[n049:1646467] Signal code:  (128)
+[n049:1646467] Failing at address: (nil)
+[n049:1646467] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646467] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646467] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646467] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646467] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646467] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646467] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646467] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646467] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646467] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646467] [10] build/debug/col_mult[0x40bca5]
+[n049:1646467] *** End of error message ***
+[n049:1646465] *** Process received signal ***
+[n049:1646465] Signal: Segmentation fault (11)
+[n049:1646465] Signal code:  (128)
+[n049:1646465] Failing at address: (nil)
+[n049:1646465] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646465] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646465] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646465] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646465] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646465] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646465] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646465] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646465] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646465] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646465] [10] build/debug/col_mult[0x40bca5]
+[n049:1646465] *** End of error message ***
+[n049:1646469] *** Process received signal ***
+[n049:1646469] Signal: Segmentation fault (11)
+[n049:1646469] Signal code:  (128)
+[n049:1646469] Failing at address: (nil)
+[n049:1646469] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646471] *** Process received signal ***
+[n049:1646471] Signal: Segmentation fault (11)
+[n049:1646471] Signal code:  (128)
+[n049:1646471] Failing at address: (nil)
+[n049:1646469] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646469] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646469] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646469] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646469] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646469] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646471] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646469] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646469] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646471] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646471] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646469] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646469] [10] build/debug/col_mult[0x40bca5]
+[n049:1646469] *** End of error message ***
+[n049:1646471] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646471] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646471] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646471] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646471] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646471] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646471] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646471] [10] build/debug/col_mult[0x40bca5]
+[n049:1646471] *** End of error message ***
+[n049:1646468] *** Process received signal ***
+[n049:1646468] Signal: Segmentation fault (11)
+[n049:1646468] Signal code:  (128)
+[n049:1646468] Failing at address: (nil)
+[n049:1646468] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646468] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646468] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646468] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646468] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646468] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646468] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646468] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646468] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646468] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646468] [10] build/debug/col_mult[0x40bca5]
+[n049:1646468] *** End of error message ***
+[n049:1646466] *** Process received signal ***
+[n049:1646466] Signal: Segmentation fault (11)
+[n049:1646466] Signal code:  (128)
+[n049:1646466] Failing at address: (nil)
+[n049:1646466] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646466] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646466] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646466] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646466] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646466] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646466] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646466] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646466] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646466] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646466] [10] build/debug/col_mult[0x40bca5]
+[n049:1646466] *** End of error message ***
+[n049:1646470] *** Process received signal ***
+[n049:1646470] Signal: Segmentation fault (11)
+[n049:1646470] Signal code:  (128)
+[n049:1646470] Failing at address: (nil)
+[n049:1646470] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1646470] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1646470] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x24157)[0x155553024157]
+[n049:1646470] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(+0xcdab9)[0x1555542cdab9]
+[n049:1646470] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(mca_base_framework_close+0x7a)[0x15555305895a]
+[n049:1646470] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_mpi_finalize+0x5a9)[0x155554253939]
+[n049:1646470] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZN5boost3mpi11environmentD1Ev+0x4a)[0x155555225e9a]
+[n049:1646470] [ 7] build/debug/col_mult[0x40c182]
+[n049:1646470] [ 8] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1646470] [ 9] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1646470] [10] build/debug/col_mult[0x40bca5]
+[n049:1646470] *** End of error message ***
+srun: error: n049: tasks 1-7: Segmentation fault (core dumped)

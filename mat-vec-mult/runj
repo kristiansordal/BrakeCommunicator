@@ -1,0 +1,50 @@
+#!/bin/bash
+#SBATCH -p rome16q # partition (queue)
+#SBATCH -t 2-12:00 # time (D-HH:MM)
+#SBATCH --exclusive
+
+# Parse command line arguments
+while [[ $# -gt 0 ]]; do
+    case "$1" in
+        -n|--nodes)
+            nodes="$2"
+            shift 2
+            ;;
+        -c|--cores)
+            cores="$2"
+            shift 2
+            ;;
+        -o|--output)
+            output_dir="$2"
+            shift 2
+            ;;
+        -j|--job)
+            job_to_run="$2"
+            shift 2
+            ;;
+        *)
+            echo "Unknown option: $1"
+            exit 1
+            ;;
+    esac
+done
+
+# Check if required arguments are provided
+if [ -z "$nodes" ] || [ -z "$cores" ] || [ -z "$output_dir" ] || [ -z "$job_to_run" ]; then
+    echo "Usage: $0 -n <nodes> -c <cores> -o <output_dir> -j <job_to_run>"
+    exit 1
+fi
+
+# Load required module
+module load openmpi-4.0.5
+
+# Set the number of nodes and cores
+#SBATCH -N $nodes
+#SBATCH --ntasks-per-node $cores
+
+# Redirect output to the specified directory
+#SBATCH -o "$output_dir/outputs/%j.out"
+
+# Run the specified job with srun
+srun "build/debug/$job_to_run"
+

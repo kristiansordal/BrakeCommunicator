@@ -1,0 +1,326 @@
+[n051:961235] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961232] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961233] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961237] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961234] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961236] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961238] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961239] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961235] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961232] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961234] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961233] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961237] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961238] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961239] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:961236] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Rank: 3 is gonna scatter
+Rank: 7 is gonna scatter
+Rank: 2 is gonna scatter
+Rank: 0 is gonna scatter
+Rank: 4 is gonna scatter
+Rank: 5 is gonna scatter
+Rank: 6 is gonna scatter
+Rank: 1 is gonna scatter
+Rank: 1 is done scattering
+Rank: 2 is done scattering
+Rank: 3 is done scattering
+Rank: 4 is done scattering
+Rank: 5 is done scattering
+Rank: 6 is done scattering
+Rank: 0 is done scattering
+Rank: 7 is done scattering
+[n051:961233] *** Process received signal ***
+[n051:961233] Signal: Segmentation fault (11)
+[n051:961233] Signal code:  (128)
+[n051:961233] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n051:961233] *** Process received signal ***
+[n051:961233] Signal: Aborted (6)
+[n051:961233] Signal code:  (-6)
+[n051:961233] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961233] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961233] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961233] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961233] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961233] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961233] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961233] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961233] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961233] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961233] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961233] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961233] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961234] *** Process received signal ***
+[n051:961234] Signal: Segmentation fault (11)
+[n051:961234] Signal code:  (128)
+[n051:961234] Failing at address: (nil)
+[n051:961233] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961233] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961233] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961233] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961233] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+malloc_consolidate(): invalid chunk size
+[n051:961233] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961234] *** Process received signal ***
+[n051:961234] Signal: Aborted (6)
+[n051:961234] Signal code:  (-6)
+[n051:961233] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961233] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961233] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961233] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961233] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961233] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961233] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961233] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961233] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961234] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961233] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961233] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961233] *** End of error message ***
+[n051:961234] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961234] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961234] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961234] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961234] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961234] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961234] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961234] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961234] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961234] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961234] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961234] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961234] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961234] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961234] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961234] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961234] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n051:961234] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961234] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961234] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961234] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961234] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961234] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961234] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961234] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961234] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961234] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961234] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961234] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961234] *** End of error message ***
+[n051:961236] *** Process received signal ***
+[n051:961236] Signal: Segmentation fault (11)
+[n051:961236] Signal code:  (128)
+[n051:961236] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n051:961236] *** Process received signal ***
+[n051:961236] Signal: Aborted (6)
+[n051:961236] Signal code:  (-6)
+[n051:961236] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961236] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961236] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961236] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961236] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961236] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961236] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961236] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961236] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961236] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961236] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961236] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961236] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961236] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961236] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961236] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961236] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961236] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n051:961236] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961236] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961236] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961236] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961236] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961236] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961236] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961236] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961236] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961236] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961236] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961236] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961236] *** End of error message ***
+[n051:961235] *** Process received signal ***
+[n051:961235] Signal: Segmentation fault (11)
+[n051:961235] Signal code:  (128)
+[n051:961235] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n051:961235] *** Process received signal ***
+[n051:961235] Signal: Aborted (6)
+[n051:961235] Signal code:  (-6)
+[n051:961235] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961235] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961235] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961235] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961235] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961235] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961235] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961235] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961235] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961235] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961235] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961235] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961235] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961235] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961235] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961235] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961235] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961235] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n051:961235] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961235] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961235] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961235] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961235] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961235] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961235] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961235] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961235] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961235] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961235] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961235] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961235] *** End of error message ***
+[n051:961237] *** Process received signal ***
+[n051:961237] Signal: Segmentation fault (11)
+[n051:961237] Signal code:  (128)
+[n051:961237] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n051:961237] *** Process received signal ***
+[n051:961237] Signal: Aborted (6)
+[n051:961237] Signal code:  (-6)
+[n051:961237] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961237] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961237] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961237] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961237] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961237] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961237] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961237] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961237] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961237] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961237] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961237] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961237] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961237] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961237] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961237] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961237] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961237] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n051:961237] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961237] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961237] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961237] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961237] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961237] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961237] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961237] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961237] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961237] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961237] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961237] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961237] *** End of error message ***
+[n051:961232] *** Process received signal ***
+[n051:961232] Signal: Segmentation fault (11)
+[n051:961232] Signal code:  (128)
+[n051:961232] Failing at address: (nil)
+[n051:961232] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961232] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961232] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_mtl_ofi.so(+0x4081)[0x155545004081]
+[n051:961232] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_pml_cm.so(+0x2421)[0x155546002421]
+[n051:961232] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x36b)[0x1555542b0f3b]
+[n051:961232] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_binomial+0xce)[0x1555542b1c4e]
+[n051:961232] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x1af)[0x155541805b9f]
+[n051:961232] [ 7] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n051:961232] [ 8] build/debug/col_mult_total[0x410e1d]
+[n051:961232] [ 9] build/debug/col_mult_total[0x410817]
+[n051:961232] [10] build/debug/col_mult_total[0x40c13c]
+[n051:961232] [11] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961232] [12] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n051:961232] [13] build/debug/col_mult_total[0x40bcb5]
+[n051:961232] *** End of error message ***
+[n051:961239] *** Process received signal ***
+[n051:961239] Signal: Segmentation fault (11)
+[n051:961239] Signal code:  (128)
+[n051:961239] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n051:961239] *** Process received signal ***
+[n051:961239] Signal: Aborted (6)
+[n051:961239] Signal code:  (-6)
+[n051:961239] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961239] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961239] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961239] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961239] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961239] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961239] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961239] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961239] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961239] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961239] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961239] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961239] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961239] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961239] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961239] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961239] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961239] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n051:961239] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961239] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961239] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961239] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961239] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961239] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961239] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961239] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961239] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961239] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961239] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961239] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961239] *** End of error message ***
+[n051:961238] *** Process received signal ***
+[n051:961238] Signal: Segmentation fault (11)
+[n051:961238] Signal code:  (128)
+[n051:961238] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n051:961238] *** Process received signal ***
+[n051:961238] Signal: Aborted (6)
+[n051:961238] Signal code:  (-6)
+[n051:961238] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961238] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n051:961238] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n051:961238] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n051:961238] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n051:961238] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n051:961238] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n051:961238] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n051:961238] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n051:961238] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n051:961238] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n051:961238] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961238] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n051:961238] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961238] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n051:961238] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n051:961238] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n051:961238] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n051:961238] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n051:961238] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n051:961238] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n051:961238] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n051:961238] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n051:961238] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n051:961238] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n051:961238] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n051:961238] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n051:961238] [27] build/debug/col_mult_total[0x4107f0]
+[n051:961238] [28] build/debug/col_mult_total[0x40c13c]
+[n051:961238] [29] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n051:961238] *** End of error message ***
+srun: error: n051: task 0: Segmentation fault (core dumped)
+srun: error: n051: tasks 1-7: Aborted (core dumped)

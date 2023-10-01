@@ -1,0 +1,9 @@
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+slurmstepd: error: execve(): build/debug/col_mult: Exec format error
+srun: error: n049: tasks 0-7: Exited with exit code 8

@@ -1,0 +1,2 @@
+srun: error: n049: task 0: Exited with exit code 8
+slurmstepd: error: execve(): build/debug/row_mult: Exec format error

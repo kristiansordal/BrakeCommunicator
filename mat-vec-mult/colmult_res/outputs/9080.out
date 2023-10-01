@@ -1,0 +1,67 @@
+[n050:990609] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990607] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990602] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990608] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990603] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990606] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990604] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990605] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990607] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990609] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990602] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990608] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990603] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990606] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990604] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:990605] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Rank: 4 is gonna scatter
+Rank: 1 is gonna scatter
+Rank: 0 is gonna scatter
+Rank: 3 is gonna scatter
+Rank: 2 is gonna scatter
+Rank: 6 is gonna scatter
+Rank: 5 is gonna scatter
+Rank: 7 is gonna scatter
+Rank: 1 is done scattering
+Rank: 2 is done scattering
+Rank: 3 is done scattering
+Rank: 4 is done scattering
+Rank: 5 is done scattering
+Rank: 6 is done scattering
+Rank: 0 is done scattering
+Rank: 7 is done scattering
+corrupted size vs. prev_size
+[n050:990609] *** Process received signal ***
+[n050:990609] Signal: Aborted (6)
+[n050:990609] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990608] *** Process received signal ***
+[n050:990608] Signal: Aborted (6)
+[n050:990608] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990607] *** Process received signal ***
+[n050:990607] Signal: Aborted (6)
+[n050:990607] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990606] *** Process received signal ***
+[n050:990606] Signal: Aborted (6)
+[n050:990606] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990605] *** Process received signal ***
+[n050:990605] Signal: Aborted (6)
+[n050:990605] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990604] *** Process received signal ***
+[n050:990604] Signal: Aborted (6)
+[n050:990604] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990603] *** Process received signal ***
+[n050:990603] Signal: Aborted (6)
+[n050:990603] Signal code:  (-6)
+corrupted size vs. prev_size
+[n050:990602] *** Process received signal ***
+[n050:990602] Signal: Aborted (6)
+[n050:990602] Signal code:  (-6)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 9080 ON n050 CANCELLED AT 2023-09-29T11:04:01 ***
+slurmstepd: error: *** STEP 9080.0 ON n050 CANCELLED AT 2023-09-29T11:04:01 ***

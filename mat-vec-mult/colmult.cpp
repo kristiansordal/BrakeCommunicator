@@ -48,7 +48,7 @@ int main() {
     double end_reduce;
     double *vector = new double[n];
     double *vector_slice = new double[cols];
-    double *res = new double[n];
+    double *res = new double[cols];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
 
@@ -95,6 +95,7 @@ int main() {
         std::cout << "Mat mult:  " << end_matmult - start_matmult << std::endl;
         std::cout << "Broadcast: " << scatter_avg << std::endl;
         std::cout << "Gather:    " << reduce_avg << std::endl;
+        std::cout << "Comm:      " << scatter_avg + reduce_avg << std::endl;
     }
 
     delete[] gathered_res;

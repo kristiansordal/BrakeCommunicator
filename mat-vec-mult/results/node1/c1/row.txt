@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Mat mult:  3.64799
 Broadcast: 7.76e-08
 Gather:    6.58966e-06
@@ -30,3 +31,9 @@ Time:      4.00832
 Mat mult:  3.6463
 Broadcast: 7.76e-08
 Gather:    7.54384e-06
+=======
+Mat mult:  3.68887
+Broadcast: 9.08e-08
+Gather:    7.0348e-06
+Time:      3.97504
+>>>>>>> refs/remotes/origin/main

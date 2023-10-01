@@ -118,8 +118,13 @@ int main() {
 
     double *cell = new double[env.cell_size];
     double *vector_slice = new double[env.cell_width];
+    double *res = new double[env.cell_width];
+    double *gathered_res = new double[env.cell_width];
+    double *final_res = new double[env.n];
 
     init_cell(cell, &env);
+
+    env.world.barrier();
 
     for (int i = 0; i < comm_reps; i++) {
         start_bcast = env.time.elapsed();
@@ -133,18 +138,14 @@ int main() {
 
     bcast_avg = time_sum / comm_reps;
     time_sum = 0;
-    env.world.barrier();
 
-    double *res = new double[env.cell_width];
+    env.world.barrier();
 
     start_matmult = env.time.elapsed();
     mat_mult(&env, cell, vector_slice, res);
     end_matmult = env.time.elapsed();
 
-    delete[] cell, delete[] vector_slice;
-
-    double *gathered_res = new double[env.cell_width];
-    double *final_res = new double[env.n];
+    env.world.barrier();
 
     for (int i = 0; i < comm_reps; i++) {
         start_gather = env.time.elapsed();
@@ -158,14 +159,15 @@ int main() {
 
     gather_avg = time_sum / comm_reps;
 
-    delete[] res, delete[] gathered_res;
+    env.world.barrier();
 
     if (env.rank == 0) {
         std::cout << "Mat mult:  " << end_matmult - start_matmult << std::endl;
         std::cout << "Broadcast: " << bcast_avg << std::endl;
         std::cout << "Gather:    " << gather_avg << std::endl;
+        std::cout << "Comm:      " << bcast_avg + gather_avg << std::endl;
     }
 
-    delete[] final_res;
+    delete[] cell, delete[] vector_slice, delete[] res, delete[] gathered_res, delete[] final_res;
     return 0;
 }

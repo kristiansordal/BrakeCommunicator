@@ -1,0 +1,77 @@
+[n053:938426] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938427] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938425] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938428] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938426] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938427] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938425] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938428] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n053:938426] *** Process received signal ***
+[n053:938426] Signal: Segmentation fault (11)
+[n053:938426] Signal code:  (128)
+[n053:938426] Failing at address: (nil)
+[n053:938425] *** Process received signal ***
+[n053:938425] Signal: Segmentation fault (11)
+[n053:938425] Signal code:  (128)
+[n053:938425] Failing at address: (nil)
+[n053:938425] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n053:938425] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n053:938425] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_mtl_ofi.so(+0x4176)[0x155545004176]
+[n053:938425] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_pml_cm.so(+0x2421)[0x155546002421]
+[n053:938425] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x36b)[0x1555542b0f3b]
+[n053:938425] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_pipeline+0xe2)[0x1555542b1a72]
+[n053:938425] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x14e)[0x155541805b3e]
+[n053:938425] [ 7] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n053:938425] [ 8] build/debug/mat_vec_mult[0x41264d]
+[n053:938425] [ 9] build/debug/mat_vec_mult[0x411997]
+[n053:938425] [10] build/debug/mat_vec_mult[0x40c14a]
+[n053:938425] [11] build/debug/mat_vec_mult[0x40cf83]
+[n053:938425] [12] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n053:938425] [13] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n053:938425] [14] build/debug/mat_vec_mult[0x40bd35]
+[n053:938425] *** End of error message ***
+[n053:938427] *** Process received signal ***
+[n053:938427] Signal: Segmentation fault (11)
+[n053:938427] Signal code:  (128)
+[n053:938427] Failing at address: (nil)
+malloc_consolidate(): invalid chunk size
+[n053:938427] *** Process received signal ***
+[n053:938427] Signal: Aborted (6)
+[n053:938427] Signal code:  (-6)
+[n053:938427] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n053:938427] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n053:938427] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n053:938427] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n053:938427] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n053:938427] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n053:938427] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n053:938427] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n053:938427] [ 8] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n053:938427] [ 9] /lib64/ld-linux-x86-64.so.2(+0x5d98)[0x15555551fd98]
+[n053:938427] [10] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n053:938427] [11] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n053:938427] [12] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n053:938427] [13] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n053:938427] [14] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n053:938427] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n053:938427] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n053:938427] [17] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n053:938427] [18] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n053:938427] [19] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n053:938427] [20] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n053:938427] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n053:938427] [22] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n053:938427] [23] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n053:938427] [24] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n053:938427] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Comm_rank+0x37)[0x15555426fae7]
+[n053:938427] [26] /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/lib/libboost_mpi.so.1.73.0(_ZNK5boost3mpi12communicator4rankEv+0x18)[0x155555223cf8]
+[n053:938427] [27] build/debug/mat_vec_mult[0x411970]
+[n053:938427] [28] build/debug/mat_vec_mult[0x40c14a]
+[n053:938427] [29] build/debug/mat_vec_mult[0x40cf83]
+[n053:938427] *** End of error message ***
+srun: error: n053: task 1: Segmentation fault (core dumped)
+srun: error: n053: task 2: Aborted (core dumped)
+srun: error: n053: task 0: Segmentation fault (core dumped)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 9062 ON n053 CANCELLED AT 2023-09-29T10:43:17 ***
+slurmstepd: error: *** STEP 9062.0 ON n053 CANCELLED AT 2023-09-29T10:43:17 ***

@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH -p rome16q # partition (queue)
+#SBATCH -N 1 # number of nodes
+#SBATCH --ntasks-per-node 8  # number of cores
+#SBATCH -t 2-12:00 # time (D-HH:MM)
+#SBATCH -o colmult_res/outputs/%j.out # STDOUT
+#SBATCH --exclusive
+
+module load openmpi-4.0.5
+srun build/debug/col_mult_total
+

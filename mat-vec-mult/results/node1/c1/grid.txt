@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 srun: error: n053: task 0: Exited with exit code 8
 slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
 error
@@ -19,3 +20,9 @@ slurmstepd: error: execve(): build/debug/grid_mult: Exec format error
 error
 srun: error: n049: task 0: Exited with exit code 8
 slurmstepd: error: execve(): build/debug/grid_mult_total: Exec format error
+=======
+Mat mult:  3.63132
+Broadcast: 0.000126834
+Gather:    2.36136e-05
+Time:      4.01332
+>>>>>>> refs/remotes/origin/main

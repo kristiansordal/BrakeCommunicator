@@ -1,0 +1,4 @@
+Mat mult:  0.0574663
+Broadcast: 0.00114158
+Gather:    0.000284604
+Time:      0.394939

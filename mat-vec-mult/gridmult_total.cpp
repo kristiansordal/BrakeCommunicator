@@ -112,6 +112,7 @@ int main() {
 
     init_cell(cell, &env);
 
+    env.world.barrier();
     if (env.rank == 0) {
         start_total = env.time.elapsed();
     }
@@ -133,6 +134,7 @@ int main() {
 
     delete[] res, delete[] gathered_res;
 
+    env.world.barrier();
     if (env.rank == 0) {
         end_total = env.time.elapsed();
         std::cout << "Time:      " << end_total - start_total << std::endl;

@@ -1,0 +1,557 @@
+[n049:1462359] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988422] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944703] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462351] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462346] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462355] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462344] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462357] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462345] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462348] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462350] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462353] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462349] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462356] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988418] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988420] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988416] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988429] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988417] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988421] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988431] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988430] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988428] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462358] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462352] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462347] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462354] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944708] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944711] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944701] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944702] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944698] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944705] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944709] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944704] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944700] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942751] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988419] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988425] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988426] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988424] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988423] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988427] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462351] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462359] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944697] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944712] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944706] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944710] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944699] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944707] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462346] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462355] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462344] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988422] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942763] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942757] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942758] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942765] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942764] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942766] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942756] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942755] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942762] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462357] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988418] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988420] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988416] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988429] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462345] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988417] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944703] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944708] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462348] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462350] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462353] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944711] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988431] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988421] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462349] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944701] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988430] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462356] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988428] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944702] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988419] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462358] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944705] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944698] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944709] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988425] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942761] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942754] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942759] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942753] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942752] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942760] mca_base_component_repository_open: unable to open mca_pml_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462352] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462347] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988426] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988424] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944704] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n049:1462354] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944700] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988423] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n050:988427] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944697] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944712] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944706] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944699] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944710] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n051:944707] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942751] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942757] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942758] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942763] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942765] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942764] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942766] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942756] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942755] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942762] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942761] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942754] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942759] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942753] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942752] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n052:942760] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+malloc(): invalid size (unsorted)
+[n049:1462345] *** Process received signal ***
+[n049:1462345] Signal: Aborted (6)
+[n049:1462345] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462346] *** Process received signal ***
+[n049:1462346] Signal: Aborted (6)
+[n049:1462346] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462347] *** Process received signal ***
+[n049:1462347] Signal: Aborted (6)
+[n049:1462347] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462348] *** Process received signal ***
+[n049:1462348] Signal: Aborted (6)
+[n049:1462348] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462349] *** Process received signal ***
+[n049:1462349] Signal: Aborted (6)
+[n049:1462349] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462350] *** Process received signal ***
+[n049:1462350] Signal: Aborted (6)
+[n049:1462350] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462351] *** Process received signal ***
+[n049:1462351] Signal: Aborted (6)
+[n049:1462351] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462352] *** Process received signal ***
+[n049:1462352] Signal: Aborted (6)
+[n049:1462352] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462353] *** Process received signal ***
+[n049:1462353] Signal: Aborted (6)
+[n049:1462353] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462354] *** Process received signal ***
+[n049:1462354] Signal: Aborted (6)
+[n049:1462354] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462356] *** Process received signal ***
+[n049:1462356] Signal: Aborted (6)
+[n049:1462356] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462355] *** Process received signal ***
+[n049:1462355] Signal: Aborted (6)
+[n049:1462355] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462357] *** Process received signal ***
+[n049:1462357] Signal: Aborted (6)
+[n049:1462357] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n049:1462358] *** Process received signal ***
+[n049:1462358] Signal: Aborted (6)
+[n049:1462358] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n049:1462359] *** Process received signal ***
+[n049:1462359] Signal: Aborted (6)
+[n049:1462359] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988416] *** Process received signal ***
+[n050:988416] Signal: Aborted (6)
+[n050:988416] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988417] *** Process received signal ***
+[n050:988417] Signal: Aborted (6)
+[n050:988417] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988418] *** Process received signal ***
+[n050:988418] Signal: Aborted (6)
+[n050:988418] Signal code:  (-6)
+[n050:988418] *** Process received signal ***
+[n050:988418] Signal: Segmentation fault (11)
+[n050:988418] Signal code:  (128)
+[n050:988418] Failing at address: (nil)
+[n050:988418] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n050:988418] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n050:988418] [ 2] /lib64/ld-linux-x86-64.so.2(+0xedf0)[0x155555528df0]
+[n050:988418] [ 3] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988418] [ 4] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n050:988418] [ 5] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988418] [ 6] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n050:988418] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n050:988418] [ 8] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988418] [ 9] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n050:988418] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n050:988418] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n050:988418] [12] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n050:988418] [13] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n050:988418] [14] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n050:988418] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n050:988418] [16] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n050:988418] [17] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n050:988418] [18] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n050:988418] [19] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n050:988418] [20] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n050:988418] [21] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n050:988418] [22] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n050:988418] [23] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n050:988418] [24] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x507)[0x1555542b10d7]
+[n050:988418] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_pipeline+0xe2)[0x1555542b1a72]
+[n050:988418] [26] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x1cf)[0x155541805bbf]
+[n050:988418] [27] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n050:988418] [28] build/debug/mat_vec_mult[0x412721]
+[n050:988418] [29] build/debug/mat_vec_mult[0x4119af]
+[n050:988418] *** End of error message ***
+malloc_consolidate(): invalid chunk size
+[n050:988419] *** Process received signal ***
+[n050:988419] Signal: Aborted (6)
+[n050:988419] Signal code:  (-6)
+[n050:988419] *** Process received signal ***
+[n050:988419] Signal: Segmentation fault (11)
+[n050:988419] Signal code:  (128)
+[n050:988419] Failing at address: (nil)
+[n050:988419] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n050:988419] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n050:988419] [ 2] /lib64/ld-linux-x86-64.so.2(+0xedf0)[0x155555528df0]
+[n050:988419] [ 3] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988419] [ 4] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n050:988419] [ 5] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988419] [ 6] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n050:988419] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n050:988419] [ 8] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988419] [ 9] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n050:988419] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n050:988419] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n050:988419] [12] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n050:988419] [13] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n050:988419] [14] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n050:988419] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n050:988419] [16] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n050:988419] [17] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n050:988419] [18] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n050:988419] [19] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n050:988419] [20] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n050:988419] [21] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n050:988419] [22] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n050:988419] [23] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n050:988419] [24] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x507)[0x1555542b10d7]
+[n050:988419] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_pipeline+0xe2)[0x1555542b1a72]
+[n050:988419] [26] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x1cf)[0x155541805bbf]
+[n050:988419] [27] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n050:988419] [28] build/debug/mat_vec_mult[0x412721]
+[n050:988419] [29] build/debug/mat_vec_mult[0x4119af]
+[n050:988419] *** End of error message ***
+malloc_consolidate(): invalid chunk size
+[n050:988420] *** Process received signal ***
+[n050:988420] Signal: Aborted (6)
+[n050:988420] Signal code:  (-6)
+[n050:988420] *** Process received signal ***
+[n050:988420] Signal: Segmentation fault (11)
+[n050:988420] Signal code:  (128)
+[n050:988420] Failing at address: (nil)
+[n050:988420] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n050:988420] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n050:988420] [ 2] /lib64/ld-linux-x86-64.so.2(+0xedf0)[0x155555528df0]
+[n050:988420] [ 3] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988420] [ 4] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n050:988420] [ 5] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988420] [ 6] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n050:988420] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n050:988420] [ 8] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n050:988420] [ 9] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n050:988420] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n050:988420] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n050:988420] [12] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n050:988420] [13] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n050:988420] [14] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n050:988420] [15] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n050:988420] [16] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n050:988420] [17] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n050:988420] [18] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n050:988420] [19] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n050:988420] [20] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n050:988420] [21] /lib/x86_64-linux-gnu/libc.so.6(+0xa1a28)[0x155553879a28]
+[n050:988420] [22] /lib/x86_64-linux-gnu/libc.so.6(+0xa3c5b)[0x15555387bc5b]
+[n050:988420] [23] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n050:988420] [24] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x507)[0x1555542b10d7]
+[n050:988420] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_pipeline+0xe2)[0x1555542b1a72]
+[n050:988420] [26] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x1cf)[0x155541805bbf]
+[n050:988420] [27] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n050:988420] [28] build/debug/mat_vec_mult[0x412721]
+[n050:988420] [29] build/debug/mat_vec_mult[0x4119af]
+[n050:988420] *** End of error message ***
+malloc_consolidate(): invalid chunk size
+[n050:988421] *** Process received signal ***
+[n050:988421] Signal: Aborted (6)
+[n050:988421] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988422] *** Process received signal ***
+[n050:988422] Signal: Aborted (6)
+[n050:988422] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988423] *** Process received signal ***
+[n050:988423] Signal: Aborted (6)
+[n050:988423] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988424] *** Process received signal ***
+[n050:988424] Signal: Aborted (6)
+[n050:988424] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988425] *** Process received signal ***
+[n050:988425] Signal: Aborted (6)
+[n050:988425] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988426] *** Process received signal ***
+[n050:988426] Signal: Aborted (6)
+[n050:988426] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988427] *** Process received signal ***
+[n050:988427] Signal: Aborted (6)
+[n050:988427] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988428] *** Process received signal ***
+[n050:988428] Signal: Aborted (6)
+[n050:988428] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988429] *** Process received signal ***
+[n050:988429] Signal: Aborted (6)
+[n050:988429] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988430] *** Process received signal ***
+[n050:988430] Signal: Aborted (6)
+[n050:988430] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n050:988431] *** Process received signal ***
+[n050:988431] Signal: Aborted (6)
+[n050:988431] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n051:944697] *** Process received signal ***
+[n051:944697] Signal: Aborted (6)
+[n051:944697] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944698] *** Process received signal ***
+[n051:944698] Signal: Aborted (6)
+[n051:944698] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944699] *** Process received signal ***
+[n051:944699] Signal: Aborted (6)
+[n051:944699] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944700] *** Process received signal ***
+[n051:944700] Signal: Aborted (6)
+[n051:944700] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n051:944701] *** Process received signal ***
+[n051:944701] Signal: Aborted (6)
+[n051:944701] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944702] *** Process received signal ***
+[n051:944702] Signal: Aborted (6)
+[n051:944702] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944703] *** Process received signal ***
+[n051:944703] Signal: Aborted (6)
+[n051:944703] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944704] *** Process received signal ***
+[n051:944704] Signal: Aborted (6)
+[n051:944704] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944705] *** Process received signal ***
+[n051:944705] Signal: Aborted (6)
+[n051:944705] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944706] *** Process received signal ***
+[n051:944706] Signal: Aborted (6)
+[n051:944706] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944707] *** Process received signal ***
+[n051:944707] Signal: Aborted (6)
+[n051:944707] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944708] *** Process received signal ***
+[n051:944708] Signal: Aborted (6)
+[n051:944708] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944709] *** Process received signal ***
+[n051:944709] Signal: Aborted (6)
+[n051:944709] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n051:944710] *** Process received signal ***
+[n051:944710] Signal: Aborted (6)
+[n051:944710] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n051:944711] *** Process received signal ***
+[n051:944711] Signal: Aborted (6)
+[n051:944711] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n051:944712] *** Process received signal ***
+[n051:944712] Signal: Aborted (6)
+[n051:944712] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942751] *** Process received signal ***
+[n052:942751] Signal: Aborted (6)
+[n052:942751] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942752] *** Process received signal ***
+[n052:942752] Signal: Aborted (6)
+[n052:942752] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942753] *** Process received signal ***
+[n052:942753] Signal: Aborted (6)
+[n052:942753] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942754] *** Process received signal ***
+[n052:942754] Signal: Aborted (6)
+[n052:942754] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942755] *** Process received signal ***
+[n052:942755] Signal: Aborted (6)
+[n052:942755] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n052:942756] *** Process received signal ***
+[n052:942756] Signal: Aborted (6)
+[n052:942756] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942757] *** Process received signal ***
+[n052:942757] Signal: Aborted (6)
+[n052:942757] Signal code:  (-6)
+srun: error: n050: tasks 18-20: Segmentation fault (core dumped)
+malloc(): invalid size (unsorted)
+[n052:942758] *** Process received signal ***
+[n052:942758] Signal: Aborted (6)
+[n052:942758] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942759] *** Process received signal ***
+[n052:942759] Signal: Aborted (6)
+[n052:942759] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942760] *** Process received signal ***
+[n052:942760] Signal: Aborted (6)
+[n052:942760] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n052:942761] *** Process received signal ***
+[n052:942761] Signal: Aborted (6)
+[n052:942761] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n052:942762] *** Process received signal ***
+[n052:942762] Signal: Aborted (6)
+[n052:942762] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n052:942763] *** Process received signal ***
+[n052:942763] Signal: Aborted (6)
+[n052:942763] Signal code:  (-6)
+malloc_consolidate(): invalid chunk size
+[n052:942764] *** Process received signal ***
+[n052:942764] Signal: Aborted (6)
+[n052:942764] Signal code:  (-6)
+malloc(): invalid size (unsorted)
+[n052:942765] *** Process received signal ***
+[n052:942765] Signal: Aborted (6)
+[n052:942765] Signal code:  (-6)
+[n052:942766] *** Process received signal ***
+[n052:942766] Signal: Segmentation fault (11)
+[n052:942766] Signal code:  (128)
+[n052:942766] Failing at address: (nil)
+malloc(): invalid size (unsorted)
+[n052:942766] *** Process received signal ***
+[n052:942766] Signal: Aborted (6)
+[n052:942766] Signal code:  (-6)
+[n052:942766] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n052:942766] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x15555386ea7c]
+[n052:942766] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x15555381a476]
+[n052:942766] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x1555538007f3]
+[n052:942766] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x896f6)[0x1555538616f6]
+[n052:942766] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0xa0d7c)[0x155553878d7c]
+[n052:942766] [ 6] /lib/x86_64-linux-gnu/libc.so.6(+0xa415c)[0x15555387c15c]
+[n052:942766] [ 7] /lib/x86_64-linux-gnu/libc.so.6(malloc+0x99)[0x15555387d1b9]
+[n052:942766] [ 8] /lib64/ld-linux-x86-64.so.2(+0x5a23)[0x15555551fa23]
+[n052:942766] [ 9] /lib64/ld-linux-x86-64.so.2(+0xecd0)[0x155555528cd0]
+[n052:942766] [10] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n052:942766] [11] /lib64/ld-linux-x86-64.so.2(+0xdf9a)[0x155555527f9a]
+[n052:942766] [12] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n052:942766] [13] /lib64/ld-linux-x86-64.so.2(+0xe34e)[0x15555552834e]
+[n052:942766] [14] /lib/x86_64-linux-gnu/libc.so.6(+0x174fb1)[0x15555394cfb1]
+[n052:942766] [15] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_exception+0x88)[0x15555394cc48]
+[n052:942766] [16] /lib/x86_64-linux-gnu/libc.so.6(_dl_catch_error+0x33)[0x15555394cd13]
+[n052:942766] [17] /lib/x86_64-linux-gnu/libc.so.6(+0x1750e7)[0x15555394d0e7]
+[n052:942766] [18] /lib/x86_64-linux-gnu/libc.so.6(__libc_unwind_link_get+0x51)[0x1555538fd7c1]
+[n052:942766] [19] /lib/x86_64-linux-gnu/libc.so.6(__backtrace+0x27)[0x15555390bd27]
+[n052:942766] [20] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_backtrace_print+0x41)[0x15555306f561]
+[n052:942766] [21] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x6a6b0)[0x15555306a6b0]
+[n052:942766] [22] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n052:942766] [23] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n052:942766] [24] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_mtl_ofi.so(+0x20d3)[0x1555450020d3]
+[n052:942766] [25] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_pml_cm.so(+0x3f19)[0x155546003f19]
+[n052:942766] [26] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x7b1)[0x1555542b1381]
+[n052:942766] [27] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_pipeline+0xe2)[0x1555542b1a72]
+[n052:942766] [28] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x1cf)[0x155541805bbf]
+[n052:942766] [29] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n052:942766] *** End of error message ***
+[n049:1462344] *** Process received signal ***
+[n049:1462344] Signal: Segmentation fault (11)
+[n049:1462344] Signal code:  (128)
+[n049:1462344] Failing at address: (nil)
+[n049:1462344] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x155544ccc877]
+[n049:1462344] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x15555381a520]
+[n049:1462344] [ 2] /cm/shared/ex3-modules/0.6.1/pkgs/rdma-core-31.0/lib/libibverbs/libmlx5-rdmav25.so(+0x1544d)[0x15553e01544d]
+[n049:1462344] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x69a1b)[0x155544c69a1b]
+[n049:1462344] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x6a0c2)[0x155544c6a0c2]
+[n049:1462344] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x6a4c5)[0x155544c6a4c5]
+[n049:1462344] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x98fb9)[0x155544c98fb9]
+[n049:1462344] [ 7] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x9ecae)[0x155544c9ecae]
+[n049:1462344] [ 8] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x9ee87)[0x155544c9ee87]
+[n049:1462344] [ 9] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x49505)[0x155544c49505]
+[n049:1462344] [10] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x48734)[0x155544c48734]
+[n049:1462344] [11] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0x48a24)[0x155544c48a24]
+[n049:1462344] [12] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_mtl_ofi.so(ompi_mtl_ofi_progress_no_inline+0x66)[0x155545006286]
+[n049:1462344] [13] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(opal_progress+0x2c)[0x15555302cfac]
+[n049:1462344] [14] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_request_default_wait+0x105)[0x155554252295]
+[n049:1462344] [15] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_generic+0x399)[0x1555542b0f69]
+[n049:1462344] [16] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(ompi_coll_base_reduce_intra_pipeline+0xe2)[0x1555542b1a72]
+[n049:1462344] [17] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/openmpi/mca_coll_tuned.so(ompi_coll_tuned_reduce_intra_dec_fixed+0x1cf)[0x155541805bbf]
+[n049:1462344] [18] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libmpi.so.40(MPI_Reduce+0x182)[0x155554288db2]
+[n049:1462344] [19] build/debug/mat_vec_mult[0x41264d]
+[n049:1462344] [20] build/debug/mat_vec_mult[0x411997]
+[n049:1462344] [21] build/debug/mat_vec_mult[0x40c14a]
+[n049:1462344] [22] build/debug/mat_vec_mult[0x40cf83]
+[n049:1462344] [23] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x155553801d90]
+[n049:1462344] [24] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x155553801e40]
+[n049:1462344] [25] build/debug/mat_vec_mult[0x40bd35]
+[n049:1462344] *** End of error message ***
+srun: error: n052: task 63: Aborted (core dumped)
+srun: error: n049: task 0: Segmentation fault (core dumped)
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 9061 ON n049 CANCELLED AT 2023-09-29T10:42:15 ***
+slurmstepd: error: *** STEP 9061.0 ON n049 CANCELLED AT 2023-09-29T10:42:15 ***

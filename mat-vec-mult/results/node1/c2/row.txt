@@ -1,7 +1,0 @@
-<<<<<<< HEAD
-=======
-Mat mult:  1.85449
-Broadcast: 0.000169438
-Gather:    3.9209e-05
-Time:      2.07932
->>>>>>> refs/remotes/origin/main

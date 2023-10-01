@@ -6,7 +6,8 @@ namespace mpi = boost::mpi;
 
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
-    // Value of j is set in order to achieve index(i,j) = i + j
+// Value of j is set in order to achieve index(i,j) = i + j
+#pragma omp parallel for
     for (int i = 0, j = rank * matrix_size / n; i < matrix_size; i++) {
         if (i > 0 && i % n == 0) {
             j++;
@@ -16,7 +17,9 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 }
 
 void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
+#pragma omp parallel for
     for (int i = 0; i < n; i++) {
+#pragma omp parallel for
         for (int j = 0; j < cols; j++) {
             res[i] += matrix[j * n + i] * vector[j];
         }
@@ -50,6 +53,7 @@ int main() {
     world.barrier();
 
     if (rank == 0) {
+#pragma omp parallel for
         for (int i = 0; i < n; i++) {
             vector[i] = i + 1;
         }

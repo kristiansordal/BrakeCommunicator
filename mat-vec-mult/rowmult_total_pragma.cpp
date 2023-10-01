@@ -6,7 +6,9 @@ namespace mpi = boost::mpi;
 
 // Initialize a matrix segment
 void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
+
     // Value of j is set in order to achieve index(i,j) = i + j
+#pragma omp parallel for
     for (int i = 0, j = rank * matrix_size / n; i < matrix_size; i++) {
         if (i > 0 && i % n == 0) {
             j++;
@@ -15,11 +17,18 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
     }
 }
 
-void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < cols; j++) {
-            res[i] += matrix[j * n + i] * vector[j];
+void mat_mult(double *matrix, double *vector, double *res, int rows, int n) {
+
+#pragma omp parallel for
+    for (int i = 0; i < rows; i++) {
+        double sum = 0;
+
+#pragma omp parallel for
+        for (int j = 0; j < n; j++) {
+            sum += matrix[i * n + j] * vector[j];
         }
+
+        res[i] = sum;
     }
 }
 
@@ -32,7 +41,7 @@ int main() {
     int np = world.size();
     int scale = 15;
     int n = 1 << scale;
-    int cols = n / np;
+    int rows = n / np;
     int matrix_size = (n * n) / np;
 
     // timing variables
@@ -40,8 +49,7 @@ int main() {
     double end_total;
 
     double *vector = new double[n];
-    double *vector_slice = new double[cols];
-    double *res = new double[cols];
+    double *res = new double[rows];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
 
@@ -50,16 +58,20 @@ int main() {
     world.barrier();
 
     if (rank == 0) {
+#pragma omp parallel for
         for (int i = 0; i < n; i++) {
             vector[i] = i + 1;
         }
         start_total = time.elapsed();
     }
 
-    mpi::scatter(world, vector, vector_slice, cols, 0);
-    mat_mult(matrix, vector_slice, res, cols, n);
+    mpi::broadcast(world, vector, n, 0);
 
-    mpi::reduce(world, res, n, gathered_res, std::plus<double>(), 0);
+    mat_mult(matrix, vector, res, rows, n);
+
+    mpi::gather(world, res, rows, gathered_res, 0);
+
+    delete[] matrix, delete[] vector, delete[] res;
 
     world.barrier();
 
@@ -67,12 +79,6 @@ int main() {
         end_total = time.elapsed();
         std::cout << "Time:      " << end_total - start_total << std::endl;
     }
-
-    delete[] matrix;
-    delete[] vector;
-    delete[] vector_slice;
-    delete[] res;
     delete[] gathered_res;
-
     return 0;
 }

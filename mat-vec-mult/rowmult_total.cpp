@@ -52,6 +52,8 @@ int main() {
 
     init_matrix_segment(matrix, matrix_size, n, rank);
 
+    world.barrier();
+
     if (rank == 0) {
         for (int i = 0; i < n; i++) {
             vector[i] = i + 1;
@@ -66,6 +68,8 @@ int main() {
     mpi::gather(world, res, rows, gathered_res, 0);
 
     delete[] matrix, delete[] vector, delete[] res;
+
+    world.barrier();
 
     if (rank == 0) {
         end_total = time.elapsed();

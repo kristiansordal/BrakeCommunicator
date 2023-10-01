@@ -76,6 +76,7 @@ int main() {
 
     bcast_avg = time_sum / comm_reps;
     time_sum = 0;
+
     world.barrier();
 
     start_matmult = time.elapsed();
@@ -99,6 +100,7 @@ int main() {
         std::cout << "Mat mult:  " << end_matmult - start_matmult << std::endl;
         std::cout << "Broadcast: " << bcast_avg << std::endl;
         std::cout << "Gather:    " << gather_avg << std::endl;
+        std::cout << "Comm:      " << bcast_avg + gather_avg << std::endl;
     }
     delete[] gathered_res;
     return 0;

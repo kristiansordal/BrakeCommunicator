@@ -1,6 +1,5 @@
 #pragma once
 #include <boost/mpi.hpp>
-
 #include <iostream>
 #include <ostream>
 #include <vector>
@@ -27,8 +26,6 @@ template <typename T> class ELLpack {
     std::vector<T> a_mat;
     std::vector<T> v_old;
     std::vector<T> v_new;
-    // std::vector<T> v_old_global;
-    // std::vector<T> v_new_global;
 
     void initialize();
     void initialize_stiffness_matrix();
@@ -43,19 +40,6 @@ template <typename T> class ELLpack {
     int size_rank();
     int width();
     int height();
-
-    // ELLpack(int rows)
-    // ELLpack(int rows)
-    //     : rows_(rows),
-    //       skinny_cols_(4),
-    //       size_total_(rows * rows * 2),
-    //       size_rank_(size_total_ / np),
-    //       width_(rows * 2),
-    //       height_(rows),
-    //       i_mat(size_total_ * skinny_cols_),
-    //       a_mat(size_total_ * skinny_cols_),
-    //       v_old_local(size_total_),
-    //       v_new_local(size_total_) {}
 
     ELLpack(int rows)
         : rows_(rows),

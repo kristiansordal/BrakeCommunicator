@@ -1,8 +1,9 @@
 #include "ellpack.cpp"
 #include "ellpack.h"
+#include "visualizer.cpp"
 
 int main() {
-    int n = 1 << 2;
+    int n = 1 << 4;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();
@@ -10,14 +11,13 @@ int main() {
     ellpack.initialize_vectors();
 
     if (ellpack.rank == 0) {
-        ellpack.print_v();
-    }
-    for (int i = 0; i < 2; i++) {
-        ellpack.update();
-        if (ellpack.rank == 0) {
-            ellpack.print_v();
+        visualize(&ellpack);
+
+    } else {
+        while (true) {
+            ellpack.update();
+            ellpack.world.barrier();
         }
-        ellpack.world.barrier();
     }
 
     return 0;

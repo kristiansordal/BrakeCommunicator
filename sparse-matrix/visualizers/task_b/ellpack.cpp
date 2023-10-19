@@ -46,6 +46,8 @@ template <typename T> void ELLpack<T>::update() {
         v_new[i] = new_v_val(i);
     }
 
+    // do something with separators here
+    // want to achieve that i only have to send the separator
     mpi::all_gather(world, v_new.data(), size_rank(), v_old);
 }
 
@@ -83,3 +85,5 @@ template <typename T> int ELLpack<T>::size_total() { return size_total_; }
 template <typename T> int ELLpack<T>::size_rank() { return size_rank_; }
 template <typename T> int ELLpack<T>::width() { return width_; }
 template <typename T> int ELLpack<T>::height() { return height_; }
+template <typename T> int ELLpack<T>::min_id() { return min_id_; }
+template <typename T> int ELLpack<T>::max_id() { return max_id_; }

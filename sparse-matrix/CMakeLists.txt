@@ -18,7 +18,7 @@ find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
 
 add_executable(sparse_matrix main.cpp)
 add_executable(visualizer visualizers/seq/main.cpp)
-add_executable(p_visualizer1 visualizers/par_a/main.cpp)
+add_executable(p_visualizer1 visualizers/task_a/main.cpp)
 
 target_include_directories(sparse_matrix PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(sparse_matrix PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})

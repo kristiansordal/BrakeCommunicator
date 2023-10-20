@@ -22,11 +22,57 @@ template <typename T> void ELLpack<T>::neighbours(int i) {
 
 template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
-        a_mat[i] = 0.3;
-        a_mat[i + 1] = 0.2;
-        a_mat[i + 2] = 0.2;
-        a_mat[i + 3] = 0.3;
+        // The resitance of the spread of the signal, should sum to 1
+        a_mat[i] = 0.2;
+        a_mat[i + 1] = 0.3;
+        a_mat[i + 2] = 0.3;
+        a_mat[i + 3] = 0.2;
     }
+}
+
+template <typename T> void ELLpack<T>::determine_separators() {
+    for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
+        for (int j = 0; j < skinny_cols_; j++) {
+            if (rank == 0) {
+            }
+            int n = i_mat[i + j];
+
+            if (n == -1) {
+                continue;
+            }
+
+            if (n > max_id() || n < min_id()) {
+                separators.push_back(i);
+            }
+        }
+    }
+    for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
+        if (std::find(separators.begin(), separators.end(), i) == separators.end()) {
+            non_separators.push_back(i);
+        }
+    }
+}
+
+template <typename T> void ELLpack<T>::reorder_separators() {
+    std::vector<T> ordered;
+    ordered.resize(i_mat.size());
+    auto s = (int)separators.size();
+    auto n = (int)non_separators.size();
+    auto offset = s * skinny_cols_;
+
+    for (int i = 0; i < s; i++) {
+        for (int j = 0; j < skinny_cols_; j++) {
+            ordered[i * skinny_cols_ + j] = i_mat[separators[i] + j];
+        }
+    }
+
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < skinny_cols_; j++) {
+            ordered[i * skinny_cols_ + j + offset] = i_mat[non_separators[i] + j];
+        }
+    }
+
+    std::swap(i_mat, ordered);
 }
 
 template <typename T> void ELLpack<T>::initialize_vectors() {
@@ -35,7 +81,7 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
             v_old[i] = 0;
         }
 
-        v_old[0] = 0.2;
+        v_old[0] = 1;
     }
 
     mpi::broadcast(world, v_old.data(), size_total(), 0);
@@ -46,8 +92,13 @@ template <typename T> void ELLpack<T>::update() {
         v_new[i] = new_v_val(i);
     }
 
-    // do something with separators here
-    // want to achieve that i only have to send the separator
+    separator_values.clear();
+    for (int i : separators) {
+        separator_values.push_back(std::make_pair(i, v_new[i]));
+    }
+
+    // Want to overwrite v_new values at index of separator
+
     mpi::all_gather(world, v_new.data(), size_rank(), v_old);
 }
 

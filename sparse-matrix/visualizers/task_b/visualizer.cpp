@@ -119,8 +119,8 @@ void gen_triangle(ELLpack<T> *ellpack, int id, std::vector<ConvexShape> *triangl
 }
 
 template <typename T> int normalize(ELLpack<T> *ellpack, int id, int s) {
-    double max = *std::max_element(ellpack->v_old.begin(), ellpack->v_old.end());
-    double min = 0; //*std::min_element(ellpack->v_new.begin(), ellpack->v_new.end());
+    double max = 1.0 / s; // * std::max_element(ellpack->v_old.begin(), ellpack->v_old.end());
+    double min = 0;       //*std::min_element(ellpack->v_new.begin(), ellpack->v_new.end());
     double range = max - min;
 
     int color_id = static_cast<int>(floor(((ellpack->v_old[id] - min) / range) * s));

@@ -29,6 +29,9 @@ template <typename T> class ELLpack {
     std::vector<T> a_mat;
     std::vector<T> v_old;
     std::vector<T> v_new;
+    std::vector<T> separators;
+    std::vector<T> non_separators;
+    std::vector<std::pair<int, T>> separator_values;
 
     void initialize();
     void initialize_stiffness_matrix();
@@ -38,6 +41,8 @@ template <typename T> class ELLpack {
     void print();
     void print_a();
     void print_v();
+    void determine_separators();
+    void reorder_separators();
     T new_v_val(int id);
     int size_total();
     int size_rank();

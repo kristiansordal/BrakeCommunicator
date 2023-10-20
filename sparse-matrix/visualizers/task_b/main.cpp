@@ -3,21 +3,16 @@
 #include "visualizer.cpp"
 
 int main() {
-    int n = 1 << 4;
+    int n = 1 << 2;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();
     ellpack.initialize_stiffness_matrix();
     ellpack.initialize_vectors();
-
-    if (ellpack.rank == 0) {
-        visualize(&ellpack);
-
-    } else {
-        while (true) {
-            ellpack.update();
-            ellpack.world.barrier();
-        }
+    ellpack.determine_separators();
+    if (ellpack.rank == 3) {
+        ellpack.reorder_separators();
+        ellpack.print();
     }
 
     return 0;

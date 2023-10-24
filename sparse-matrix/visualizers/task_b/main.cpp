@@ -10,10 +10,17 @@ int main() {
     ellpack.initialize_stiffness_matrix();
     ellpack.initialize_vectors();
     ellpack.determine_separators();
-    if (ellpack.rank == 3) {
-        ellpack.reorder_separators();
-        ellpack.print();
-    }
+    ellpack.reorder_separators();
+    ellpack.update();
+
+    // if (ellpack.rank == 0) {
+    //     visualize(&ellpack);
+
+    // } else {
+    //     while (true) {
+    //         ellpack.update();
+    //     }
+    // }
 
     return 0;
 }

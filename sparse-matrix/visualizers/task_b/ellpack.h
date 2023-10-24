@@ -16,6 +16,7 @@ template <typename T> class ELLpack {
     int height_;
     int min_id_;
     int max_id_;
+    int buffer_ = 0;
 
   public:
     // MPI environment
@@ -31,7 +32,8 @@ template <typename T> class ELLpack {
     std::vector<T> v_new;
     std::vector<T> separators;
     std::vector<T> non_separators;
-    std::vector<std::pair<int, T>> separator_values;
+    std::vector<int> separator_sizes;
+    std::vector<T> separator_values;
 
     void initialize();
     void initialize_stiffness_matrix();
@@ -43,13 +45,14 @@ template <typename T> class ELLpack {
     void print_v();
     void determine_separators();
     void reorder_separators();
-    T new_v_val(int id);
+    T new_v_val(int id, int offset);
     int size_total();
     int size_rank();
     int width();
     int height();
     int min_id();
     int max_id();
+    int buffer_size();
 
     ELLpack(int rows)
         : rows_(rows),
@@ -62,6 +65,10 @@ template <typename T> class ELLpack {
         max_id_ = min_id_ + size_rank_ - 1;
         v_new.assign(size_rank_, 0);
         v_old.assign(size_total_, 0);
+        // all_separators.assign(size_total_, 0);
+        // separator_values.assign(size_total_, 0);
+
+        // test1.assign(np, {});
         i_mat.assign(size_rank_ * skinny_cols_, 0);
         a_mat.assign(size_rank_ * skinny_cols_, 0);
     }

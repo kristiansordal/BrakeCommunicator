@@ -1,5 +1,6 @@
 #pragma once
 #include <boost/mpi.hpp>
+
 #include <iostream>
 #include <ostream>
 #include <vector>
@@ -18,6 +19,7 @@ template <typename T> class ELLpack {
     // MPI environment
     mpi::environment env;
     mpi::communicator world;
+    mpi::timer time;
     int np = world.size();
     int rank = world.rank();
 
@@ -26,6 +28,8 @@ template <typename T> class ELLpack {
     std::vector<T> a_mat;
     std::vector<T> v_old;
     std::vector<T> v_new;
+    // std::vector<T> v_old_global;
+    // std::vector<T> v_new_global;
 
     void initialize();
     void initialize_stiffness_matrix();
@@ -46,10 +50,10 @@ template <typename T> class ELLpack {
           skinny_cols_(4),
           size_total_(rows * rows * 2),
           width_(rows * 2),
-          height_(rows),
-          v_old(size_total_),
-          v_new(size_total_) {
+          height_(rows) {
         size_rank_ = size_total_ / np;
+        v_new.assign(size_rank_, 0);
+        v_old.assign(size_total_, 0);
         i_mat.assign(size_rank_ * skinny_cols_, 0);
         a_mat.assign(size_rank_ * skinny_cols_, 0);
     }

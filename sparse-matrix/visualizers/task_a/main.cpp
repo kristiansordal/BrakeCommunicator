@@ -3,7 +3,7 @@
 #include "visualizer.cpp"
 
 int main() {
-    int n = 1 << 5;
+    int n = 1 << 8;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();
@@ -16,7 +16,6 @@ int main() {
     } else {
         while (true) {
             ellpack.update();
-            // ellpack.world.barrier();
         }
     }
 

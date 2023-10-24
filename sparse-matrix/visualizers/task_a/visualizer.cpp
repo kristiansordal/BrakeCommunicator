@@ -3,7 +3,7 @@
 #include <iostream>
 #include <numeric>
 
-const int CELL_SIZE = 25;
+const int CELL_SIZE = 5;
 using namespace sf;
 template <typename T> void visualize(ELLpack<T> *ellpack) {
     RenderWindow window(VideoMode(ellpack->height() * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");
@@ -28,11 +28,8 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
         window.clear(Color::White);
         if (start) {
             ellpack->update();
-            // ellpack->world.barrier();
-            triangles.clear();
-
-            for (int i = 0; i < ellpack->size_total(); i += 2) {
-                gen_triangle(ellpack, i, &triangles, &color_list);
+            for (int i = 0; i < ellpack->size_total(); i++) {
+                update_triangle(ellpack, &color_list, triangles[i], i);
             }
         }
         while (window.pollEvent(event)) {
@@ -43,13 +40,6 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
             if (event.type == Event::KeyPressed) {
                 if (event.key.code == Keyboard::A) {
                     start = true;
-                    // ellpack->update();
-                    // ellpack->world.barrier();
-                    // triangles.clear();
-
-                    // for (int i = 0; i < ellpack->size_total(); i += 2) {
-                    //     gen_triangle(ellpack, i, &triangles, &color_list);
-                    // }
                 }
             }
         }
@@ -62,21 +52,11 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
 }
 
 template <typename T>
-void update_vis(RenderWindow &window, ELLpack<T> *ellpack, std::vector<ConvexShape> *triangles,
-                std::vector<Color> *color_list) {
-    if (window.isOpen()) {
-        window.clear(Color::White);
-        triangles->clear();
-        for (int i = 0; i < ellpack->size_total(); i += 2) {
-            gen_triangle(ellpack, i, triangles, color_list);
-        }
-
-        for (int i = 0; i < static_cast<int>(triangles->size()); i++) {
-            window.draw((*triangles)[i]);
-        }
-        window.display();
-    }
+void update_triangle(ELLpack<T> *ellpack, std::vector<Color> *color_list, ConvexShape &triangle, int id) {
+    int color = normalize(ellpack, id, color_list->size());
+    triangle.setFillColor((*color_list)[color]);
 }
+
 // genereate a triangle object
 ConvexShape get_triangle(std::vector<Color> *color_list, int color_id, Vector2f p1, Vector2f p2, Vector2f p3) {
     ConvexShape triangle;
@@ -119,17 +99,12 @@ void gen_triangle(ELLpack<T> *ellpack, int id, std::vector<ConvexShape> *triangl
 }
 
 template <typename T> int normalize(ELLpack<T> *ellpack, int id, int s) {
-    // double max = *std::max_element(ellpack->v_old.begin(), ellpack->v_old.end());
     double max = 1.0 / s;
-    double min = 0; //*std::min_element(ellpack->v_new.begin(), ellpack->v_new.end());
+    double min = 0;
     double range = max - min;
 
     int color_id = static_cast<int>(floor(((ellpack->v_old[id] - min) / range) * s));
 
-    // Ensure color_index is within the valid range of color_list
-    // if (color_id < 0) {
-    //     color_id = 0;
-    // }
     if (color_id >= s) {
         color_id = s - 1;
     }

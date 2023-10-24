@@ -22,6 +22,7 @@ template <typename T> void ELLpack<T>::neighbours(int i) {
 
 template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
+        // The resitance of the spread of the signal, should sum to 1
         a_mat[i] = 0.3;
         a_mat[i + 1] = 0.2;
         a_mat[i + 2] = 0.2;
@@ -35,7 +36,8 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
             v_old[i] = 0;
         }
 
-        v_old[0] = 0.2;
+        v_old[0] = 2.5;
+        v_old[v_old.size() - 1] = 1;
     }
 
     mpi::broadcast(world, v_old.data(), size_total(), 0);
@@ -79,7 +81,7 @@ template <typename T> void ELLpack<T>::print_v() {
     }
 }
 
-template <typename T> int ELLpack<T>::size_total() { return size_rank_; }
+template <typename T> int ELLpack<T>::size_total() { return size_total_; }
 template <typename T> int ELLpack<T>::size_rank() { return size_rank_; }
 template <typename T> int ELLpack<T>::width() { return width_; }
 template <typename T> int ELLpack<T>::height() { return height_; }

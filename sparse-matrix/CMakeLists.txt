@@ -17,8 +17,11 @@ find_package(Boost REQUIRED
 find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
 
 add_executable(sparse_matrix main.cpp)
+add_executable(par1 par1/main.cpp)
 add_executable(visualizer visualizers/seq/main.cpp)
 add_executable(p_visualizer1 visualizers/task_a/main.cpp)
+add_executable(p_visualizer2 visualizers/task_b/main.cpp)
+add_executable(test test.cpp)
 
 target_include_directories(sparse_matrix PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_include_directories(sparse_matrix PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})
@@ -35,4 +38,19 @@ target_include_directories(p_visualizer1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/incl
 target_include_directories(p_visualizer1 PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})
 target_link_libraries(p_visualizer1 PRIVATE ${Boost_LIBRARIES} sfml-system sfml-window sfml-graphics)
 target_compile_options(p_visualizer1 PRIVATE -Wall -Wextra -Wpedantic -Werror)
+
+target_include_directories(par1 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(par1 PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})
+target_link_libraries(par1 PRIVATE ${Boost_LIBRARIES} sfml-system sfml-window sfml-graphics)
+target_compile_options(par1 PRIVATE -Wall -Wextra -Wpedantic -Werror)
+
+target_include_directories(p_visualizer2 PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(p_visualizer2 PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})
+target_link_libraries(p_visualizer2 PRIVATE ${Boost_LIBRARIES} sfml-system sfml-window sfml-graphics)
+target_compile_options(p_visualizer2 PRIVATE -Wall -Wextra -Wpedantic -Werror)
+
+target_include_directories(test PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(test PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})
+target_link_libraries(test PRIVATE ${Boost_LIBRARIES} sfml-system sfml-window sfml-graphics)
+target_compile_options(test PRIVATE -Wall -Wextra -Wpedantic -Werror)
 set(CMAKE_COLOR_DIAGNOSTICS On)

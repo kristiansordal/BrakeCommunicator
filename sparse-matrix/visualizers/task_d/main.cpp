@@ -3,7 +3,7 @@
 #include "visualizer.cpp"
 
 int main() {
-    int n = 1 << 4;
+    int n = 1 << 2;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();
@@ -11,16 +11,16 @@ int main() {
     ellpack.initialize_vectors();
     ellpack.determine_separators();
     ellpack.reorder_separators();
-    // ellpack.update();
+    ellpack.update();
 
-    if (ellpack.rank == 0) {
-        visualize(&ellpack);
+    // if (ellpack.rank == 0) {
+    //     visualize(&ellpack);
 
-    } else {
-        while (true) {
-            ellpack.update();
-        }
-    }
+    // } else {
+    //     while (true) {
+    //         ellpack.update();
+    //     }
+    // }
 
     return 0;
 }

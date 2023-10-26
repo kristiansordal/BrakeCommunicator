@@ -20,6 +20,24 @@ template <typename T> void ELLpack<T>::neighbours(int i) {
     }
 }
 
+template <typename T> void ELLpack<T>::initialize_vectors() {
+    if (rank == 0) {
+        for (int i = 0; i < size_total(); i++) {
+            v_old[i] = 0;
+        }
+    }
+
+    v_old[1] = 1;
+    v_old[3] = 1;
+    v_old[5] = 1;
+    v_old[7] = 1;
+    // v_old[3] = 1.5;
+    // v_old[28] = 28;
+    // v_old[30] = 100;
+    // v_old[32] = 30;
+    mpi::broadcast(world, v_old.data(), size_total(), 0);
+}
+
 template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
         // The resitance of the spread of the signal, should sum to 1
@@ -52,10 +70,23 @@ template <typename T> void ELLpack<T>::determine_separators() {
     int s = (int)separators.size();
     mpi::all_gather(world, s, separator_sizes);
 
+    for (int i = 0; i < np; i++) {
+        std::cout << "rank: " << rank << " has " << separators.size() << std::endl;
+        mpi::broadcast(world, separators.data(), separators.size(), i);
+
+        for (auto &s : separator_sizes) {
+            all_separators.push_back(s);
+        }
+    }
+
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
         if (std::find(separators.begin(), separators.end(), i) == separators.end()) {
             non_separators.push_back(i);
         }
+    }
+
+    for (auto &e : all_separators) {
+        std::cout << e << std::endl;
     }
 }
 
@@ -83,101 +114,58 @@ template <typename T> void ELLpack<T>::reorder_separators() {
     std::swap(i_mat, ordered);
 }
 
-template <typename T> void ELLpack<T>::initialize_vectors() {
-    if (rank == 0) {
-        for (int i = 0; i < size_total(); i++) {
-            v_old[i] = 0;
-        }
-
-        v_old[1] = 1;
-        v_old[2] = 2;
-        v_old[3] = 3;
-        v_old[4] = 4;
-        v_old[5] = 5;
-        v_old[6] = 6;
-        v_old[7] = 7;
-        v_old[8] = 8;
-        v_old[9] = 9;
-        v_old[10] = 10;
-        v_old[11] = 11;
-        v_old[12] = 12;
-        v_old[13] = 13;
-        v_old[14] = 14;
-        v_old[15] = 15;
-        v_old[16] = 16;
-        v_old[17] = 17;
-        v_old[18] = 18;
-    }
-
-    mpi::broadcast(world, v_old.data(), size_total(), 0);
-}
-
-// Should first send the separators, i.e. the values in v_old
 template <typename T> void ELLpack<T>::update() {
+    std::vector<T> local;
 
     for (int i = 0; i < (int)separator_sizes.size(); i++) {
+
         std::vector<T> vals;
-        vals.assign(separator_sizes[i], 0);
 
         for (int j = 0; j < separator_sizes[i]; j++) {
-            vals[j] = v_old[i_mat[j * skinny_cols_]];
+            vals.push_back(v_old[i_mat[j * skinny_cols_]]);
         }
-        // each rank now has its respective vals vector
-        // here is where rank i should broadcast it i guess
 
-        std::cout << "RANK: " << rank << " " << vals.size() << std::endl;
-        mpi::all_gather(world, vals.data(), separator_sizes[i], separator_values);
+        mpi::broadcast(world, vals.data(), vals.size(), i);
+
+        for (auto &v : vals) {
+            local.push_back(v);
+        }
     }
 
-    // The offset at which to get the v_old values
     int offset = std::accumulate(separator_sizes.begin(), separator_sizes.begin() + rank, 0);
 
-    world.barrier();
-    if (rank == 1) {
-        for (auto &v : separator_values) {
-            std::cout << v << " ";
-        }
-    }
-    std::cout << std::endl;
-
-    // for (auto &i : separators) {
-    //     mpi::all_gather(world, v_old[i_mat[i]], &(v_old[i_mat[i]]));
-    // }
-
-    // for (int i = 0; i < (int)separator_sizes.size(); i++) {
-    //     std::cout << separator_sizes[i] << std::endl;
-    // }
-
     for (int i = 0; i < size_rank(); i++) {
-        v_old[i] = new_v_val(i, offset);
+        v_new[i] = new_v_val(i, offset, local);
     }
-    // mpi::all_gather(world, v_new.data(), size_rank(), v_old);
+
+    mpi::all_gather(world, v_new.data(), size_rank(), v_old);
 }
 
-template <typename T> T ELLpack<T>::new_v_val(int id, int offset) {
-    // double v1, v2, v3, v4;
+template <typename T> T ELLpack<T>::new_v_val(int id, int offset, std::vector<T> &local) {
     std::vector<double> v_vals;
     int s = id * skinny_cols_;
+    // int found_separators = 0;
+    std::cout << local[0] << std::endl;
 
     for (int i = 0; i < skinny_cols_; i++) {
-        s += i;
-        bool is_separator = std::find(separators.begin(), separators.end(), s) != separators.end();
-        // std::cout << "S: " << s << " is separator: " << is_separator << std::endl;
-        if (is_separator) {
-            v_vals.push_back(separator_values[offset]);
+        // auto separator_iter = std::find(local.begin(), local.end(), i_mat[s + i]);
+        // bool is_separator = separator_iter != local.end();
+
+        // if (is_separator) {
+        //     std::cout << v_old[local[offset + found_separators]] << " ";
+        //     v_vals.push_back(v_old[local[offset + found_separators++]]);
+        if (id < offset) {
+
         } else {
             if (i == 0) {
                 v_vals.push_back(v_old[i_mat[s]]);
+            } else {
+                v_vals.push_back(i_mat[s + i] != -1 ? v_old[i_mat[s + i]] : v_old[i_mat[s]]);
             }
-            v_vals.push_back(i_mat[s + i] != -1 ? v_old[i_mat[s + i]] : v_old[i_mat[s]]);
         }
     }
 
-    // v1 = v_old[i_mat[s]];
-    // v2 = i_mat[s + 1] != -1 ? v_old[i_mat[s + 1]] : v_old[i_mat[s]];
-    // v3 = i_mat[s + 2] != -1 ? v_old[i_mat[s + 2]] : v_old[i_mat[s]];
-    // v4 = i_mat[s + 3] != -1 ? v_old[i_mat[s + 3]] : v_old[i_mat[s]];
-
+    std::cout << std::endl;
     return a_mat[s] * v_vals[0] + a_mat[s + 1] * v_vals[1] + a_mat[s + 2] * v_vals[2] + a_mat[s + 3] * v_vals[3];
 }
 

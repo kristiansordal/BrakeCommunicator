@@ -35,6 +35,8 @@ template <typename T> class ELLpack {
     std::vector<int> separator_sizes;
     std::vector<T> separator_values;
     std::vector<int> all_separators;
+    std::vector<std::vector<std::vector<int>>> send_list;
+    // std::vector<std::vector<std::vector<int>>> recieve_list;
 
     void initialize();
     void initialize_stiffness_matrix();
@@ -46,7 +48,7 @@ template <typename T> class ELLpack {
     void print_v();
     void determine_separators();
     void reorder_separators();
-    T new_v_val(int id, int offset, std::vector<T> &local);
+    T new_v_val(int id, std::vector<std::vector<T>> &send_buffer);
     int size_total();
     int size_rank();
     int width();
@@ -68,6 +70,8 @@ template <typename T> class ELLpack {
         v_old.assign(size_total_, 0);
         i_mat.assign(size_rank_ * skinny_cols_, 0);
         a_mat.assign(size_rank_ * skinny_cols_, 0);
+        send_list.assign(np, std::vector<std::vector<int>>(np, std::vector<int>()));
+        // recieve_list.assign(np, std::vector<std::vector<int>>(np, std::vector<int>()));
     }
 
     ~ELLpack() = default;

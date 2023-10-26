@@ -3,7 +3,7 @@
 #include <iostream>
 #include <numeric>
 
-const int CELL_SIZE = 25;
+const int CELL_SIZE = 15;
 using namespace sf;
 template <typename T> void visualize(ELLpack<T> *ellpack) {
     RenderWindow window(VideoMode(ellpack->height() * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");
@@ -21,18 +21,19 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
         gen_triangle(ellpack, i, &triangles, &color_list);
     }
 
-    // bool start = false;
+    bool start = false;
     while (window.isOpen()) {
         Event event;
 
         window.clear(Color::White);
-        // if (start) {
-        //     ellpack->update();
+        if (start) {
+            ellpack->update();
 
-        //     for (int i = 0; i < ellpack->size_total(); i++) {
-        //         update_triangle(ellpack, &color_list, triangles[i], i);
-        //     }
-        // }
+#pragma omp parallel for
+            for (int i = 0; i < ellpack->size_total(); i++) {
+                update_triangle(ellpack, &color_list, triangles[i], i);
+            }
+        }
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close();
@@ -40,16 +41,17 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
 
             if (event.type == Event::KeyPressed) {
                 if (event.key.code == Keyboard::A) {
-                    ellpack->update();
+                    // ellpack->update();
 
-                    for (int i = 0; i < ellpack->size_total(); i++) {
-                        update_triangle(ellpack, &color_list, triangles[i], i);
-                    }
-                    // start = true;
+                    // for (int i = 0; i < ellpack->size_total(); i++) {
+                    //     update_triangle(ellpack, &color_list, triangles[i], i);
+                    // }
+                    start = true;
                 }
             }
         }
 
+#pragma omp parallel for
         for (int i = 0; i < static_cast<int>(triangles.size()); i++) {
             window.draw(triangles[i]);
         }

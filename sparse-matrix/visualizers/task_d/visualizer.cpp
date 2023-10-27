@@ -3,11 +3,12 @@
 #include <iostream>
 #include <numeric>
 
-const int CELL_SIZE = 15;
+const int CELL_SIZE = 5;
 using namespace sf;
 template <typename T> void visualize(ELLpack<T> *ellpack) {
     RenderWindow window(VideoMode(ellpack->height() * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");
     std::vector<ConvexShape> triangles;
+    VertexArray tris(Triangles);
 
     std::vector<Color> color_list;
 
@@ -29,7 +30,6 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
         if (start) {
             ellpack->update();
 
-#pragma omp parallel for
             for (int i = 0; i < ellpack->size_total(); i++) {
                 update_triangle(ellpack, &color_list, triangles[i], i);
             }
@@ -43,15 +43,14 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
                 if (event.key.code == Keyboard::A) {
                     // ellpack->update();
 
+                    start = true;
                     // for (int i = 0; i < ellpack->size_total(); i++) {
                     //     update_triangle(ellpack, &color_list, triangles[i], i);
                     // }
-                    start = true;
                 }
             }
         }
 
-#pragma omp parallel for
         for (int i = 0; i < static_cast<int>(triangles.size()); i++) {
             window.draw(triangles[i]);
         }

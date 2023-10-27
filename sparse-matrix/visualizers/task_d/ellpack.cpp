@@ -27,6 +27,7 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
         }
 
         v_old[0] = 1;
+        v_new[0] = 10;
     }
 
     mpi::broadcast(world, v_old.data(), size_total(), 0);
@@ -38,14 +39,13 @@ template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
         a_mat[i] = 0.2;
         a_mat[i + 1] = 0.3;
         a_mat[i + 2] = 0.3;
-        a_mat[i + 3] = 0.3;
+        a_mat[i + 3] = 0.2;
     }
 }
 
 // Determines at which index in the i_mat matrix the separators are stored
 // Populates the vectors separators and non_separators.
 template <typename T> void ELLpack<T>::determine_separators() {
-    // std::cout << "R: " << rank << std::endl;
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
         for (int j = 0; j < skinny_cols_; j++) {
 
@@ -64,8 +64,8 @@ template <typename T> void ELLpack<T>::determine_separators() {
             } else if (n > max_id()) {
                 int dest = rank + 1;
 
-                send_list[dest][rank].push_back(n);
                 send_list[rank][dest].push_back(i_mat[i]);
+                send_list[dest][rank].push_back(n);
             }
         }
     }
@@ -73,37 +73,58 @@ template <typename T> void ELLpack<T>::determine_separators() {
 
 template <typename T> void ELLpack<T>::update() {
     std::vector<std::vector<T>> send_buffer;
+    std::vector<std::vector<T>> recv_buffer;
     send_buffer.assign(np, std::vector<T>());
+    recv_buffer.assign(np, std::vector<T>());
 
-#pragma omp parallel for
     for (int i = 0; i < np; i++) {
-        if (i != rank && (int)send_list[i][rank].size() != 0) {
-#pragma omp parallel for
-            for (int j = 0; j < (int)send_list[i][rank].size(); j++) {
-                send_buffer[i].push_back(v_old[send_list[i][rank][j]]);
-            }
-#pragma omp parallel for
-            for (int j = 0; j < (int)send_list[i][rank].size(); j++) {
-                send_buffer[i].push_back(v_old[send_list[rank][i][j]]);
+        if (i != rank && (int)send_list[rank][i].size() != 0) {
+            if (v_new.size() > 0) {
+                for (int j = 0; j < (int)send_list[rank][i].size(); j++) {
+                    send_buffer[i].push_back(v_new[send_list[rank][i][j] % size_rank()]);
+                }
+            } else {
+                for (int j = 0; j < (int)send_list[rank][i].size(); j++) {
+                    send_buffer[i].push_back(v_old[send_list[rank][i][j]]);
+                }
             }
         }
     }
 
-#pragma omp parallel for
-    for (int i = 0; i < size_rank(); i++) {
-        v_new[i] = new_v_val(i, send_buffer);
+    std::vector<mpi::request> send_requests;
+    std::vector<mpi::request> recv_requests;
+
+    for (int dest = 0; dest < np; dest++) {
+        if (dest == rank) {
+            continue;
+        }
+        if (send_list[rank][dest].size() == 0) {
+            continue;
+        }
+
+        mpi::request send_request = world.isend(dest, 0, send_buffer[dest]);
+        mpi::request recv_request = world.irecv(dest, 0, recv_buffer[dest]);
+
+        send_requests.push_back(send_request);
+        recv_requests.push_back(recv_request);
     }
 
-    mpi::all_gather(world, v_new.data(), size_rank(), v_old);
+    mpi::wait_all(send_requests.begin(), send_requests.end());
+    mpi::wait_all(recv_requests.begin(), recv_requests.end());
+
+    for (int i = 0; i < size_rank(); i++) {
+        v_new[i] = new_v_val(i, recv_buffer);
+    }
+
+    mpi::gather(world, v_new.data(), size_rank(), v_old, 0);
 }
 
-template <typename T> T ELLpack<T>::new_v_val(int id, std::vector<std::vector<T>> &send_buffer) {
+template <typename T> T ELLpack<T>::new_v_val(int id, std::vector<std::vector<T>> &recv_buffer) {
     std::vector<double> v_vals;
     int s = id * skinny_cols_;
     int n1 = rank + 1;
     int n2 = rank - 1;
 
-#pragma omp parallel for
     for (int i = 0; i < skinny_cols_; i++) {
         int cell = i_mat[s + i];
         bool found_sep = false;
@@ -116,7 +137,7 @@ template <typename T> T ELLpack<T>::new_v_val(int id, std::vector<std::vector<T>
                 for (int j = 0; j < (int)sendv_list.size(); j++) {
                     if (sendv_list[j] == cell) {
                         found_sep = true;
-                        v_vals.push_back(send_buffer[n1][j]);
+                        v_vals.push_back(recv_buffer[n1][j]);
                     }
                 }
             }
@@ -129,14 +150,14 @@ template <typename T> T ELLpack<T>::new_v_val(int id, std::vector<std::vector<T>
                 for (int j = 0; j < (int)recv_list.size(); j++) {
                     if (recv_list[j] == cell) {
                         found_sep = true;
-                        v_vals.push_back(send_buffer[n2][j]);
+                        v_vals.push_back(recv_buffer[n2][j]);
                     }
                 }
             }
         }
 
         if (!found_sep) {
-            v_vals.push_back(i_mat[s + i] != -1 ? v_old[i_mat[s + i]] : v_old[i_mat[s]]);
+            v_vals.push_back(i_mat[s + i] != -1 ? v_new[i_mat[s + i] % size_rank()] : v_new[i_mat[s] % size_rank()]);
         }
     }
     return a_mat[s] * v_vals[0] + a_mat[s + 1] * v_vals[1] + a_mat[s + 2] * v_vals[2] + a_mat[s + 3] * v_vals[3];

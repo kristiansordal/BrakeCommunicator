@@ -26,7 +26,7 @@ template <typename T> class ELLpack {
     int rank = world.rank();
 
     // Matrices and vectors
-    std::vector<T> i_mat;
+    std::vector<int> i_mat;
     std::vector<T> a_mat;
     std::vector<T> v_old;
     std::vector<T> v_new;
@@ -41,7 +41,7 @@ template <typename T> class ELLpack {
     void print_a();
     void print_v();
     void determine_separators();
-    T new_v_val(int id, std::vector<std::vector<T>> &send_buffer);
+    T new_v_val(int id, std::vector<std::vector<T>> &recv_buffer);
     int size_total();
     int size_rank();
     int width();

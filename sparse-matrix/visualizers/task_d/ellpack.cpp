@@ -27,19 +27,18 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
         }
 
         v_old[0] = 1;
-        v_new[0] = 10;
+        v_new[0] = 1;
     }
 
-    mpi::broadcast(world, v_old.data(), size_total(), 0);
+    // mpi::broadcast(world, v_old.data(), size_total(), 0);
 }
 
 template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
-        // The resitance of the spread of the signal, should sum to 1
-        a_mat[i] = 0.2;
+        a_mat[i] = 0.3;
         a_mat[i + 1] = 0.3;
-        a_mat[i + 2] = 0.3;
-        a_mat[i + 3] = 0.2;
+        a_mat[i + 2] = 0.2;
+        a_mat[i + 3] = 0.3;
     }
 }
 

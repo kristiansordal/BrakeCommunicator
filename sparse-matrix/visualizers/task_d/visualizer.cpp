@@ -3,12 +3,19 @@
 #include <iostream>
 #include <numeric>
 
-const int CELL_SIZE = 5;
+// Function prototypes
+const int CELL_SIZE = 2;
 using namespace sf;
+template <typename T> int normalize(T value, int s);
+template <typename T>
+void generate(std::vector<T> *v_old, int w, VertexArray *triangles, std::vector<Color> *color_list);
+template <typename T> void update_tri(std::vector<T> *v_old, std::vector<Color> *color_list, Vertex *v1, int id);
+
 template <typename T> void visualize(ELLpack<T> *ellpack) {
     RenderWindow window(VideoMode(ellpack->height() * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");
-    std::vector<ConvexShape> triangles;
-    VertexArray tris(Triangles);
+    VertexArray triangles(Triangles);
+    Clock dt_clock, fps;
+    float lastTime = 0;
 
     std::vector<Color> color_list;
 
@@ -18,22 +25,20 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
         color_list.push_back(Color(r, 0, b));
     }
 
-    for (int i = 0; i < ellpack->size_total(); i += 2) {
-        gen_triangle(ellpack, i, &triangles, &color_list);
-    }
+    generate(&(ellpack->v_old), ellpack->width(), &triangles, &color_list);
 
     bool start = false;
     while (window.isOpen()) {
         Event event;
 
-        window.clear(Color::White);
         if (start) {
             ellpack->update();
 
-            for (int i = 0; i < ellpack->size_total(); i++) {
-                update_triangle(ellpack, &color_list, triangles[i], i);
+            for (int i = 0; i < (int)triangles.getVertexCount(); i++) {
+                update_tri(&(ellpack->v_old), &color_list, &triangles[i], i);
             }
         }
+
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed) {
                 window.close();
@@ -41,77 +46,61 @@ template <typename T> void visualize(ELLpack<T> *ellpack) {
 
             if (event.type == Event::KeyPressed) {
                 if (event.key.code == Keyboard::A) {
-                    // ellpack->update();
-
                     start = true;
-                    // for (int i = 0; i < ellpack->size_total(); i++) {
-                    //     update_triangle(ellpack, &color_list, triangles[i], i);
-                    // }
                 }
             }
         }
 
-        for (int i = 0; i < static_cast<int>(triangles.size()); i++) {
-            window.draw(triangles[i]);
-        }
+        window.draw(triangles);
         window.display();
+        float dt = dt_clock.restart().asSeconds();
+        if (fps.getElapsedTime().asSeconds() > 1) {
+            fps.restart();
+            std::cout << ((1.0 / dt > 60) ? 60 : (1.0 / dt)) << std::endl;
+        }
     }
 }
 
-template <typename T>
-void update_triangle(ELLpack<T> *ellpack, std::vector<Color> *color_list, ConvexShape &triangle, int id) {
-    int color = normalize(ellpack, id, color_list->size());
-    triangle.setFillColor((*color_list)[color]);
-}
-// genereate a triangle object
-ConvexShape get_triangle(std::vector<Color> *color_list, int color_id, Vector2f p1, Vector2f p2, Vector2f p3) {
-    ConvexShape triangle;
-    Color color = (*color_list)[color_id];
-
-    triangle.setPointCount(3);
-    triangle.setPoint(0, p1);
-    triangle.setPoint(1, p2);
-    triangle.setPoint(2, p3);
-    triangle.setFillColor(color);
-    triangle.setOutlineColor(Color::Black);
-
-    return triangle;
+template <typename T> void update_tri(std::vector<T> *v_old, std::vector<Color> *color_list, Vertex *v1, int id) {
+    int color = normalize((*v_old)[floor(id / 3)], color_list->size());
+    v1->color = (*color_list)[color];
 }
 
-// add the two triangles for a cell
 template <typename T>
-void gen_triangle(ELLpack<T> *ellpack, int id, std::vector<ConvexShape> *triangles, std::vector<Color> *color_list) {
-    int w = ellpack->width();
+void generate(std::vector<T> *v_old, int w, VertexArray *triangles, std::vector<Color> *color_list) {
     float s = CELL_SIZE;
-    Vector2f p1;
-    Vector2f p2;
-    Vector2f p3;
-    Vector2f p4;
 
-    if (id % w == 0) {
-        p1 = {static_cast<float>(s * (id % w)), static_cast<float>(s * floor(id / w))};
-    } else {
-        p1 = (*triangles)[id - 1].getPoint(1);
+    for (int i = 0; i < static_cast<int>(v_old->size()); i += 2) {
+        Vector2f p1;
+        Vector2f p2;
+        Vector2f p3;
+        Vector2f p4;
+        if (i % w == 0) {
+            p1 = {0, static_cast<float>(s * floor(i / w))};
+        } else {
+            p1 = (*triangles)[(i * 3) - 1].position;
+        }
+
+        p2 = {p1.x + s, p1.y};
+        p3 = {p1.x, p1.y + s};
+        p4 = {p2.x, p3.y};
+
+        int c1 = normalize((*v_old)[i], color_list->size());
+        int c2 = normalize((*v_old)[i + 1], color_list->size());
+
+        triangles->append(Vertex(p1, (*color_list)[c1]));
+        triangles->append(Vertex(p2, (*color_list)[c1]));
+        triangles->append(Vertex(p3, (*color_list)[c1]));
+        triangles->append(Vertex(p3, (*color_list)[c2]));
+        triangles->append(Vertex(p4, (*color_list)[c2]));
+        triangles->append(Vertex(p2, (*color_list)[c2]));
     }
-    p2 = {p1.x + s, p1.y};
-    p3 = {p1.x, p1.y + s};
-    p4 = {p2.x, p3.y};
-
-    int c1 = normalize(ellpack, id, color_list->size());
-    int c2 = normalize(ellpack, id + 1, color_list->size());
-
-    triangles->push_back(get_triangle(color_list, c1, p1, p2, p3));
-    triangles->push_back(get_triangle(color_list, c2, p4, p2, p3));
 }
 
-template <typename T> int normalize(ELLpack<T> *ellpack, int id, int s) {
-    double max = 1.0 / s; // * std::max_element(ellpack->v_old.begin(), ellpack->v_old.end());
-    double min = 0;       //*std::min_element(ellpack->v_new.begin(), ellpack->v_new.end());
-    double range = max - min;
+template <typename T> int normalize(T value, int s) {
+    double range = 1.0 / s;
+    int color_id = static_cast<int>(floor((value / range) * s));
 
-    int color_id = static_cast<int>(floor(((ellpack->v_old[id] - min) / range) * s));
-
-    // Ensure color_index is within the valid range of color_list
     if (color_id < 0) {
         color_id = 0;
     } else if (color_id >= s) {

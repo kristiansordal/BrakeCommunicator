@@ -1,6 +1,7 @@
-#include <boost/mpi.hpp>
 #include <stdio.h>
 #include <stdlib.h>
+
+#include <boost/mpi.hpp>
 
 namespace mpi = boost::mpi;
 
@@ -18,7 +19,8 @@ void init_matrix_segment(double *matrix, int matrix_size, int n, int rank) {
 void mat_mult(double *matrix, double *vector, double *res, int cols, int n) {
     for (int i = 0; i < n; i++) {
         for (int j = 0; j < cols; j++) {
-            res[i] += matrix[j * n + i] * vector[j];
+            // res[i] += matrix[j * n + i] * vector[j];
+            res[i] += matrix[i * n + j] * vector[j];
         }
     }
 }
@@ -30,17 +32,23 @@ int main() {
 
     int rank = world.rank();
     int np = world.size();
-    int scale = 15;
+    int scale = 2;
     int n = 1 << scale;
-    int cols = n / np;
     int matrix_size = (n * n) / np;
+
+    // size of a column
+    int cols = n / np;
 
     // timing variables
     double start_total;
     double end_total;
 
     double *vector = new double[n];
+
+    // part of the vector to multiply with for each rank
     double *vector_slice = new double[cols];
+
+    // result vector for each rank
     double *res = new double[cols];
     double *matrix = new double[matrix_size];
     double *gathered_res = new double[n];
@@ -66,6 +74,9 @@ int main() {
     if (rank == 0) {
         end_total = time.elapsed();
         std::cout << "Time:      " << end_total - start_total << std::endl;
+        for (int i = 0; i < n; i++) {
+            std::cout << gathered_res[i] << std::endl;
+        }
     }
 
     delete[] matrix;

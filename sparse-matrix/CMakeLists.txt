@@ -17,7 +17,7 @@ find_package(Boost REQUIRED
 find_package(OpenMP REQUIRED)
 find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
 
-add_executable(sparse_matrix main.cpp)
+add_executable(sparse_matrix visualizers/seq/main.cpp)
 add_executable(par1 par1/main.cpp)
 add_executable(par_d par_d/main.cpp)
 add_executable(visualizer visualizers/seq/main.cpp)

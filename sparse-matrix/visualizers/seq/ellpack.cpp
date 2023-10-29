@@ -30,13 +30,11 @@ template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
 }
 
 template <typename T> void ELLpack<T>::initialize_vectors() {
-    v_old[0] = 0.2;
     for (int i = 1; i < size(); i++) {
         v_old[i] = 0;
         v_new[i] = 0;
     }
-
-    v_old[220] = 0.9;
+    v_old[0] = 0.2;
 }
 
 template <typename T> void ELLpack<T>::update() {
@@ -56,24 +54,6 @@ template <typename T> T ELLpack<T>::new_v_val(int id) {
     v4 = i_mat[s + 3] != -1 ? v_old[i_mat[s + 3]] : v_old[i_mat[s]];
 
     return a_mat[s] * v1 + a_mat[s + 1] * v2 + a_mat[s + 2] * v3 + a_mat[s + 3] * v4;
-}
-
-template <typename T> void ELLpack<T>::print() {
-    for (int i = 0; i < (int)std::size(i_mat); i++) {
-        if (i % skinny_cols_ == 0 && i > 0) {
-            std::cout << std::endl;
-        }
-        std::cout << "(" << i_mat[i] << ", " << v_new[i_mat[i]] << ") ";
-    }
-    std::cout << std::endl;
-}
-template <typename T> void ELLpack<T>::print_v() {
-    for (int i = 0; i < (int)std::size(v_new); i++) {
-        if (i % width() == 0 && i > 0) {
-            std::cout << std::endl;
-        }
-        std::cout << v_new[i] << " ";
-    }
 }
 
 template <typename T> int ELLpack<T>::size() { return size_; }

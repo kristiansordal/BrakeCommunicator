@@ -25,6 +25,7 @@ template <typename T> class ELLpack {
     mpi::timer time;
     int np = world.size();
     int rank = world.rank();
+    int comm_time;
 
     // Measurements
     double gflops;

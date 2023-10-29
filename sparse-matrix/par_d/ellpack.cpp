@@ -95,16 +95,16 @@ template <typename T> void ELLpack<T>::update() {
     std::vector<mpi::request> send_requests;
     std::vector<mpi::request> recv_requests;
 
+    int t1 = time.elapsed();
     for (int dest = 0; dest < np; dest++) {
         if (dest == rank) {
             continue;
         }
 
-        if (send_list[rank][dest].size() == 0) {
-            continue;
-        }
+        // if (send_list[rank][dest].size() == 0) {
+        //     continue;
+        // }
 
-        std::cout << send_buffer[dest].size() << std::endl;
         mpi::request send_request = world.isend(dest, 0, send_buffer[dest]);
         mpi::request recv_request = world.irecv(dest, 0, recv_buffer[dest]);
 
@@ -114,6 +114,7 @@ template <typename T> void ELLpack<T>::update() {
 
     mpi::wait_all(send_requests.begin(), send_requests.end());
     mpi::wait_all(recv_requests.begin(), recv_requests.end());
+    comm_time += time.elapsed() - t1;
 
     for (int i = 0; i < size_rank(); i++) {
         v_new[i] = new_v_val(i, recv_buffer);

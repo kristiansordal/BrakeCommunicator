@@ -120,7 +120,7 @@ template <typename T> void ELLpack<T>::update() {
     }
 
     for (int dest = 0; dest < np; dest++) {
-        mpi::broadcast(world, send_buffer[dest].data(), send_buffer[dest].size(), dest);
+        mpi::all_gather(world, send_buffer[dest].data(), send_buffer[dest].size(), send_buffer[rank]);
     }
 
     // if (rank == 0) {
@@ -138,7 +138,6 @@ template <typename T> void ELLpack<T>::update() {
         v_new[i] = new_v_val(i, found_seps, send_buffer);
     }
 
-    world.barrier();
     mpi::all_gather(world, v_new.data(), size_rank(), v_old);
 }
 

@@ -25,16 +25,16 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
         for (int i = 0; i < size_total(); i++) {
             v_old[i] = 0;
         }
+        v_new[1] = 1;
+        v_new[3] = 1;
+        v_new[5] = 1;
+        v_new[7] = 1;
+        v_old[1] = 1;
+        v_old[3] = 1;
+        v_old[5] = 1;
+        v_old[7] = 1;
     }
 
-    v_old[1] = 1;
-    v_old[3] = 1;
-    v_old[5] = 1;
-    v_old[7] = 1;
-    // v_old[3] = 1.5;
-    // v_old[28] = 28;
-    // v_old[30] = 100;
-    // v_old[32] = 30;
     mpi::broadcast(world, v_old.data(), size_total(), 0);
 }
 
@@ -70,23 +70,10 @@ template <typename T> void ELLpack<T>::determine_separators() {
     int s = (int)separators.size();
     mpi::all_gather(world, s, separator_sizes);
 
-    for (int i = 0; i < np; i++) {
-        std::cout << "rank: " << rank << " has " << separators.size() << std::endl;
-        mpi::broadcast(world, separators.data(), separators.size(), i);
-
-        for (auto &s : separator_sizes) {
-            all_separators.push_back(s);
-        }
-    }
-
     for (int i = 0; i < size_rank() * skinny_cols_; i += skinny_cols_) {
         if (std::find(separators.begin(), separators.end(), i) == separators.end()) {
             non_separators.push_back(i);
         }
-    }
-
-    for (auto &e : all_separators) {
-        std::cout << e << std::endl;
     }
 }
 
@@ -112,60 +99,70 @@ template <typename T> void ELLpack<T>::reorder_separators() {
     }
 
     std::swap(i_mat, ordered);
+    if (rank == 0) {
+        for (int i = 0; i < 4; i++) {
+            std::cout << v_old[i_mat[4 * i]] << std::endl;
+        }
+    }
 }
 
 template <typename T> void ELLpack<T>::update() {
-    std::vector<T> local;
+    std::vector<std::vector<T>> send_buffer;
+    send_buffer.assign(np, std::vector<T>());
 
-    for (int i = 0; i < (int)separator_sizes.size(); i++) {
-
-        std::vector<T> vals;
-
-        for (int j = 0; j < separator_sizes[i]; j++) {
-            vals.push_back(v_old[i_mat[j * skinny_cols_]]);
-        }
-
-        mpi::broadcast(world, vals.data(), vals.size(), i);
-
-        for (auto &v : vals) {
-            local.push_back(v);
-        }
-    }
-
-    int offset = std::accumulate(separator_sizes.begin(), separator_sizes.begin() + rank, 0);
-
-    for (int i = 0; i < size_rank(); i++) {
-        v_new[i] = new_v_val(i, offset, local);
-    }
-
-    mpi::all_gather(world, v_new.data(), size_rank(), v_old);
-}
-
-template <typename T> T ELLpack<T>::new_v_val(int id, int offset, std::vector<T> &local) {
-    std::vector<double> v_vals;
-    int s = id * skinny_cols_;
-    // int found_separators = 0;
-    std::cout << local[0] << std::endl;
-
-    for (int i = 0; i < skinny_cols_; i++) {
-        // auto separator_iter = std::find(local.begin(), local.end(), i_mat[s + i]);
-        // bool is_separator = separator_iter != local.end();
-
-        // if (is_separator) {
-        //     std::cout << v_old[local[offset + found_separators]] << " ";
-        //     v_vals.push_back(v_old[local[offset + found_separators++]]);
-        if (id < offset) {
-
-        } else {
-            if (i == 0) {
-                v_vals.push_back(v_old[i_mat[s]]);
-            } else {
-                v_vals.push_back(i_mat[s + i] != -1 ? v_old[i_mat[s + i]] : v_old[i_mat[s]]);
+    for (int i = 0; i < np; i++) {
+        if (i == rank) {
+            for (int j = 0; j < separator_sizes[i]; j++) {
+                send_buffer[i].push_back(v_new[i_mat[j * skinny_cols_]]);
             }
         }
     }
 
-    std::cout << std::endl;
+    for (int dest = 0; dest < np; dest++) {
+        mpi::broadcast(world, send_buffer[dest].data(), send_buffer[dest].size(), dest);
+    }
+
+    if (rank == 1) {
+        for (int i = 0; i < (int)send_buffer.size(); i++) {
+            std::cout << i << ": ";
+            for (int j = 0; j < (int)send_buffer[i].size(); j++) {
+                std::cout << send_buffer[i][j] << " ";
+            }
+            std::cout << std::endl;
+        }
+    }
+
+    int found_seps = 0;
+    for (int i = 0; i < size_rank(); i++) {
+        v_new[i] = new_v_val(i, found_seps, send_buffer);
+    }
+
+    world.barrier();
+    mpi::all_gather(world, v_new.data(), size_rank(), v_old);
+}
+
+template <typename T> T ELLpack<T>::new_v_val(int id, int &found_seps, std::vector<std::vector<T>> &send_buffer) {
+    std::vector<double> v_vals;
+    int s = id * skinny_cols_;
+    bool found_sep = false;
+
+    for (int i = 0; i < skinny_cols_; i++) {
+        if (id < separator_sizes[rank] && found_seps < separator_sizes[rank]) {
+            if (i_mat[s + i] > 0 && (i_mat[s + i] < min_id() || i_mat[s + i] > max_id())) {
+                if (rank == 1) {
+                    // std::cout << "Separator: " << i_mat[s + i] << std::endl;
+                    // std::cout << send_buffer[rank][found_seps] << std::endl;
+                    // std::cout << found_seps << std::endl;
+                }
+                found_sep = true;
+                v_vals.push_back(send_buffer[rank][found_seps++]);
+            }
+        }
+        if (!found_sep) {
+            v_vals.push_back(i_mat[s + i] != -1 ? v_old[i_mat[s + i]] : v_old[i_mat[s]]);
+        }
+    }
+
     return a_mat[s] * v_vals[0] + a_mat[s + 1] * v_vals[1] + a_mat[s + 2] * v_vals[2] + a_mat[s + 3] * v_vals[3];
 }
 

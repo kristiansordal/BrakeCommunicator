@@ -4,7 +4,7 @@
 #include <numeric>
 
 // Function prototypes
-const int CELL_SIZE = 2;
+const int CELL_SIZE = 5;
 using namespace sf;
 template <typename T> int normalize(T value, int s);
 template <typename T>
@@ -12,7 +12,7 @@ void generate(std::vector<T> *v_old, int w, VertexArray *triangles, std::vector<
 template <typename T> void update_tri(std::vector<T> *v_old, std::vector<Color> *color_list, Vertex *v1, int id);
 
 template <typename T> void visualize(ELLpack<T> *ellpack) {
-    RenderWindow window(VideoMode(ellpack->height() * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");
+    RenderWindow window(VideoMode(ellpack->width() / 2 * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");
     VertexArray triangles(Triangles);
     Clock dt_clock, fps;
     float lastTime = 0;

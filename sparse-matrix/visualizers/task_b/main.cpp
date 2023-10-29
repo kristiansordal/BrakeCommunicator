@@ -11,12 +11,13 @@ int main() {
     ellpack.initialize_vectors();
     ellpack.determine_separators();
     ellpack.reorder_separators();
-    // ellpack.update();
 
     if (ellpack.rank == 0) {
+        ellpack.world.barrier();
         visualize(&ellpack);
 
     } else {
+        ellpack.world.barrier();
         while (true) {
             ellpack.update();
         }

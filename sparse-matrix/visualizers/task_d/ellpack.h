@@ -53,8 +53,8 @@ template <typename T> class ELLpack {
     ELLpack(int rows)
         : rows_(rows),
           skinny_cols_(4),
-          size_total_(rows * rows * 2),
-          width_(rows * 2),
+          size_total_(rows * rows),
+          width_(rows),
           height_(rows) {
         size_rank_ = size_total_ / np;
         min_id_ = rank * size_rank_;
@@ -64,7 +64,6 @@ template <typename T> class ELLpack {
         i_mat.assign(size_rank_ * skinny_cols_, 0);
         a_mat.assign(size_rank_ * skinny_cols_, 0);
         send_list.assign(np, std::vector<std::vector<int>>(np, std::vector<int>()));
-        // recieve_list.assign(np, std::vector<std::vector<int>>(np, std::vector<int>()));
     }
 
     ~ELLpack() = default;

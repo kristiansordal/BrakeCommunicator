@@ -3,7 +3,7 @@
 #include "visualizer.cpp"
 
 int main() {
-    int n = 1 << 7;
+    int n = 1 << 8;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();

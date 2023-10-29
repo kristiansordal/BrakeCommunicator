@@ -22,18 +22,16 @@ template <typename T> class ELLpack {
     // MPI environment
     mpi::environment env;
     mpi::communicator world;
+    mpi::timer time;
     int np = world.size();
     int rank = world.rank();
 
     // Matrices and vectors
-    std::vector<T> i_mat;
+    std::vector<int> i_mat;
     std::vector<T> a_mat;
     std::vector<T> v_old;
     std::vector<T> v_new;
-    std::vector<int> separators;
-    std::vector<T> non_separators;
-    std::vector<int> separator_sizes;
-    std::vector<T> separator_values;
+    std::vector<std::vector<std::vector<int>>> send_list;
 
     void initialize();
     void initialize_stiffness_matrix();
@@ -44,8 +42,7 @@ template <typename T> class ELLpack {
     void print_a();
     void print_v();
     void determine_separators();
-    void reorder_separators();
-    T new_v_val(int id, int &found_seps, std::vector<std::vector<T>> &send_buffer);
+    T new_v_val(int id, std::vector<std::vector<T>> &recv_buffer);
     int size_total();
     int size_rank();
     int width();
@@ -57,8 +54,8 @@ template <typename T> class ELLpack {
     ELLpack(int rows)
         : rows_(rows),
           skinny_cols_(4),
-          size_total_(rows * rows * 2),
-          width_(rows * 2),
+          size_total_(rows * rows),
+          width_(rows),
           height_(rows) {
         size_rank_ = size_total_ / np;
         min_id_ = rank * size_rank_;
@@ -67,6 +64,7 @@ template <typename T> class ELLpack {
         v_old.assign(size_total_, 0);
         i_mat.assign(size_rank_ * skinny_cols_, 0);
         a_mat.assign(size_rank_ * skinny_cols_, 0);
+        send_list.assign(np, std::vector<std::vector<int>>(np, std::vector<int>()));
     }
 
     ~ELLpack() = default;

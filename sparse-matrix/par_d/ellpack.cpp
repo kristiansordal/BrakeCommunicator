@@ -26,19 +26,15 @@ template <typename T> void ELLpack<T>::neighbours(int i) {
 }
 
 template <typename T> void ELLpack<T>::initialize_vectors() {
-    std::vector<int> to_add;
-    for (int i = 0; i < 5000; i++) {
-        int id = rand() % size_total();
-        to_add.push_back(id);
-    }
 
     if (rank == 0) {
         for (int i = 0; i < size_total(); i++) {
-            if (std::find(to_add.begin(), to_add.end(), i) != to_add.end()) {
-                v_old[i] = fRand(0, 0.025);
-                v_new[i % size_rank()] = v_old[i];
-            }
+            v_old[i] = 0;
+            v_new[i % size_rank()] = v_old[i];
         }
+
+        v_old[0] = 1;
+        v_new[0] = 1;
     }
 
     mpi::broadcast(world, v_new.data(), size_rank(), 0);

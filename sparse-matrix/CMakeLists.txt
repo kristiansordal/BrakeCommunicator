@@ -6,6 +6,7 @@ project(sparse_matrix
         LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -ffast-math")
 
 find_package(Boost REQUIRED
              COMPONENTS
@@ -14,11 +15,11 @@ find_package(Boost REQUIRED
              REQUIRED)
 
 find_package(OpenMP REQUIRED)
-# Find SFML
 find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
 
 add_executable(sparse_matrix main.cpp)
 add_executable(par1 par1/main.cpp)
+add_executable(par_d par_d/main.cpp)
 add_executable(visualizer visualizers/seq/main.cpp)
 add_executable(p_visualizer1 visualizers/task_a/main.cpp)
 add_executable(p_visualizer2 visualizers/task_b/main.cpp)
@@ -55,4 +56,8 @@ target_include_directories(p_visualizer3 PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_IN
 target_link_libraries(p_visualizer3 PRIVATE ${Boost_LIBRARIES} sfml-system sfml-window sfml-graphics)
 target_compile_options(p_visualizer3 PRIVATE )#-Wall -Wextra -Wpedantic -Werror)
 
+target_include_directories(par_d PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+target_include_directories(par_d PRIVATE ${Boost_INCLUDE_DIRS} ${SFML_INCLUDE_DIR})
+target_link_libraries(par_d PRIVATE ${Boost_LIBRARIES} sfml-system sfml-window sfml-graphics)
+target_compile_options(par_d PRIVATE )#-Wall -Wextra -Wpedantic -Werror)
 set(CMAKE_COLOR_DIAGNOSTICS On)

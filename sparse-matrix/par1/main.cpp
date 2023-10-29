@@ -2,7 +2,7 @@
 #include "ellpack.h"
 
 int main() {
-    int n = 1 << 12;
+    int n = 1 << 15;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();
@@ -11,7 +11,6 @@ int main() {
     float start = 0;
     float end = 0;
 
-    ellpack.world.barrier();
     if (ellpack.rank == 0) {
         start = ellpack.time.elapsed();
     }

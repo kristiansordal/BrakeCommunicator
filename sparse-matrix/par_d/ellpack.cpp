@@ -6,11 +6,6 @@ template <typename T> void ELLpack<T>::initialize() {
     }
 }
 
-double fRand(double fMin, double fMax) {
-    double f = (double)rand() / RAND_MAX;
-    return fMin + f * (fMax - fMin);
-}
-
 template <typename T> void ELLpack<T>::neighbours(int i) {
     int mesh_cols = width();
     int id = i + rank * size_rank();
@@ -104,10 +99,12 @@ template <typename T> void ELLpack<T>::update() {
         if (dest == rank) {
             continue;
         }
+
         if (send_list[rank][dest].size() == 0) {
             continue;
         }
 
+        std::cout << send_buffer[dest].size() << std::endl;
         mpi::request send_request = world.isend(dest, 0, send_buffer[dest]);
         mpi::request recv_request = world.irecv(dest, 0, recv_buffer[dest]);
 
@@ -121,8 +118,6 @@ template <typename T> void ELLpack<T>::update() {
     for (int i = 0; i < size_rank(); i++) {
         v_new[i] = new_v_val(i, recv_buffer);
     }
-
-    mpi::gather(world, v_new.data(), size_rank(), v_old, 0);
 }
 
 template <typename T> T ELLpack<T>::new_v_val(int id, std::vector<std::vector<T>> &recv_buffer) {

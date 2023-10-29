@@ -26,7 +26,7 @@ template <typename T> class ELLpack {
     int rank = world.rank();
 
     // Matrices and vectors
-    std::vector<T> i_mat;
+    std::vector<int> i_mat;
     std::vector<T> a_mat;
     std::vector<T> v_old;
     std::vector<T> v_new;

@@ -35,7 +35,8 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
         v_old[7] = 1;
     }
 
-    mpi::broadcast(world, v_old.data(), size_total(), 0);
+    // mpi::broadcast(world, v_old.data(), size_total(), 0);
+    mpi::scatter(world, v_old.data(), v_new.data(), size_rank(), 0);
 }
 
 template <typename T> void ELLpack<T>::initialize_stiffness_matrix() {
@@ -80,7 +81,7 @@ template <typename T> void ELLpack<T>::determine_separators() {
 // Reorders the i_mat matrix to store the separators at the first n indices,
 // given n separators.
 template <typename T> void ELLpack<T>::reorder_separators() {
-    std::vector<T> ordered;
+    std::vector<int> ordered;
     ordered.resize(i_mat.size());
     auto s = (int)separators.size();
     auto n = (int)non_separators.size();
@@ -113,7 +114,7 @@ template <typename T> void ELLpack<T>::update() {
     for (int i = 0; i < np; i++) {
         if (i == rank) {
             for (int j = 0; j < separator_sizes[i]; j++) {
-                send_buffer[i].push_back(v_new[i_mat[j * skinny_cols_]]);
+                send_buffer[i].push_back(v_new[i_mat[j * skinny_cols_] % size_rank()]);
             }
         }
     }
@@ -122,15 +123,15 @@ template <typename T> void ELLpack<T>::update() {
         mpi::broadcast(world, send_buffer[dest].data(), send_buffer[dest].size(), dest);
     }
 
-    if (rank == 1) {
-        for (int i = 0; i < (int)send_buffer.size(); i++) {
-            std::cout << i << ": ";
-            for (int j = 0; j < (int)send_buffer[i].size(); j++) {
-                std::cout << send_buffer[i][j] << " ";
-            }
-            std::cout << std::endl;
-        }
-    }
+    // if (rank == 0) {
+    //     for (int i = 0; i < (int)send_buffer.size(); i++) {
+    //         std::cout << i << ": ";
+    //         for (int j = 0; j < (int)send_buffer[i].size(); j++) {
+    //             std::cout << send_buffer[i][j] << " ";
+    //         }
+    //         std::cout << std::endl;
+    //     }
+    // }
 
     int found_seps = 0;
     for (int i = 0; i < size_rank(); i++) {

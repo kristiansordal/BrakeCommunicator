@@ -26,6 +26,10 @@ template <typename T> class ELLpack {
     int np = world.size();
     int rank = world.rank();
 
+    // Measurements
+    double gflops;
+    double l2;
+
     // Matrices and vectors
     std::vector<int> i_mat;
     std::vector<T> a_mat;

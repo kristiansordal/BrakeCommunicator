@@ -25,6 +25,11 @@ template <typename T> class ELLpack {
     mpi::timer time;
     int np = world.size();
     int rank = world.rank();
+    int comm_time;
+
+    // Measurements
+    double gflops;
+    double l2;
 
     // Matrices and vectors
     std::vector<int> i_mat;

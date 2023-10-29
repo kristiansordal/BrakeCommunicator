@@ -24,9 +24,6 @@ template <typename T> class ELLpack {
     void initialize_vectors();
     void update();
     void neighbours(int i);
-    void print();
-    void print_a();
-    void print_v();
     T new_v_val(int id);
     int size();
     int width();

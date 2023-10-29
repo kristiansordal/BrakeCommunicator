@@ -48,7 +48,9 @@ template <typename T> void ELLpack<T>::update() {
         v_new[i] = new_v_val(i);
     }
 
+    double t = time.elapsed();
     mpi::all_gather(world, v_new.data(), size_rank(), v_old);
+    comm_time += time.elapsed() - t;
 }
 
 template <typename T> T ELLpack<T>::new_v_val(int id) {

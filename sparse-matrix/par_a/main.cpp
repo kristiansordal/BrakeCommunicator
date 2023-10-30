@@ -21,7 +21,6 @@ int main() {
     mpi::gather(ellpack.world, ellpack.v_old.data(), ellpack.size_rank(), v, 0);
 
     double ops = (long long)n * 8ll * 100ll;
-    std::cout << ops << std::endl;
 
     if (ellpack.rank == 0) {
         double l2 = 0;
@@ -33,7 +32,7 @@ int main() {
         std::cout << "Time:    " << end - start << std::endl;
         std::cout << "Comp:    " << (end - start) - ellpack.comm_time << std::endl;
         std::cout << "Comm:    " << ellpack.comm_time << std::endl;
-        std::cout << "GFLOPS:  " << ops << std::endl;
+        std::cout << "GFLOPS:  " << ops / (end - start) << std::endl;
         std::cout << "L2:      " << l2 << std::endl;
     }
 

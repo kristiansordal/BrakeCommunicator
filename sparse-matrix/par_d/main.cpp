@@ -2,8 +2,8 @@
 #include "ellpack.h"
 
 int main() {
-    int n = 1 << 12;
-    int timesteps = 100;
+    int n = 1 << 11;
+    int timesteps = 5;
     double start, end;
 
     ELLpack<double> ellpack(n);
@@ -25,7 +25,6 @@ int main() {
     if (ellpack.rank == 0) {
         double ops = (long long)n * 8ll * 100ll;
         double l2 = 0;
-
         for (auto &v : vv) {
             l2 += v * v;
         }

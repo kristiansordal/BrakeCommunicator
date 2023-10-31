@@ -33,12 +33,19 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
     }
 
     if (rank == 0) {
+        // for (int i = 0; i < size_total(); i++) {
+        //     if (std::find(to_add.begin(), to_add.end(), i) != to_add.end()) {
+        //         // v_old[i] = fRand(0, 0.025);
+        //         // v_new[i % size_rank()] = v_old[i];
+        //     }
+        // }
         for (int i = 0; i < size_total(); i++) {
-            if (std::find(to_add.begin(), to_add.end(), i) != to_add.end()) {
-                v_old[i] = fRand(0, 0.025);
-                v_new[i % size_rank()] = v_old[i];
-            }
+            v_old[i] = 0;
+            v_new[i % size_rank()] = v_old[i];
         }
+        v_old[0] = 1;
+        v_new[0] = 1;
+        v_new[v_new.size() - 1] = 1;
     }
 
     mpi::broadcast(world, v_new.data(), size_rank(), 0);
@@ -68,12 +75,20 @@ template <typename T> void ELLpack<T>::determine_separators() {
             if (n < min_id()) {
                 int dest = rank - 1;
 
+                // v_new[i_mat[i]] = 1;
+                // v_new[n] = 1;
+                // v_old[i_mat[i]] = 1;
+                // v_old[n] = 1;
                 send_list[rank][dest].push_back(i_mat[i]);
                 send_list[dest][rank].push_back(n);
 
             } else if (n > max_id()) {
                 int dest = rank + 1;
 
+                // v_new[i_mat[i]] = 1;
+                // v_new[n] = 1;
+                // v_old[i_mat[i]] = 1;
+                // v_old[n] = 1;
                 send_list[rank][dest].push_back(i_mat[i]);
                 send_list[dest][rank].push_back(n);
             }

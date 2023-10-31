@@ -2,7 +2,7 @@
 #include "ellpack.h"
 
 int main() {
-    int n = 1 << 12;
+    int n = 1 << 14;
 
     ELLpack<double> ellpack(n);
     ellpack.initialize();

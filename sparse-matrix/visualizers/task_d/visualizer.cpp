@@ -4,7 +4,7 @@
 #include <numeric>
 
 // Function prototypes
-const int CELL_SIZE = 5;
+const int CELL_SIZE = 2;
 using namespace sf;
 template <typename T> int normalize(T value, int s);
 template <typename T>

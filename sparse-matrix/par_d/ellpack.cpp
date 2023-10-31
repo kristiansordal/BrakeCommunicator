@@ -101,19 +101,23 @@ template <typename T> void ELLpack<T>::update() {
             continue;
         }
 
-        // if (send_list[rank][dest].size() == 0) {
-        //     continue;
-        // }
+        if (send_list[rank][dest].size() == 0) {
+            continue;
+        }
 
+        std::cout << "rank: " << rank << " waiting" << std::endl;
         mpi::request send_request = world.isend(dest, 0, send_buffer[dest]);
         mpi::request recv_request = world.irecv(dest, 0, recv_buffer[dest]);
+        std::cout << "rank: " << rank << " done waiting" << std::endl;
 
         send_requests.push_back(send_request);
         recv_requests.push_back(recv_request);
     }
 
-    mpi::wait_all(send_requests.begin(), send_requests.end());
+    // std::cout << "waiting" << std::endl;
+    // mpi::wait_all(send_requests.begin(), send_requests.end());
     mpi::wait_all(recv_requests.begin(), recv_requests.end());
+    // std::cout << "done waiting" << std::endl;
     comm_time += time.elapsed() - t1;
 
     for (int i = 0; i < size_rank(); i++) {

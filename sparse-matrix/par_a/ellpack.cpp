@@ -36,8 +36,8 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
             v_old[i] = 0;
         }
 
-        v_old[0] = 2.5;
-        v_old[v_old.size() - 1] = 1;
+        v_old[0] = 1;
+        // v_old[v_old.size() - 1] = 1;
     }
 
     mpi::broadcast(world, v_old.data(), size_total(), 0);
@@ -49,7 +49,9 @@ template <typename T> void ELLpack<T>::update() {
     }
 
     double t = time.elapsed();
+    // std::cout << "Gathering: " << rank << std::endl;
     mpi::all_gather(world, v_new.data(), size_rank(), v_old);
+    std::cout << v_old.size() << std::endl;
     comm_time += time.elapsed() - t;
 }
 

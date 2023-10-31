@@ -49,8 +49,8 @@ template <typename T> class ELLpack {
     ELLpack(int rows)
         : rows_(rows),
           skinny_cols_(4),
-          size_total_(rows * rows * 2),
-          width_(rows * 2),
+          size_total_(rows * rows),
+          width_(rows),
           height_(rows) {
         size_rank_ = size_total_ / np;
         v_new.assign(size_rank_, 0);

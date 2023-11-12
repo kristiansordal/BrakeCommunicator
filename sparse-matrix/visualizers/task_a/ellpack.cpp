@@ -36,15 +36,7 @@ template <typename T> void ELLpack<T>::initialize_vectors() {
             v_old[i] = 0;
         }
 
-        v_old[0] = 10;
-        // v_old[1] = 1;
-        // v_old[3] = 1;
-        // v_old[5] = 1;
-        // v_old[7] = 1;
-        // v_old[0] = 2.5;
-        // v_old[(v_old.size() - 1) / 2 - 40] = 5;
-        // v_old[(v_old.size() - 1) / 2 - 140] = 5;
-        // v_old[v_old.size() - 1] = 1;
+        v_old[0] = 1;
     }
 
     mpi::broadcast(world, v_old.data(), size_total(), 0);

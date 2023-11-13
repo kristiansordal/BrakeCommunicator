@@ -6,7 +6,7 @@ void Matrix::update() {
         double sum = 0.0;
 
         for (int i = row_ptr[row]; i < row_ptr[row + 1]; i++) {
-            sum += a[i] * v_old[col_ptr[i]];
+            sum += vals[i] * v_old[col_ptr[i]];
         }
 
         v_new[row] = sum;
@@ -21,6 +21,6 @@ void Matrix::init_v() {
 
 void Matrix::init_a_mat() {
     for (int i = 0; i < nnz; i++) {
-        a[i] = 0.3;
+        vals[i] = 0.3;
     }
 }

@@ -13,9 +13,10 @@ class Matrix {
     vector<i64> col_ptr;
     vector<double> v_old;
     vector<double> v_new;
-    vector<double> a;
+    vector<double> vals;
 
     Matrix() = default;
+    ~Matrix() = default;
 
     void update();
     void init_v();

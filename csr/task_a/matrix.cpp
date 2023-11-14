@@ -15,7 +15,7 @@ void Matrix::update() {
 }
 
 void Matrix::init_row_ptr() {
-    std::vector<i64> r;
+    vector<i64> r;
 
     int count = 1;
     r.push_back(0);
@@ -31,7 +31,20 @@ void Matrix::init_row_ptr() {
     row_ptr = r;
 }
 
-void Matrix::init_col_ptr() {}
+void Matrix::init_col_ptr() {
+    vector<i64> c;
+    int count = 1;
+
+    for (int i = 1; i < col_ptr.size(); i++) {
+        if (col_ptr[i] == col_ptr[i - 1]) {
+            count++;
+        } else {
+            c.push_back(count++);
+        }
+    }
+    c.push_back(count);
+    col_ptr = c;
+}
 
 void Matrix::init_v() {
     for (int i = 0; i < n; i++) {

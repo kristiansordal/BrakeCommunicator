@@ -51,8 +51,8 @@ int main() {
 
     // process mtx file on rank 0
     if (rank == 0) {
-        read_file("matrices/Arrow.mtx", matrix);
-        matrix.init_row_ptr();
+        read_file("matrices/Hamrle1.mtx", matrix);
+        matrix.init_col_ptr();
     }
 
     mpi::broadcast(world, matrix.n, 0);
@@ -70,38 +70,38 @@ int main() {
     if (rank == 0) {
         for (int i = 0; i < np; i++) {
             for (int j = 0; j < rank_size + 1; j++) {
-                row_buffer[i].push_back(matrix.row_ptr[i * rank_size + j]);
+                col_buffer[i].push_back(matrix.col_ptr[i * rank_size + j]);
             }
         }
 
         for (int i = 0; i < np; i++) {
-            for (int j = i == 0 ? 0 : row_buffer[i - 1][row_buffer[i].size() - 1];
-                 j < row_buffer[i][row_buffer[i].size() - 1]; j++) {
-                col_buffer[i].push_back(matrix.col_ptr[j]);
+            for (int j = i == 0 ? 0 : col_buffer[i - 1][col_buffer[i].size() - 1];
+                 j < col_buffer[i][col_buffer[i].size() - 1]; j++) {
+                row_buffer[i].push_back(matrix.row_ptr[j]);
                 val_buffer[i].push_back(matrix.vals[j]);
             }
         }
 
         for (int i = 0; i < np; i++) {
-            world.send(i, i, row_buffer[i]);
             world.send(i, i, col_buffer[i]);
+            world.send(i, i, row_buffer[i]);
             world.send(i, i, val_buffer[i]);
         }
     }
 
     for (int i = 0; i < np; i++) {
         if (rank == i) {
-            world.recv(0, i, row_buffer[i]);
             world.recv(0, i, col_buffer[i]);
+            world.recv(0, i, row_buffer[i]);
             world.recv(0, i, val_buffer[i]);
-            matrix.row_ptr = row_buffer[i];
             matrix.col_ptr = col_buffer[i];
+            matrix.row_ptr = row_buffer[i];
             matrix.vals = val_buffer[i];
         }
     }
 
     cout << "Rank: " << rank << endl;
-    for (auto &i : matrix.row_ptr) {
+    for (auto &i : matrix.col_ptr) {
         cout << i << " ";
     }
     cout << endl;

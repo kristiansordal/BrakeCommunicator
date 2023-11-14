@@ -35,6 +35,7 @@ void Matrix::init_col_ptr() {
     vector<i64> c;
     int count = 1;
 
+    c.push_back(0);
     for (int i = 1; i < col_ptr.size(); i++) {
         if (col_ptr[i] == col_ptr[i - 1]) {
             count++;

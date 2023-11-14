@@ -1,4 +1,5 @@
 #include "matrix.hpp"
+#include <numeric>
 #include <omp.h>
 
 void Matrix::update() {
@@ -12,6 +13,25 @@ void Matrix::update() {
         v_new[row] = sum;
     }
 }
+
+void Matrix::init_row_ptr() {
+    std::vector<i64> r;
+
+    int count = 1;
+    r.push_back(0);
+    for (int i = 1; i < row_ptr.size(); i++) {
+        if (row_ptr[i] == row_ptr[i - 1]) {
+            count++;
+        } else {
+            r.push_back(count++);
+        }
+    }
+
+    r.push_back(count);
+    row_ptr = r;
+}
+
+void Matrix::init_col_ptr() {}
 
 void Matrix::init_v() {
     for (int i = 0; i < n; i++) {

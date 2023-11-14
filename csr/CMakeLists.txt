@@ -16,7 +16,6 @@ find_package(Boost REQUIRED
 
 find_package(OpenMP REQUIRED)
 add_subdirectory(include/METIS)
-# add_subdirectory(include/fast_matrix_market)
 
 include(FetchContent)
 FetchContent_Declare(

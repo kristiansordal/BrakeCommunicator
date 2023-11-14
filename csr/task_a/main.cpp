@@ -34,7 +34,7 @@ void read_file(string path, Matrix &matrix) {
 
     ffm::read_matrix_market_triplet(file, matrix.nrows, matrix.ncols, matrix.row_ptr, matrix.col_ptr, matrix.vals);
     matrix.nnz = matrix.vals.size();
-    cout << matrix.nnz << endl;
+    matrix.n = matrix.nrows;
 
     cout << "Successfully read file " << file_name << endl;
     file.close();
@@ -58,11 +58,19 @@ void split_nnz(Matrix &matrix, mpi::communicator world, int np, int rank) {
             matrix.nnz++;
         }
     }
+    cout << "rank: " << rank << " " << matrix.nnz << endl;
+}
 
-    std::cout << "rank: " << rank << " " << matrix.nnz << std::endl;
+void split_vals(Matrix &matrix, mpi::communicator world, int np, int rank) {
+    std::vector<std::vector<double>> vals;
+
+    int vals_per_rank = matrix.nnz / np;
+    int rem = matrix.nnz % np;
 }
 
 int main() {
+    Matrix matrix;
+
     mpi::environment env;
     mpi::communicator world;
     mpi::timer time;
@@ -70,23 +78,66 @@ int main() {
     int np = world.size();
     int rank = world.rank();
 
-    Matrix matrix;
-
     // process mtx file on rank 0
     if (rank == 0) {
-        read_file("matrices/494_bus.mtx", matrix);
+        read_file("matrices/Arrow.mtx", matrix);
+        matrix.init_row_ptr();
     }
 
-    split_nnz(matrix, world, np, rank);
+    mpi::broadcast(world, matrix.n, 0);
+    matrix.row_ptr.resize(matrix.n / np);
 
-    // broadcast matrix data to all processes
-    // then scatter col_ptr to all processes
-    mpi::scatter(world, matrix.col_ptr.data(), matrix.col_ptr.data(), matrix.nnz, 0);
+    mpi::scatter(world, matrix.row_ptr.data(), matrix.row_ptr.data(), matrix.n / np, 0);
 
-    for (auto &i : matrix.col_ptr) {
-        cout << i << " ";
+    // send the pointer to the end of the vector to the last rank
+    if (rank == 0) {
+        world.isend(np - 1, 0, matrix.row_ptr[matrix.n]);
     }
-    cout << endl;
+
+    if (rank == np - 1) {
+        int x;
+        world.irecv(0, 0, x);
+        matrix.row_ptr.push_back(x);
+    }
+
+    for (int i = np; i > 0; i++) {
+        if (i == rank) {
+            int x;
+            world.recv(i, 0, x);
+            matrix.row_ptr.push_back(x);
+        } else if (i == rank - 1) {
+            world.send(i - 1, 0, matrix.row_ptr[0]);
+        }
+    }
+
+    // for (int i = 1; i < np; i++) {
+    //     int x;
+    //     world.isend(0, 0, matrix.row_ptr[matrix.n]);
+    //     world.irecv(i, 0, x);
+    //     if (rank == i) {
+    //         matrix.row_ptr.push_back(x);
+    //     }
+    // }
+    // for (auto &i : matrix.row_ptr) {
+    //     cout << i << " ";
+    // }
+    // cout << endl;
+
+    if (rank == 0) {
+
+        for (auto &i : matrix.col_ptr) {
+            cout << i << " ";
+        }
+        cout << endl;
+    }
+
+    std::vector<std::vector<double>> send_buffer;
+    send_buffer.assign(np, std::vector<double>());
+
+    for (int i = 0; i < np; i++) {
+        if (i == rank) {
+        }
+    }
 
     return 0;
 }

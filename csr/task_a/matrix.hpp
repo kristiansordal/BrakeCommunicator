@@ -19,6 +19,8 @@ class Matrix {
     ~Matrix() = default;
 
     void update();
+    void init_row_ptr();
+    void init_col_ptr();
     void init_v();
     void init_a_mat();
 };

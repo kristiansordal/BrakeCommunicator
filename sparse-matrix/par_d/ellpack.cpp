@@ -127,7 +127,6 @@ template <typename T> void ELLpack<T>::update() {
     std::cout << "Rank: " << rank << " waiting" << std::endl;
     mpi::wait_all(send_requests.begin(), send_requests.end());
     mpi::wait_all(recv_requests.begin(), recv_requests.end());
-    std::cout << "Rank: " << rank << " done waiting" << std::endl;
     comm_time += time.elapsed() - t1;
 
     for (int i = 0; i < size_rank(); i++) {

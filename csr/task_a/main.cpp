@@ -9,12 +9,6 @@ using namespace std;
 namespace mpi = boost::mpi;
 namespace ffm = fast_matrix_market;
 
-// TODO: Implement hybrid version (OpenMP + MPI version) of Compressed Sparse Row sparse
-// TODO: Matrix-vector multiplication using  1d or 1e strategy with file  reading.
-// TODO: Implement file reading.
-// TODO: Use metis for load balancing (PartKwayGraph)
-// TODO: Check out https://sparcityeu.github.io/sparsebase/pages/getting_started/ for file reading
-
 void read_file(string path, Matrix &matrix) {
     ifstream file;
     file.open(path);
@@ -45,15 +39,27 @@ int main() {
     mpi::environment env;
     mpi::communicator world;
     mpi::timer time;
+    double time_total_start;
+    double time_total_end;
+    double time_file_start;
+    double time_file_end;
+    double time_comm_start;
+    double time_comm_end;
+    double time_comp_start;
+    double time_comp_end;
 
     int np = world.size();
     int rank = world.rank();
 
+    time_total_start = time.elapsed();
     // process mtx file on rank 0
     if (rank == 0) {
-        read_file("matrices/Identity.mtx", matrix);
+        time_file_start = time.elapsed();
+        read_file("matrices/cage15.mtx", matrix);
         matrix.init_col_ptr();
+        time_file_end = time.elapsed();
     }
+
     mpi::broadcast(world, matrix.n, 0);
     matrix.init_v();
     matrix.n /= np;
@@ -68,10 +74,6 @@ int main() {
 
     if (rank == 0) {
         for (int i = 0; i < np; i++) {
-            // if (i > 0) {
-            //     offset = cb[i - 1][cb[i - 1].size() - 1];
-            // }
-
             for (int j = 0; j < matrix.n + 1; j++) {
                 cb[i].push_back(matrix.col_ptr[i * matrix.n + j]);
             }
@@ -83,32 +85,56 @@ int main() {
                 vb[i].push_back(matrix.vals[j]);
             }
         }
+        matrix.col_ptr = cb[0];
+        matrix.row_ptr = rb[0];
+        matrix.vals = vb[0];
 
-        for (int i = 0; i < np; i++) {
+        for (int i = 1; i < np; i++) {
+            cout << cb[i].size() * sizeof(i64) << endl;
+            cout << rb[i].size() * sizeof(i64) << endl;
+            cout << vb[i].size() * sizeof(double) << endl;
+
             world.send(i, i, cb[i]);
             world.send(i, i, rb[i]);
             world.send(i, i, vb[i]);
         }
     }
 
-    for (int i = 0; i < np; i++) {
+    for (int i = 1; i < np; i++) {
         if (rank == i) {
             world.recv(0, i, cb[i]);
             world.recv(0, i, rb[i]);
             world.recv(0, i, vb[i]);
+
             matrix.col_ptr = cb[i];
             matrix.row_ptr = rb[i];
             matrix.vals = vb[i];
         }
     }
 
+    time_comp_start = time.elapsed();
+
     for (int i = 0; i < 5; i++) {
         matrix.update(rank);
-        for (int i = 0; i < matrix.v_old.size(); i++) {
-            cout << matrix.v_old[i] << " ";
+    }
+
+    time_comp_end = time.elapsed();
+
+    std::vector<double> vv;
+    mpi::gather(world, matrix.v_old.data(), matrix.v_old.size(), vv, 0);
+
+    time_total_end = time.elapsed();
+
+    if (rank == 0) {
+
+        double sum = 0;
+        for (auto &i : vv) {
+            sum += abs(i * i);
         }
-        cout << endl;
-        world.barrier();
+
+        cout << "Comp:    " << time_comp_end - time_comp_start << endl;
+        cout << "Total:   " << time_total_end - time_total_start << endl;
+        cout << "L2 norm: " << sqrt(sum) << endl;
     }
 
     return 0;

@@ -4,6 +4,8 @@
 #include <omp.h>
 
 void Matrix::update(int rank) {
+
+#pragma omp parallel for schedule(static)
     for (int row = 0; row < n; row++) {
         double sum = 0.0;
 
@@ -21,6 +23,7 @@ void Matrix::init_col_ptr() {
     int count = 1;
 
     c.push_back(0);
+#pragma omp parallel for schedule(static)
     for (int i = 1; i < col_ptr.size(); i++) {
         if (col_ptr[i] == col_ptr[i - 1]) {
             count++;

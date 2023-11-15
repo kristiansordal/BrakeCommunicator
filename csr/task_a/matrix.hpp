@@ -18,8 +18,7 @@ class Matrix {
     Matrix() = default;
     ~Matrix() = default;
 
-    void update();
-    void init_row_ptr();
+    void update(int rank);
     void init_col_ptr();
     void init_v();
     void init_a_mat();

@@ -51,64 +51,65 @@ int main() {
 
     // process mtx file on rank 0
     if (rank == 0) {
-        read_file("matrices/Hamrle1.mtx", matrix);
+        read_file("matrices/Identity.mtx", matrix);
         matrix.init_col_ptr();
     }
-
     mpi::broadcast(world, matrix.n, 0);
-    int rank_size = matrix.n / np;
+    matrix.init_v();
+    matrix.n /= np;
 
-    // TODO : Currently implemented with files being row major, change to column major
-    vector<vector<i64>> col_buffer;
-    vector<vector<i64>> row_buffer;
-    vector<vector<double>> val_buffer;
+    vector<vector<i64>> cb;
+    vector<vector<i64>> rb;
+    vector<vector<double>> vb;
 
-    col_buffer.assign(np, vector<i64>());
-    row_buffer.assign(np, vector<i64>());
-    val_buffer.assign(np, vector<double>());
+    cb.assign(np, vector<i64>());
+    rb.assign(np, vector<i64>());
+    vb.assign(np, vector<double>());
 
     if (rank == 0) {
         for (int i = 0; i < np; i++) {
-            for (int j = 0; j < rank_size + 1; j++) {
-                col_buffer[i].push_back(matrix.col_ptr[i * rank_size + j]);
+            // if (i > 0) {
+            //     offset = cb[i - 1][cb[i - 1].size() - 1];
+            // }
+
+            for (int j = 0; j < matrix.n + 1; j++) {
+                cb[i].push_back(matrix.col_ptr[i * matrix.n + j]);
             }
         }
 
         for (int i = 0; i < np; i++) {
-            for (int j = i == 0 ? 0 : col_buffer[i - 1][col_buffer[i].size() - 1];
-                 j < col_buffer[i][col_buffer[i].size() - 1]; j++) {
-                row_buffer[i].push_back(matrix.row_ptr[j]);
-                val_buffer[i].push_back(matrix.vals[j]);
+            for (int j = i == 0 ? 0 : cb[i - 1][cb[i - 1].size() - 1]; j < cb[i][cb[i].size() - 1]; j++) {
+                rb[i].push_back(matrix.row_ptr[j]);
+                vb[i].push_back(matrix.vals[j]);
             }
         }
 
         for (int i = 0; i < np; i++) {
-            world.send(i, i, col_buffer[i]);
-            world.send(i, i, row_buffer[i]);
-            world.send(i, i, val_buffer[i]);
+            world.send(i, i, cb[i]);
+            world.send(i, i, rb[i]);
+            world.send(i, i, vb[i]);
         }
     }
 
     for (int i = 0; i < np; i++) {
         if (rank == i) {
-            world.recv(0, i, col_buffer[i]);
-            world.recv(0, i, row_buffer[i]);
-            world.recv(0, i, val_buffer[i]);
-            matrix.col_ptr = col_buffer[i];
-            matrix.row_ptr = row_buffer[i];
-            matrix.vals = val_buffer[i];
+            world.recv(0, i, cb[i]);
+            world.recv(0, i, rb[i]);
+            world.recv(0, i, vb[i]);
+            matrix.col_ptr = cb[i];
+            matrix.row_ptr = rb[i];
+            matrix.vals = vb[i];
         }
     }
 
-    cout << "Rank: " << rank << endl;
-    for (auto &i : matrix.col_ptr) {
-        cout << i << " ";
+    for (int i = 0; i < 5; i++) {
+        matrix.update(rank);
+        for (int i = 0; i < matrix.v_old.size(); i++) {
+            cout << matrix.v_old[i] << " ";
+        }
+        cout << endl;
+        world.barrier();
     }
-    cout << endl;
-    for (auto &i : matrix.vals) {
-        cout << i << " ";
-    }
-    cout << endl;
 
     return 0;
 }

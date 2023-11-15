@@ -1,34 +1,19 @@
 #include "matrix.hpp"
+#include <iostream>
 #include <numeric>
 #include <omp.h>
 
-void Matrix::update() {
+void Matrix::update(int rank) {
     for (int row = 0; row < n; row++) {
         double sum = 0.0;
 
-        for (int i = row_ptr[row]; i < row_ptr[row + 1]; i++) {
-            sum += vals[i] * v_old[col_ptr[i]];
+        for (int i = col_ptr[row] - col_ptr[0]; i < col_ptr[row + 1] - col_ptr[0]; i++) {
+            sum += vals[i] * v_old[row_ptr[i]];
         }
 
-        v_new[row] = sum;
+        v_new[rank * n + row] = sum;
     }
-}
-
-void Matrix::init_row_ptr() {
-    vector<i64> r;
-
-    int count = 1;
-    r.push_back(0);
-    for (int i = 1; i < row_ptr.size(); i++) {
-        if (row_ptr[i] == row_ptr[i - 1]) {
-            count++;
-        } else {
-            r.push_back(count++);
-        }
-    }
-
-    r.push_back(count);
-    row_ptr = r;
+    v_old = v_new;
 }
 
 void Matrix::init_col_ptr() {
@@ -49,12 +34,7 @@ void Matrix::init_col_ptr() {
 
 void Matrix::init_v() {
     for (int i = 0; i < n; i++) {
-        v_old[i] = 1.0 / n;
+        v_old.push_back(1.0 / n);
     }
-}
-
-void Matrix::init_a_mat() {
-    for (int i = 0; i < nnz; i++) {
-        vals[i] = 0.3;
-    }
+    v_new.assign(v_old.size(), 0);
 }

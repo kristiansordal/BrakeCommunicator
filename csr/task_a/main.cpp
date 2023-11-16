@@ -6,7 +6,6 @@
 #include <metis.h>
 
 using namespace std;
-namespace mpi = boost::mpi;
 namespace ffm = fast_matrix_market;
 
 void read_file(string path, Matrix &matrix) {
@@ -39,6 +38,7 @@ int main() {
     mpi::environment env;
     mpi::communicator world;
     mpi::timer time;
+
     double time_total_start;
     double time_total_end;
     double time_file_start;
@@ -50,20 +50,21 @@ int main() {
 
     int np = world.size();
     int rank = world.rank();
+    int ops = 0;
 
     time_total_start = time.elapsed();
+
     // process mtx file on rank 0
     if (rank == 0) {
         time_file_start = time.elapsed();
-        read_file("matrices/cage15.mtx", matrix);
+        read_file("matrices/arrow.mtx", matrix);
         matrix.init_col_ptr();
         time_file_end = time.elapsed();
     }
 
     mpi::broadcast(world, matrix.n, 0);
-    matrix.init_v();
+    matrix.init_v(np);
     matrix.n /= np;
-
     vector<vector<i64>> cb;
     vector<vector<i64>> rb;
     vector<vector<double>> vb;
@@ -90,10 +91,6 @@ int main() {
         matrix.vals = vb[0];
 
         for (int i = 1; i < np; i++) {
-            cout << cb[i].size() * sizeof(i64) << endl;
-            cout << rb[i].size() * sizeof(i64) << endl;
-            cout << vb[i].size() * sizeof(double) << endl;
-
             world.send(i, i, cb[i]);
             world.send(i, i, rb[i]);
             world.send(i, i, vb[i]);
@@ -113,25 +110,21 @@ int main() {
     }
 
     time_comp_start = time.elapsed();
-
-    for (int i = 0; i < 5; i++) {
-        matrix.update(rank);
+    for (int i = 0; i < 10; i++) {
+        matrix.update(world, rank, ops);
     }
-
     time_comp_end = time.elapsed();
-
-    std::vector<double> vv;
-    mpi::gather(world, matrix.v_old.data(), matrix.v_old.size(), vv, 0);
 
     time_total_end = time.elapsed();
 
+    world.barrier();
+    cout << "Rank " << rank << " did " << ops << " operations" << endl;
     if (rank == 0) {
-
         double sum = 0;
-        for (auto &i : vv) {
+        for (auto &i : matrix.v_old) {
             sum += abs(i * i);
         }
-
+        cout << endl;
         cout << "Comp:    " << time_comp_end - time_comp_start << endl;
         cout << "Total:   " << time_total_end - time_total_start << endl;
         cout << "L2 norm: " << sqrt(sum) << endl;

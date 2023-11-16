@@ -3,7 +3,7 @@
 #include <numeric>
 #include <omp.h>
 
-void Matrix::update(int rank) {
+void Matrix::update(mpi::communicator &world, int rank, int &ops) {
 
 #pragma omp parallel for schedule(static)
     for (int row = 0; row < n; row++) {
@@ -11,11 +11,12 @@ void Matrix::update(int rank) {
 
         for (int i = col_ptr[row] - col_ptr[0]; i < col_ptr[row + 1] - col_ptr[0]; i++) {
             sum += vals[i] * v_old[row_ptr[i]];
+            ops++;
         }
 
-        v_new[rank * n + row] = sum;
+        v_new[row] = sum;
     }
-    v_old = v_new;
+    mpi::all_gather(world, v_new.data(), v_new.size(), v_old.data());
 }
 
 void Matrix::init_col_ptr() {
@@ -35,9 +36,10 @@ void Matrix::init_col_ptr() {
     col_ptr = c;
 }
 
-void Matrix::init_v() {
+void Matrix::init_v(int np) {
     for (int i = 0; i < n; i++) {
-        v_old.push_back(1.0 / n);
+        v_old.push_back((double)i / n);
+        // v_old.push_back(10);
     }
-    v_new.assign(v_old.size(), 0);
+    v_new.assign(n / np, 0);
 }

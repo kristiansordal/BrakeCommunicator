@@ -1,5 +1,7 @@
 #pragma once
+#include <boost/mpi.hpp>
 #include <vector>
+namespace mpi = boost::mpi;
 using namespace std;
 using i64 = int64_t;
 
@@ -18,8 +20,7 @@ class Matrix {
     Matrix() = default;
     ~Matrix() = default;
 
-    void update(int rank);
+    void update(mpi::communicator &world, int rank, int &ops);
     void init_col_ptr();
-    void init_v();
-    void init_a_mat();
+    void init_v(int np);
 };

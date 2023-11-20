@@ -21,7 +21,7 @@ class Matrix {
     Matrix() = default;
     ~Matrix() = default;
 
-    void update(mpi::communicator &world, int rank, int &ops);
+    void update(mpi::communicator &world, mpi::timer &time, int rank, int &ops, double &tcomp, double &tcomm);
     void init_row_ptr();
     void init_row_size();
     void init_v_old(int np);

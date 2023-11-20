@@ -3,7 +3,6 @@
 #include <boost/mpi.hpp>
 #include <fast_matrix_market/fast_matrix_market.hpp>
 #include <fstream>
-#include <metis.h>
 
 using namespace std;
 namespace ffm = fast_matrix_market;
@@ -39,14 +38,12 @@ int main() {
     mpi::communicator world;
     mpi::timer time;
 
-    double time_total_start;
-    double time_total_end;
-    double time_file_start;
-    double time_file_end;
-    double time_comm_start;
-    double time_comm_end;
-    double time_comp_start;
-    double time_comp_end;
+    double ttots;
+    double ttote;
+    double tfiles;
+    double tfilee;
+    double tcomm;
+    double tcomp;
 
     int np = world.size();
     int rank = world.rank();
@@ -56,29 +53,30 @@ int main() {
     vector<int> rc;
     rc.assign(np, 0);
 
-    time_total_start = time.elapsed();
+    ttots = time.elapsed();
 
     if (rank == 0) {
-        time_file_start = time.elapsed();
-        read_file("matrices/Identity.mtx", M);
+        tfiles = time.elapsed();
+        read_file("matrices/cage15.mtx", M);
         M.init_row_ptr();
         M.init_row_size();
-        time_file_end = time.elapsed();
+        tfilee = time.elapsed();
 
-        // Perform load balancing
+        // Load balancing
         double avg_load = (double)M.nnz / (double)np;
+        cout << "AVG LOAD: " << avg_load << endl;
         int core = 0;
 
-        for (int i = 0; i < M.nrows; ++i) {
+        for (int i = 0; i < M.nrows; i++) {
 
             rc[core]++;
 
             if (M.row_ptr[i + 1] > avg_load * (core + 1)) {
-                ++core;
+                cout << "CORE: " << core << " HAS " << rc[core] << endl;
+                core++;
             }
         }
 
-        cout << "sending" << endl;
         for (int i = 1; i < rc.size(); i++) {
             world.send(i, i, rc[i]);
         }
@@ -104,24 +102,18 @@ int main() {
     vb.assign(np, vector<double>());
 
     if (rank == 0) {
+        int offset = 0;
         for (int i = 0; i < np; i++) {
-            for (int j = 0; j < rc[i] + 1; j++) {
-                rb[i].push_back(M.row_ptr[i * rc[i] + j]);
+            for (int j = offset; j < rc[i] + 1 + offset; j++) {
+                rb[i].push_back(M.row_ptr[j]);
             }
+            offset += rc[i];
         }
 
         rb[np - 1].push_back(M.row_ptr[M.nrows]);
 
-        for (auto &i : rb) {
-            for (auto &j : i) {
-                cout << j << " ";
-            }
-            cout << endl;
-        }
-
         for (int i = 0; i < np; i++) {
             for (int j = i == 0 ? 0 : rb[i - 1][rb[i - 1].size() - 1]; j < rb[i][rb[i].size() - 1]; j++) {
-                cout << "J: " << j << endl;
                 cb[i].push_back(M.col_ptr[j]);
                 vb[i].push_back(M.vals[j]);
             }
@@ -144,13 +136,6 @@ int main() {
             world.recv(0, i, cb[i]);
             world.recv(0, i, vb[i]);
 
-            cout << "Recieved: "
-                 << " ";
-            for (auto i : vb[i]) {
-                cout << i << " ";
-            }
-            cout << endl;
-
             M.row_ptr = rb[i];
             M.col_ptr = cb[i];
             M.vals = vb[i];
@@ -159,39 +144,24 @@ int main() {
 
     M.init_v_new();
 
-    if (rank == 3) {
-
-        cout << "======= Rank " << rank << " ==========" << endl;
-        cout << "nrows: " << M.nrows << endl;
-        cout << "n: " << M.n << endl;
-        cout << "v_new: " << M.v_new.size() << endl;
-        cout << "v_old: " << M.v_old.size() << endl;
-        cout << "vals: "
-             << " ";
-        for (auto &i : M.vals) {
-            cout << i << " ";
-        }
-        cout << endl;
-        cout << "=========================" << endl;
-    }
-    time_comp_start = time.elapsed();
-
-    for (int i = 0; i < 1; i++) {
-        M.update(world, rank, ops);
+    for (int i = 0; i < 10; i++) {
+        M.update(world, time, rank, ops, tcomp, tcomm);
     }
 
-    time_comp_end = time.elapsed();
-    time_total_end = time.elapsed();
+    ttote = time.elapsed();
 
+    cout << "Rank " << rank << " did " << ops << " operations" << endl;
     if (rank == 0) {
         double sum = 0;
         for (auto &i : M.v_old) {
             sum += abs(i * i);
         }
-        // cout << endl;
-        // cout << "Comp:    " << time_comp_end - time_comp_start << endl;
-        // cout << "Total:   " << time_total_end - time_total_start << endl;
-        // cout << "L2 norm: " << sqrt(sum) << endl;
+        cout << endl;
+        cout << "File:    " << tfilee - tfiles << endl;
+        cout << "Comp:    " << tcomp << endl;
+        cout << "Comm:    " << tcomm << endl;
+        cout << "Total:   " << ttote - ttots << endl;
+        cout << "L2 norm: " << sqrt(sum) << endl;
     }
 
     return 0;

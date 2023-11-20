@@ -13,6 +13,7 @@ class Matrix {
     int nnz;
     vector<i64> row_ptr;
     vector<i64> col_ptr;
+    vector<int> row_sizes;
     vector<double> v_old;
     vector<double> v_new;
     vector<double> vals;
@@ -21,6 +22,8 @@ class Matrix {
     ~Matrix() = default;
 
     void update(mpi::communicator &world, int rank, int &ops);
-    void init_col_ptr();
-    void init_v(int np);
+    void init_row_ptr();
+    void init_row_size();
+    void init_v_old(int np);
+    void init_v_new();
 };

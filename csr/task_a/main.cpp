@@ -31,7 +31,7 @@ void read_file(string path, Matrix &matrix) {
     file.close();
 }
 
-int main() {
+int main(int argv, char **argc) {
     Matrix M;
 
     mpi::environment env;
@@ -57,7 +57,7 @@ int main() {
 
     if (rank == 0) {
         tfiles = time.elapsed();
-        read_file("matrices/cage15.mtx", M);
+        read_file(argc[1], M);
         M.init_row_ptr();
         M.init_row_size();
         tfilee = time.elapsed();
@@ -144,7 +144,8 @@ int main() {
 
     M.init_v_new();
 
-    for (int i = 0; i < 10; i++) {
+    world.barrier();
+    for (int i = 0; i < 1; i++) {
         M.update(world, time, rank, ops, tcomp, tcomm);
     }
 

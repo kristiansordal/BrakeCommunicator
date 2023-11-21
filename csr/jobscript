@@ -32,4 +32,4 @@ export MV2_ENABLE_AFFINITY=0
 
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-mpirun -np $SLURM_NTASKS --bind-to none build/debug/csr /global/D1/projects/mtx/datasets/suitesparse/JGD_GL7d/GL7d19/GL7d19.mtx
+mpirun -np $SLURM_NTASKS build/debug/csr /home/krisor99/BrakeCommunicator/csr/matrices/cage15.mtx

@@ -1,0 +1,161 @@
+\documentclass{beamer}
+\input{preamble.tex}
+%Information to be included in the title page:
+\title{Parallell Matrix Vector Multiplier - Results}
+\author{Kristian Sørdal}
+\institute{University of Bergen}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Total time - Task A and Sequential}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Processes},
+        ylabel={Time [s]},
+        legend pos=outer north east, % Adjust the legend position
+        grid=both, % Display grid lines
+        xmode=log, % Set x-axis to logarithmic scale
+        ymode=log,
+        xmin=1, xmax=128, % Set x-axis limits
+        ymin=0, ymax=1000, % Set y-axis limits
+        xtick={1,2,4,8,16,32,64,128}, % Specify the x-axis tick values
+        ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400,500,600,700,800,900,1000}, 
+        yticklabels={0.1,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},1,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},10,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},100,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},1000}, 
+        xticklabels={1,2,4,8,16,32,64,128}, % Specify the labels for the tick values
+      ]
+      
+      % Line 1
+      \addplot[blue, mark=*, mark options={blue}] coordinates {
+              (8,266)
+              (16,464)
+              (32,456)
+              (64,454)
+              (128,458)
+      };
+      \addlegendentry{Task A}
+      \addplot[red] coordinates {
+              (1,9.86)
+              (128,9.86)
+      };
+      \addlegendentry{Sequential}
+      
+     
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Total time - scale 12}
+\end{figure}
+
+\end{frame}
+\begin{frame}
+\frametitle{Results of communication times}
+\begin{figure}
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Processes},
+        ylabel={Time [s]},
+        legend pos=outer north east, % Adjust the legend position
+        grid=both, % Display grid lines
+        xmode=log, % Set x-axis to logarithmic scale
+        ymode=log,
+        xmin=1, xmax=128, % Set x-axis limits
+        ymin=0, ymax=1000, % Set y-axis limits
+        xtick={1,2,4,8,16,32,64,128}, % Specify the x-axis tick values
+        ytick={0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400,500,600,700,800,900,1000}, 
+        yticklabels={0.1,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},1,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},10,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},100,\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},\phantom{a},1000}, 
+        xticklabels={1,2,4,8,16,32,64,128}, % Specify the labels for the tick values
+      ]
+      
+      % Line 1
+      \addplot[blue, mark=*, mark options={blue}] coordinates {
+              (8,233)
+              (16,425)
+              (32,445)
+              (64,448)
+              (128,452)
+      };
+      \addlegendentry{Task A}
+      \addplot[black] coordinates {
+              (1,10)
+              (128,10)
+      };
+      
+     
+    \end{axis}
+  \end{tikzpicture}
+  \caption{Communication Time - scale 12}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{GFLOPS}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    title={GFLOPS vs. Cores},
+    xmode=log, % Set x-axis to logarithmic scale
+    xlabel={Cores},
+    ylabel={GFLOPS},
+    xtick={1,2,4,8,16,32,64,128},
+    xticklabels={1,2,4,8,16,32,64,128},
+    grid=major,
+]
+
+\addplot[color=blue, mark=*] coordinates {
+    (8, 49316.6)
+    (16, 28227.4)
+    (32, 28741.1)
+    (64, 28826.3)
+    (128, 28616.6)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{GFLOPS for Different Numbers of Cores}
+\end{figure}
+\end{frame}
+\begin{frame}
+\frametitle{L2 Norm}
+\begin{figure}
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    ybar,
+    xmode=log,
+    xlabel={Cores},
+    ylabel={L2},
+    xtick={1,2,4,8,16,32,64,128},
+    xticklabels={1,2,4,8,16,32,64,128},
+]
+
+\addplot[color=blue, mark=*] coordinates {
+    (8, 0.973794)
+    (16, 1.37715)
+    (32, 2.75431)
+    (64, 3.89518)
+    (128, 3.89518)
+};
+\end{axis}
+\end{tikzpicture}
+\caption{GFLOPS for Different Numbers of Cores}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{What went wrong?}
+
+    \begin{itemize}
+        \item The code I wrote was unnecesarily complex, resulted in a lot of mental overhead when coding. 
+        \item Poor time management. Spent too much time trying to fix task B, which was ultimately unsuccesful. Resulted in less time for the other tasks.
+        \item Didn't spend enough time testing on EX3 at higher scales, which made me believe the code work, even though it didn't.
+        \item Task D: deadlocks when waiting for communcation of send lists at scale \( > 9 \)
+        \item Lesson learned: Work on other tasks when stuck. Test earlier on EX3. Write simpler code.
+    \end{itemize}
+\end{frame}
+\end{document}
+

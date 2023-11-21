@@ -2,8 +2,8 @@
 #include "ellpack.h"
 
 int main() {
-    int n = 1 << 11;
-    int timesteps = 5;
+    int n = 1 << 9;
+    int timesteps = 10;
     double start, end;
 
     ELLpack<double> ellpack(n);

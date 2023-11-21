@@ -1,0 +1,12 @@
+[submodule "csr/csr/include/GKlib"]
+	path = csr/csr/include/GKlib
+	url = https://github.com/KarypisLab/GKlib
+[submodule "csr/include/GKlib"]
+	path = csr/include/GKlib
+	url = https://github.com/KarypisLab/GKlib
+[submodule "csr/include/fast_matrix_market"]
+	path = csr/include/fast_matrix_market
+	url = https://github.com/alugowski/fast_matrix_market
+[submodule "csr/include/metis"]
+	path = csr/include/metis
+	url = https://github.com/scivision/METIS

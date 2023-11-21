@@ -3,7 +3,7 @@
 #include <iostream>
 #include <numeric>
 
-const int CELL_SIZE = 10;
+const int CELL_SIZE = 25;
 using namespace sf;
 template <typename T> void visualize(ELLpack<T> *ellpack) {
     RenderWindow window(VideoMode(ellpack->height() * CELL_SIZE, ellpack->height() * CELL_SIZE), "Mesh Visualizer");

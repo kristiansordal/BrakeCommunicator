@@ -64,7 +64,6 @@ int main(int argv, char **argc) {
 
         // Load balancing
         double avg_load = (double)M.nnz / (double)np;
-        cout << "AVG LOAD: " << avg_load << endl;
         int core = 0;
 
         for (int i = 0; i < M.nrows; i++) {
@@ -72,7 +71,6 @@ int main(int argv, char **argc) {
             rc[core]++;
 
             if (M.row_ptr[i + 1] > avg_load * (core + 1)) {
-                cout << "CORE: " << core << " HAS " << rc[core] << endl;
                 core++;
             }
         }
@@ -150,19 +148,25 @@ int main(int argv, char **argc) {
     }
 
     ttote = time.elapsed();
+    vector<int> ops_all;
+    mpi::gather(world, ops, ops_all, 0);
 
-    cout << "Rank " << rank << " did " << ops << " operations" << endl;
     if (rank == 0) {
         double sum = 0;
+
         for (auto &i : M.v_old) {
             sum += abs(i * i);
         }
+
         cout << endl;
         cout << "File:    " << tfilee - tfiles << endl;
         cout << "Comp:    " << tcomp << endl;
         cout << "Comm:    " << tcomm << endl;
         cout << "Total:   " << ttote - ttots << endl;
         cout << "L2 norm: " << sqrt(sum) << endl;
+        for (int i = 0; i < ops_all.size(); i++) {
+            cout << "Rank " << i << " ops: " << ops_all[i] << endl;
+        }
     }
 
     return 0;

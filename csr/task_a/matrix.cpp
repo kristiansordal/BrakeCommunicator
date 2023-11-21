@@ -5,6 +5,7 @@
 
 void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, int &ops, double &tcomp, double &tcomm) {
     double t1 = time.elapsed();
+#pragma omp parallel for
     for (int row = 0; row < n; row++) {
         double sum = 0.0;
 
@@ -26,18 +27,26 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, int &o
         }
     }
 
+    // vector<mpi::request> sreqs;
+    // vector<mpi::request> rreqs;
+
     t1 = time.elapsed();
     for (int i = 0; i < world.size(); i++) {
         if (i == rank) {
             for (int j = 0; j < world.size(); j++) {
                 if (j != rank) {
-                    world.isend(j, i, send_buff[i]);
+                    // sreqs.push_back(world.isend(j, i, send_buff[i]));
+                    world.send(j, i, send_buff[i]);
                 }
             }
         } else {
-            world.irecv(i, i, send_buff[i]);
+            // rreqs.push_back(world.irecv(i, i, send_buff[i]));
+            world.recv(i, i, send_buff[i]);
         }
     }
+
+    // mpi::wait_all(sreqs.begin(), sreqs.end());
+    // mpi::wait_all(rreqs.begin(), rreqs.end());
     tcomm += time.elapsed() - t1;
 
     v_old.clear();
@@ -46,6 +55,11 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, int &o
             v_old.push_back(j);
         }
     }
+
+    // for (auto &i : v_old) {
+    //     cout << i << " ";
+    // }
+    // cout << endl;
 }
 
 void Matrix::init_row_ptr() {

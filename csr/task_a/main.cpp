@@ -47,7 +47,7 @@ int main(int argv, char **argc) {
 
     int np = world.size();
     int rank = world.rank();
-    int ops = 0;
+    i64 ops = 0;
 
     // Rows per rank
     vector<int> rc;
@@ -143,12 +143,12 @@ int main(int argv, char **argc) {
     M.init_v_new();
 
     world.barrier();
-    for (int i = 0; i < 1; i++) {
+    for (int i = 0; i < 100; i++) {
         M.update(world, time, rank, ops, tcomp, tcomm);
     }
 
     ttote = time.elapsed();
-    vector<int> ops_all;
+    vector<i64> ops_all;
     mpi::gather(world, ops, ops_all, 0);
 
     if (rank == 0) {

@@ -58,7 +58,7 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, i64 &o
 }
 
 void Matrix::init_row_ptr() {
-    vector<i64> r;
+    vector<idx_t> r;
     int count = 1;
 
     r.push_back(0);

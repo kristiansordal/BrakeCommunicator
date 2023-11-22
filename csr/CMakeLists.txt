@@ -29,8 +29,10 @@ FetchContent_MakeAvailable(fast_matrix_market)
 
 file(GLOB TASK_A_SRC "task_a/*.cpp")
 file(GLOB TASK_B_SRC "task_b/*.cpp")
+file(GLOB HELLOWORLD_SRC "helloworld/*.cpp")
 add_executable(csr ${TASK_A_SRC})
 add_executable(csrp ${TASK_B_SRC})
+add_executable(hw ${HELLOWORLD_SRC})
 
 target_include_directories(csr
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -47,5 +49,13 @@ target_include_directories(csrp
 
 target_link_libraries(csrp
     PRIVATE ${METIS_LIBRARIES}
+    PRIVATE ${Boost_LIBRARIES}
+    PRIVATE fast_matrix_market::fast_matrix_market)
+
+target_include_directories(hw
+    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+    PRIVATE ${Boost_INCLUDE_DIRS})
+
+target_link_libraries(hw
     PRIVATE ${Boost_LIBRARIES}
     PRIVATE fast_matrix_market::fast_matrix_market)

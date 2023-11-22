@@ -11,10 +11,14 @@ void read_file(string path, Matrix &matrix) {
     ifstream file;
     file.open(path);
 
+    cout << "Opening file..." << endl;
+
     if (!file.is_open()) {
-        cerr << "Error: Could not open file." << endl;
+        cout << "Error: Could not open file." << endl;
         return;
     }
+
+    cout << "File successfully opened" << endl;
 
     auto get_file_name = [](const string &path) {
         size_t found = path.find_last_of("/");
@@ -49,6 +53,7 @@ int main(int argv, char **argc) {
     int rank = world.rank();
     i64 ops = 0;
 
+    cout << "Rank: " << rank << " starting..." << endl;
     // Rows per rank
     vector<int> rc;
     rc.assign(np, 0);

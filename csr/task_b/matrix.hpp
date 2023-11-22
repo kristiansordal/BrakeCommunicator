@@ -1,5 +1,6 @@
 #pragma once
 #include <boost/mpi.hpp>
+#include <metis.h>
 #include <vector>
 namespace mpi = boost::mpi;
 using namespace std;
@@ -11,8 +12,8 @@ class Matrix {
     int nrows;
     int ncols;
     int nnz;
-    vector<i64> row_ptr;
-    vector<i64> col_ptr;
+    vector<idx_t> row_ptr;
+    vector<idx_t> col_ptr;
     vector<int> row_sizes;
     vector<double> v_old;
     vector<double> v_new;

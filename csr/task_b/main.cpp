@@ -58,50 +58,69 @@ int main(int argv, char **argc) {
     if (rank == 0) {
         tfiles = time.elapsed();
         read_file(argc[1], M);
-        M.init_row_ptr();
-        M.init_row_size();
         tfilee = time.elapsed();
 
-        idx_t nvtxs = M.nnz;
         idx_t ncon = 1;
-        idx_t *xadj = &M.row_ptr[0];
-        idx_t *adjncy = &M.col_ptr[0];
         idx_t nparts = np;
         idx_t objval;
-        idx_t *part = new idx_t[nvtxs];
-        int rc = METIS_PartGraphKway(&nvtxs, &ncon, xadj, adjncy, NULL, NULL, NULL, &nparts, NULL, NULL, NULL, &objval,
-                                     part);
+        vector<idx_t> part(M.nnz);
+        int rc = METIS_PartGraphKway(&M.nnz, &ncon, M.row_ptr.data(), M.col_ptr.data(), NULL, NULL, NULL, &nparts, NULL,
+                                     NULL, NULL, &objval, part.data());
 
-        cout << "XADJ: ";
-        for (int i = 0; i < 10; i++) {
-            cout << xadj[i] << " ";
+        cout << "XADJ:      ";
+        for (auto &i : M.row_ptr) {
+            cout << i << " ";
         }
         cout << endl;
 
         cout << "Adjacency: ";
-        for (int i = 0; i < 10; i++) {
-            cout << adjncy[i] << " ";
+        for (auto &i : M.col_ptr) {
+            cout << i << " ";
         }
         cout << endl;
-        // Metis
-        // Load balancing
-        // double avg_load = (double)M.nnz / (double)np;
-        // int core = 0;
+        cout << "Part:      ";
+        for (int i = 0; i < M.nnz; i++) {
+            cout << part[i] << " ";
+        }
+        cout << endl;
 
-        // for (int i = 0; i < M.nrows; i++) {
+        vector<vector<idx_t>> rb;
+        vector<vector<idx_t>> cb;
+        vector<vector<double>> vb;
 
-        //     rc[core]++;
+        rb.assign(np, vector<idx_t>());
+        cb.assign(np, vector<idx_t>());
+        vb.assign(np, vector<double>());
 
-        //     if (M.row_ptr[i + 1] > avg_load * (core + 1)) {
-        //         core++;
-        //     }
-        // }
+        cout << "P size: " << part.size() << endl;
+        for (int i = 0; i < part.size(); i++) {
+            rb[part[i]].push_back(M.row_ptr[i]);
+            cb[part[i]].push_back(M.col_ptr[i]);
+            vb[part[i]].push_back(M.vals[i]);
+        }
 
-        // for (int i = 1; i < rc.size(); i++) {
-        //     world.send(i, i, rc[i]);
-        // }
-
-        // M.n = rc[0];
+        // print the stuff
+        for (auto &i : rb) {
+            for (auto &j : i) {
+                cout << j << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+        for (auto &i : cb) {
+            for (auto &j : i) {
+                cout << j << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
+        for (auto &i : vb) {
+            for (auto &j : i) {
+                cout << j << " ";
+            }
+            cout << endl;
+        }
+        cout << endl;
     }
 
     // for (int i = 1; i < np; i++) {

@@ -79,7 +79,9 @@ int main(int argv, char **argc) {
         }
 
         for (int i = 1; i < rc.size(); i++) {
+            cout << "Status " << i << ": waiting" << endl;
             world.send(i, i, rc[i]);
+            cout << "Status " << i << ": success" << endl;
         }
 
         M.n = rc[0];
@@ -87,7 +89,9 @@ int main(int argv, char **argc) {
 
     for (int i = 1; i < np; i++) {
         if (rank == i) {
+            cout << "Status " << i << ": waiting" << endl;
             world.recv(0, i, M.n);
+            cout << "Status " << i << ": success" << endl;
         }
     }
 

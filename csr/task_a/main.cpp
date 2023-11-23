@@ -126,11 +126,13 @@ int main(int argv, char **argc) {
         M.col_ptr = cb[0];
         M.vals = vb[0];
 
+        double t1 = time.elapsed();
         for (int i = 1; i < np; i++) {
             world.send(i, i, rb[i]);
             world.send(i, i, cb[i]);
             world.send(i, i, vb[i]);
         }
+        tcomm += time.elapsed() - t1;
     }
 
     for (int i = 1; i < np; i++) {

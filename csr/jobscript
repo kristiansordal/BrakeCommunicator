@@ -2,7 +2,7 @@
 
 #SBATCH -p rome16q # partition (queue)
 #SBATCH -N 1 # number of nodes
-#SBATCH --ntasks-per-node 1  # number of cores
+#SBATCH --ntasks-per-node 16  # number of cores
 #SBATCH --cpus-per-task=1
 #SBATCH -t 0-00:01 # time (D-HH:MM)
 #SBATCH -o slurm.%N.%j.out # STDOUT
@@ -10,16 +10,15 @@
 #SBATCH --exclusive
 
 
-ulimit -s 10240
-
 module purge
 module load slurm/21.08.8
-module load libfabric/gcc/1.18.0
 module load openmpi4/gcc/4.1.2
+module load boost-1.73.0
+module load boost-mpi-1.73.0
+module load libfabric/gcc/1.18.0
 module load libevent/2.1.12-stable
 module load cuda11.8/toolkit/11.8.0
 module load metis
-
 
 export OMPI_MCA_pml="^ucx"
 export OMPI_MCA_btl_openib_if_include="mlx5_1:1"

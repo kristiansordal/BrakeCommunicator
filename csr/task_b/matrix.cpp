@@ -25,28 +25,20 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, i64 &o
         }
     }
 
-    // vector<mpi::request> sreqs;
-    // vector<mpi::request> rreqs;
-
     t1 = time.elapsed();
     for (int i = 0; i < world.size(); i++) {
         if (i == rank) {
             for (int j = 0; j < world.size(); j++) {
                 if (j != rank) {
-                    // sreqs.push_back(world.isend(j, i, send_buff[i]));
                     world.send(j, i, send_buff[i]);
                 }
             }
         } else {
-            // rreqs.push_back(world.irecv(i, i, send_buff[i]));
             world.recv(i, i, send_buff[i]);
         }
     }
 
-    // mpi::wait_all(sreqs.begin(), sreqs.end());
-    // mpi::wait_all(rreqs.begin(), rreqs.end());
     tcomm += time.elapsed() - t1;
-
     v_old.clear();
     v_old.reserve(nrows);
 

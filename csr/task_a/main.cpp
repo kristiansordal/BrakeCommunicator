@@ -153,6 +153,7 @@ int main(int argv, char **argc) {
     for (int i = 0; i < 100; i++) {
         M.update(world, time, rank, ops, tcomp, tcomm);
     }
+    world.barrier();
 
     ttote = time.elapsed();
     vector<i64> ops_all;

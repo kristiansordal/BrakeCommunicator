@@ -54,7 +54,6 @@ void Matrix::init_row_ptr() {
     int count = 1;
 
     r.push_back(0);
-#pragma omp parallel for schedule(static)
     for (int i = 1; i < row_ptr.size(); i++) {
         if (row_ptr[i] == row_ptr[i - 1]) {
             count++;
@@ -67,14 +66,12 @@ void Matrix::init_row_ptr() {
 }
 
 void Matrix::init_row_size() {
-#pragma omp parallel for schedule(static)
     for (int i = 0; i < n; i++) {
         row_sizes.push_back(row_ptr[i + 1] - row_ptr[i]);
     }
 }
 
 void Matrix::init_v_old(int np) {
-#pragma omp parallel for schedule(static)
     for (int i = 0; i < nrows; i++) {
         v_old.push_back(0.99);
     }

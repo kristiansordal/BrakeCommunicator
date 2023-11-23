@@ -157,6 +157,7 @@ int main(int argv, char **argc) {
     ttote = time.elapsed();
     vector<i64> ops_all;
     mpi::gather(world, ops, ops_all, 0);
+    i64 o = std::accumulate(ops_all.begin(), ops_all.end(), 0);
 
     if (rank == 0) {
         double sum = 0;
@@ -171,9 +172,8 @@ int main(int argv, char **argc) {
         cout << "Comm:    " << tcomm << endl;
         cout << "Total:   " << ttote - ttots << endl;
         cout << "L2 norm: " << sqrt(sum) << endl;
-        for (int i = 0; i < ops_all.size(); i++) {
-            cout << "Rank " << i << " ops: " << ops_all[i] << endl;
-        }
+        cout << "OPS:     " << o << endl;
+        cout << "GFLOPS:  " << o / (ttote - ttots) / 1e9 << endl;
     }
 
     return 0;

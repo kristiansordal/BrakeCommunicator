@@ -1,12 +1,11 @@
 #include "matrix.hpp"
 #include <iostream>
 #include <numeric>
-#include <omp.h>
 
 void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, i64 &ops, double &tcomp, double &tcomm) {
     double t1 = time.elapsed();
-#pragma omp parallel for schedule(static)
     i64 start = row_ptr[0];
+#pragma omp parallel for schedule(static)
     for (int row = 0; row < n; row++) {
         double sum = 0.0;
 

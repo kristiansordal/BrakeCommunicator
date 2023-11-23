@@ -1,5 +1,6 @@
 #pragma once
 #include <boost/mpi.hpp>
+#include <omp.h>
 #include <vector>
 namespace mpi = boost::mpi;
 using namespace std;

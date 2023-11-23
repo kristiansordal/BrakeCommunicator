@@ -52,15 +52,16 @@ int main(int argv, char **argc) {
     int np = world.size();
     int rank = world.rank();
     i64 ops = 0;
+    int threads = omp_get_num_threads();
 
-    cout << "Rank: " << rank << " starting..." << endl;
-    // Rows per rank
     vector<int> rc;
     rc.assign(np, 0);
 
     ttots = time.elapsed();
 
     if (rank == 0) {
+        cout << "SIZE:    " << np << endl;
+        cout << "THREADS: " << threads << endl;
         tfiles = time.elapsed();
         read_file(argc[1], M);
         M.init_row_ptr();
@@ -72,7 +73,6 @@ int main(int argv, char **argc) {
         int core = 0;
 
         for (int i = 0; i < M.nrows; i++) {
-
             rc[core]++;
 
             if (M.row_ptr[i + 1] > avg_load * (core + 1)) {

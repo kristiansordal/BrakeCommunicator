@@ -52,7 +52,6 @@ int main(int argv, char **argc) {
     int np = world.size();
     int rank = world.rank();
     i64 ops = 0;
-    int threads = omp_get_num_threads();
 
     vector<int> rc;
     rc.assign(np, 0);
@@ -61,7 +60,6 @@ int main(int argv, char **argc) {
 
     if (rank == 0) {
         cout << "SIZE:    " << np << endl;
-        cout << "THREADS: " << threads << endl;
         tfiles = time.elapsed();
         read_file(argc[1], M);
         M.init_row_ptr();

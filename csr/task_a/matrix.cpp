@@ -27,28 +27,20 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, i64 &o
         }
     }
 
-    // vector<mpi::request> sreqs;
-    // vector<mpi::request> rreqs;
-
     t1 = time.elapsed();
     for (int i = 0; i < world.size(); i++) {
         if (i == rank) {
             for (int j = 0; j < world.size(); j++) {
                 if (j != rank) {
-                    // sreqs.push_back(world.isend(j, i, send_buff[i]));
                     world.send(j, i, send_buff[i]);
                 }
             }
         } else {
-            // rreqs.push_back(world.irecv(i, i, send_buff[i]));
             world.recv(i, i, send_buff[i]);
         }
     }
 
-    // mpi::wait_all(sreqs.begin(), sreqs.end());
-    // mpi::wait_all(rreqs.begin(), rreqs.end());
     tcomm += time.elapsed() - t1;
-
     v_old.clear();
     v_old.reserve(nrows);
 
@@ -62,6 +54,7 @@ void Matrix::init_row_ptr() {
     int count = 1;
 
     r.push_back(0);
+#pragma omp parallel for schedule(dynamic, 1024)
     for (int i = 1; i < row_ptr.size(); i++) {
         if (row_ptr[i] == row_ptr[i - 1]) {
             count++;
@@ -74,12 +67,14 @@ void Matrix::init_row_ptr() {
 }
 
 void Matrix::init_row_size() {
+#pragma omp parallel for schedule(dynamic, 1024)
     for (int i = 0; i < n; i++) {
         row_sizes.push_back(row_ptr[i + 1] - row_ptr[i]);
     }
 }
 
 void Matrix::init_v_old(int np) {
+#pragma omp parallel for schedule(dynamic, 1024)
     for (int i = 0; i < nrows; i++) {
         v_old.push_back(1);
     }

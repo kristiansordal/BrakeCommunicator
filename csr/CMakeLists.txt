@@ -6,7 +6,7 @@ project(sparse_matrix
         LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 20)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -ffast-math -march=native -funroll-loops -malign-double -fstrict-aliasing -march=native -mtune=native")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -ffast-math")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 find_package(Boost REQUIRED
@@ -32,7 +32,6 @@ file(GLOB TASK_B_SRC "task_b/*.cpp")
 file(GLOB HELLOWORLD_SRC "helloworld/*.cpp")
 add_executable(csr ${TASK_A_SRC})
 add_executable(csrp ${TASK_B_SRC})
-add_executable(hw ${HELLOWORLD_SRC})
 
 target_include_directories(csr
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -49,13 +48,5 @@ target_include_directories(csrp
 
 target_link_libraries(csrp
     PRIVATE ${METIS_LIBRARIES}
-    PRIVATE ${Boost_LIBRARIES}
-    PRIVATE fast_matrix_market::fast_matrix_market)
-
-target_include_directories(hw
-    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-    PRIVATE ${Boost_INCLUDE_DIRS})
-
-target_link_libraries(hw
     PRIVATE ${Boost_LIBRARIES}
     PRIVATE fast_matrix_market::fast_matrix_market)

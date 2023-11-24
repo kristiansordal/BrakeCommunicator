@@ -154,11 +154,11 @@ int main(int argv, char **argc) {
     ttote = time.elapsed();
 
     if (rank == 0) {
-        boost::multiprecision::cpp_int sum = 0;
+        double sum = 0;
         ulli ops = M.nnz * 2 * 100;
 
         for (auto &i : M.v_old) {
-            sum += (int)abs(i * i);
+            sum += abs(i * i);
         }
 
         cout << endl;

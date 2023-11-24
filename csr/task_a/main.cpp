@@ -49,6 +49,7 @@ int main(int argv, char **argc) {
     double tfilee;
     double tcomm;
     double tcomp;
+    double tcomp_kernel;
 
     int np = world.size();
     int rank = world.rank();
@@ -81,14 +82,12 @@ int main(int argv, char **argc) {
         }
 
         for (int i = 1; i < rc.size(); i++) {
-            cout << "Sending: " << rc[i] * sizeof(int) << " bytes to " << i << endl;
             world.send(i, i, rc[i]);
         }
 
         M.n = rc[0];
     } else {
         world.recv(0, rank, M.n);
-        cout << "Recieved " << M.n << " at rank " << rank << endl;
     }
 
     mpi::broadcast(world, M.nrows, 0);
@@ -148,7 +147,7 @@ int main(int argv, char **argc) {
     world.barrier();
     tcomp = time.elapsed();
     for (int i = 0; i < 100; i++) {
-        M.update(world, time, rank, tcomm);
+        M.update(world, time, rank, tcomp_kernel, tcomm);
     }
     world.barrier();
     tcomp = time.elapsed() - tcomp;
@@ -156,8 +155,6 @@ int main(int argv, char **argc) {
 
     if (rank == 0) {
         double sum = 0;
-        cout << M.nnz << endl;
-        cout << M.nnz * 2 * 100 << endl;
         ulli ops = (ulli)M.nnz * 2 * 100;
 
         for (auto &i : M.v_old) {
@@ -165,13 +162,14 @@ int main(int argv, char **argc) {
         }
 
         cout << endl;
-        cout << "File:    " << tfilee - tfiles << endl;
-        cout << "Comp:    " << tcomp << endl;
-        cout << "Comm:    " << tcomm << endl;
-        cout << "Total:   " << ttote - ttots << endl;
-        cout << "L2 norm: " << sqrt(sum) << endl;
-        cout << "OPS:     " << ops << endl;
-        cout << "GFLOPS:  " << ops / (tcomp * 1e9) << endl;
+        cout << "File:             " << tfilee - tfiles << endl;
+        cout << "Comp:             " << tcomp << endl;
+        cout << "Comm:             " << tcomm << endl;
+        cout << "Total:            " << ttote - ttots << endl;
+        cout << "L2 norm:          " << sqrt(sum) << endl;
+        cout << "OPS:              " << ops << endl;
+        cout << "GFLOPS:           " << ops / (tcomp * 1e9) << endl;
+        cout << "GFLOPS (kernel):  " << ops / (tcomp_kernel * 1e9) << endl;
     }
 
     return 0;

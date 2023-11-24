@@ -1,0 +1,48 @@
+SIZE:    1
+File:    0.419893
+Comp:    0.738847
+Comm:    1e-05
+Total:   1.45592
+L2 norm: inf
+OPS:     3838838600
+GFLOPS:  5.19572
+
+SIZE:    2
+File:    0.344296
+Comp:    0.984416
+Comm:    0.350071
+Total:   1.58763
+L2 norm: inf
+OPS:     3838838600
+GFLOPS:  3.89961
+
+SIZE:    3
+File:    0.407029
+Comp:    1.53547
+Comm:    0.907102
+Total:   2.20928
+L2 norm: inf
+OPS:     3838838600
+GFLOPS:  2.50011
+
+SIZE:    4
+File:    0.459588
+Comp:    1.87112
+Comm:    1.42856
+Total:   2.67891
+L2 norm: inf
+OPS:     3838838600
+GFLOPS:  2.05163
+SIZE:    5
+Opening file...
+File successfully opened
+Successfully read file circuit5M_dc.mtx
+19194193
+
+File:    0.503827
+Comp:    3.51205
+Comm:    2.65574
+Total:   4.33167
+L2 norm: inf
+OPS:     3838838600
+GFLOPS:  1.09305

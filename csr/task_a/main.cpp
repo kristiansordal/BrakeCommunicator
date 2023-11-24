@@ -54,7 +54,7 @@ int main(int argv, char **argc) {
     int rank = world.rank();
     ulli ops = 0;
 
-    vector<int> rc;
+    vector<i64> rc;
     vector<ulli> send_counts;
     rc.assign(np, 0);
 
@@ -80,30 +80,28 @@ int main(int argv, char **argc) {
             }
         }
 
+        world.barrier();
         for (int i = 1; i < rc.size(); i++) {
             cout << "Sending: " << rc[i] * sizeof(int) << " bytes to " << i << endl;
-            world.isend(i, i, rc[i]);
+            world.send(i, i, rc[i]);
         }
 
         M.n = rc[0];
-    }
-
-    for (int i = 1; i < np; i++) {
-        if (i == rank) {
-            world.irecv(0, i, M.n);
-            cout << "Recieved " << M.n << " at rank " << i << endl;
-        }
+    } else {
+        world.barrier();
+        world.recv(0, rank, M.n);
+        cout << "Recieved " << M.n << " at rank " << rank << endl;
     }
 
     mpi::broadcast(world, M.nrows, 0);
     M.init_v_old(np);
 
-    vector<vector<int>> rb;
-    vector<vector<int>> cb;
+    vector<vector<i64>> rb;
+    vector<vector<i64>> cb;
     vector<vector<double>> vb;
 
-    rb.assign(np, vector<int>());
-    cb.assign(np, vector<int>());
+    rb.assign(np, vector<i64>());
+    cb.assign(np, vector<i64>());
     vb.assign(np, vector<double>());
 
     if (rank == 0) {

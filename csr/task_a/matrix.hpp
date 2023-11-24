@@ -4,18 +4,18 @@
 #include <vector>
 namespace mpi = boost::mpi;
 using namespace std;
-// using int = int64_t;
+using i64 = int64_t;
 using ulli = unsigned long long int;
 
 class Matrix {
   public:
-    int n;
-    int nrows;
-    int ncols;
-    int nnz;
-    vector<int> row_ptr;
-    vector<int> col_ptr;
-    vector<int> row_sizes;
+    i64 n;
+    i64 nrows;
+    i64 ncols;
+    i64 nnz;
+    vector<i64> row_ptr;
+    vector<i64> col_ptr;
+    vector<i64> row_sizes;
     vector<double> v_old;
     vector<double> v_new;
     vector<double> vals;

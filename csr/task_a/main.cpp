@@ -1,6 +1,7 @@
 #include "fast_matrix_market/app/triplet.hpp"
 #include "matrix.hpp"
 #include <boost/mpi.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
 #include <fast_matrix_market/fast_matrix_market.hpp>
 #include <fstream>
 
@@ -51,7 +52,7 @@ int main(int argv, char **argc) {
 
     int np = world.size();
     int rank = world.rank();
-    i64 ops = 0;
+    ulli ops = 0;
 
     vector<int> rc;
     rc.assign(np, 0);
@@ -79,9 +80,7 @@ int main(int argv, char **argc) {
         }
 
         for (int i = 1; i < rc.size(); i++) {
-            cout << "Status " << i << ": waiting" << endl;
             world.send(i, i, rc[i]);
-            cout << "Status " << i << ": success" << endl;
         }
 
         M.n = rc[0];
@@ -89,9 +88,7 @@ int main(int argv, char **argc) {
 
     for (int i = 1; i < np; i++) {
         if (rank == i) {
-            cout << "Status " << i << ": waiting" << endl;
             world.recv(0, i, M.n);
-            cout << "Status " << i << ": success" << endl;
         }
     }
 
@@ -153,20 +150,18 @@ int main(int argv, char **argc) {
 
     world.barrier();
     for (int i = 0; i < 100; i++) {
-        M.update(world, time, rank, ops, tcomp, tcomm);
+        M.update(world, time, rank, tcomp, tcomm);
     }
     world.barrier();
 
     ttote = time.elapsed();
-    vector<i64> ops_all;
-    mpi::gather(world, ops, ops_all, 0);
-    i64 o = std::accumulate(ops_all.begin(), ops_all.end(), 0);
 
     if (rank == 0) {
-        double sum = 0;
+        boost::multiprecision::cpp_int sum = 0;
+        ulli ops = M.nnz * 2 * 100;
 
         for (auto &i : M.v_old) {
-            sum += abs(i * i);
+            sum += (int)abs(i * i);
         }
 
         cout << endl;
@@ -175,8 +170,8 @@ int main(int argv, char **argc) {
         cout << "Comm:    " << tcomm << endl;
         cout << "Total:   " << ttote - ttots << endl;
         cout << "L2 norm: " << sqrt(sum) << endl;
-        cout << "OPS:     " << o << endl;
-        cout << "GFLOPS:  " << o / (ttote - ttots) / 1e9 << endl;
+        cout << "OPS:     " << ops << endl;
+        cout << "GFLOPS:  " << ops / (tcomp * 1e9) << endl;
     }
 
     return 0;

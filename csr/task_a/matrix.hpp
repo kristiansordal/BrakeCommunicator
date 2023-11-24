@@ -5,6 +5,7 @@
 namespace mpi = boost::mpi;
 using namespace std;
 using i64 = int64_t;
+using ulli = unsigned long long int;
 
 class Matrix {
   public:
@@ -22,7 +23,7 @@ class Matrix {
     Matrix() = default;
     ~Matrix() = default;
 
-    void update(mpi::communicator &world, mpi::timer &time, int rank, i64 &ops, double &tcomp, double &tcomm);
+    void update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomp, double &tcomm);
     void init_row_ptr();
     void init_row_size();
     void init_v_old(int np);

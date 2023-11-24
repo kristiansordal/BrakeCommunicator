@@ -2,16 +2,15 @@
 #include <iostream>
 #include <numeric>
 
-void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, i64 &ops, double &tcomp, double &tcomm) {
+void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomp, double &tcomm) {
     double t1 = time.elapsed();
     i64 start = row_ptr[0];
-#pragma omp parallel for schedule(static)
+#pragma omp parallel for schedule(dynamic, 1024)
     for (int row = 0; row < n; row++) {
         double sum = 0.0;
 
         for (int i = row_ptr[row] - start; i < row_ptr[row + 1] - start; i++) {
             sum += vals[i] * v_old[col_ptr[i]];
-            ops++;
         }
 
         v_new[row] = sum;
@@ -44,7 +43,7 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, i64 &o
     v_old.clear();
     v_old.reserve(nrows);
 
-    for (const auto &i : send_buff) {
+    for (auto &i : send_buff) {
         v_old.insert(v_old.end(), i.begin(), i.end());
     }
 }
@@ -73,7 +72,7 @@ void Matrix::init_row_size() {
 
 void Matrix::init_v_old(int np) {
     for (int i = 0; i < nrows; i++) {
-        v_old.push_back(0.99);
+        v_old.push_back(1);
     }
 }
 

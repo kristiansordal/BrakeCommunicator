@@ -55,6 +55,7 @@ int main(int argv, char **argc) {
     ulli ops = 0;
 
     vector<int> rc;
+    vector<ulli> send_counts;
     rc.assign(np, 0);
 
     ttots = time.elapsed();
@@ -80,6 +81,7 @@ int main(int argv, char **argc) {
         }
 
         for (int i = 1; i < rc.size(); i++) {
+            cout << "Sending: " << rc[i] * sizeof(int) << " bytes to " << i << endl;
             world.send(i, i, rc[i]);
         }
 
@@ -93,12 +95,12 @@ int main(int argv, char **argc) {
     mpi::broadcast(world, M.nrows, 0);
     M.init_v_old(np);
 
-    vector<vector<i64>> rb;
-    vector<vector<i64>> cb;
+    vector<vector<int>> rb;
+    vector<vector<int>> cb;
     vector<vector<double>> vb;
 
-    rb.assign(np, vector<i64>());
-    cb.assign(np, vector<i64>());
+    rb.assign(np, vector<int>());
+    cb.assign(np, vector<int>());
     vb.assign(np, vector<double>());
 
     if (rank == 0) {

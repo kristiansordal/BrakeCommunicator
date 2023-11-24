@@ -4,7 +4,7 @@
 #include <vector>
 namespace mpi = boost::mpi;
 using namespace std;
-using i64 = int64_t;
+// using int = int64_t;
 using ulli = unsigned long long int;
 
 class Matrix {
@@ -13,8 +13,8 @@ class Matrix {
     int nrows;
     int ncols;
     int nnz;
-    vector<i64> row_ptr;
-    vector<i64> col_ptr;
+    vector<int> row_ptr;
+    vector<int> col_ptr;
     vector<int> row_sizes;
     vector<double> v_old;
     vector<double> v_new;

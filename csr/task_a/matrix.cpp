@@ -4,7 +4,7 @@
 #include <random>
 
 void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomm) {
-    i64 start = row_ptr[0];
+    int start = row_ptr[0];
 #pragma omp parallel for schedule(dynamic, 1024)
     for (int row = 0; row < n; row++) {
         double sum = 0.0;
@@ -48,7 +48,7 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
 }
 
 void Matrix::init_row_ptr() {
-    vector<i64> r;
+    vector<int> r;
     int count = 1;
 
     r.push_back(0);

@@ -80,7 +80,6 @@ int main(int argv, char **argc) {
             }
         }
 
-        world.barrier();
         for (int i = 1; i < rc.size(); i++) {
             cout << "Sending: " << rc[i] * sizeof(int) << " bytes to " << i << endl;
             world.send(i, i, rc[i]);
@@ -88,7 +87,6 @@ int main(int argv, char **argc) {
 
         M.n = rc[0];
     } else {
-        world.barrier();
         world.recv(0, rank, M.n);
         cout << "Recieved " << M.n << " at rank " << rank << endl;
     }

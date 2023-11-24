@@ -82,7 +82,7 @@ int main(int argv, char **argc) {
 
         for (int i = 1; i < rc.size(); i++) {
             cout << "Sending: " << rc[i] * sizeof(int) << " bytes to " << i << endl;
-            world.send(i, i, rc[i]);
+            world.isend(i, i, rc[i]);
         }
 
         M.n = rc[0];
@@ -90,7 +90,7 @@ int main(int argv, char **argc) {
 
     for (int i = 1; i < np; i++) {
         if (i == rank) {
-            world.recv(0, i, M.n);
+            world.irecv(0, i, M.n);
             cout << "Recieved " << M.n << " at rank " << i << endl;
         }
     }

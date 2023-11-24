@@ -156,7 +156,8 @@ int main(int argv, char **argc) {
     if (rank == 0) {
         double sum = 0;
         cout << M.nnz << endl;
-        ulli ops = M.nnz * 2 * 100;
+        cout << M.nnz * 2 * 100 << endl;
+        ulli ops = (ulli)M.nnz * 2 * 100;
 
         for (auto &i : M.v_old) {
             sum += abs(i * i);

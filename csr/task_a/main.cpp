@@ -88,9 +88,13 @@ int main(int argv, char **argc) {
         M.n = rc[0];
     }
 
-    if (rank != 0) {
-        world.recv(0, rank, M.n);
+    for (int i = 1; i < np; i++) {
+        if (i == rank) {
+            world.recv(0, i, M.n);
+        }
     }
+    // if (rank != 0) {
+    // }
 
     mpi::broadcast(world, M.nrows, 0);
     M.init_v_old(np);

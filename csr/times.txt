@@ -1,58 +1,58 @@
 # Shared memory
 
 ## 1 thread
-File:    0.359231
-Comp:    2.6775
-Comm:    2.988e-05
-Total:   3.8207
+File:    1.50613
+Comp:    2.79468
+Comm:    3.1451e-05
+Total:   4.78923
 L2 norm: inf
-OPS:     1919419300
-GFLOPS:  0.502374
+OPS:     3838838600
+GFLOPS:  1.37362
 
 ## 2 threads
-File:    0.367167
-Comp:    3.17482
-Comm:    3.0433e-05
-Total:   4.33906
+File:    1.49233
+Comp:    2.38243
+Comm:    3.2441e-05
+Total:   4.35822
 L2 norm: inf
-OPS:     1133601590
-GFLOPS:  0.261255
+OPS:     3838838600
+GFLOPS:  1.61131
 
 ## 4 threads
-File:    0.373486
-Comp:    3.26721
-Comm:    3.26e-05
-Total:   4.4539
+File:    1.49488
+Comp:    2.36692
+Comm:    3.379e-05
+Total:   4.34188
 L2 norm: inf
-OPS:     528746868
-GFLOPS:  0.118715
+OPS:     3838838600
+GFLOPS:  1.62187
 
 ## 8 threads
-File:    0.364582
-Comp:    3.52662
-Comm:    3.1872e-05
-Total:   4.71914
+File:    1.49488
+Comp:    2.36692
+Comm:    3.379e-05
+Total:   4.34188
 L2 norm: inf
-OPS:     267820120
-GFLOPS:  0.0567519
+OPS:     3838838600
+GFLOPS:  1.62187
 
 ## 16 threads
-File:    0.364476
-Comp:    3.73642
-Comm:    3.183e-05
-Total:   4.93976
+File:    1.50232
+Comp:    2.35278
+Comm:    3.0941e-05
+Total:   4.3362
 L2 norm: inf
-OPS:     164510762
-GFLOPS:  0.0333034
+OPS:     3838838600
+GFLOPS:  1.63162
 
 ## 24 threads
-File:    0.361156
-Comp:    4.35643
-Comm:    3.529e-05
-Total:   5.6704
+File:    1.49481
+Comp:    2.36642
+Comm:    2.731e-05
+Total:   4.34561
 L2 norm: inf
-OPS:     130537660
-GFLOPS:  0.0230209
+OPS:     3838838600
+GFLOPS:  1.62222
 
 ## 32 threads
 File:    0.358497

@@ -1,6 +1,7 @@
 #include "matrix.hpp"
 #include <iostream>
 #include <numeric>
+#include <random>
 
 void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomm) {
     i64 start = row_ptr[0];
@@ -69,8 +70,12 @@ void Matrix::init_row_size() {
 }
 
 void Matrix::init_v_old(int np) {
+    // Seed the random number generator
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<double> dis(-0.5, 0.5);
     for (int i = 0; i < nrows; i++) {
-        v_old.push_back(1);
+        v_old.push_back(dis(gen));
     }
 }
 

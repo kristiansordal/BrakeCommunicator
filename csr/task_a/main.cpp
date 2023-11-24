@@ -145,11 +145,12 @@ int main(int argv, char **argc) {
     M.init_v_new();
 
     world.barrier();
+    tcomp = time.elapsed();
     for (int i = 0; i < 100; i++) {
-        M.update(world, time, rank, tcomp, tcomm);
+        M.update(world, time, rank, tcomm);
     }
     world.barrier();
-
+    tcomp = time.elapsed() - tcomp;
     ttote = time.elapsed();
 
     if (rank == 0) {

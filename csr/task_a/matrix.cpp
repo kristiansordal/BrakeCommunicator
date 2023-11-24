@@ -2,8 +2,7 @@
 #include <iostream>
 #include <numeric>
 
-void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomp, double &tcomm) {
-    double t1 = time.elapsed();
+void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomm) {
     i64 start = row_ptr[0];
 #pragma omp parallel for schedule(dynamic, 1024)
     for (int row = 0; row < n; row++) {
@@ -15,7 +14,6 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
 
         v_new[row] = sum;
     }
-    tcomp += time.elapsed() - t1;
 
     vector<vector<double>> send_buff;
     send_buff.assign(world.size(), vector<double>());
@@ -26,7 +24,7 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
         }
     }
 
-    t1 = time.elapsed();
+    double t1 = time.elapsed();
     for (int i = 0; i < world.size(); i++) {
         if (i == rank) {
             for (int j = 0; j < world.size(); j++) {

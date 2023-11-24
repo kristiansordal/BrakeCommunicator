@@ -38,8 +38,8 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
             world.recv(i, i, send_buff[i]);
         }
     }
-
     tcomm += time.elapsed() - t1;
+
     v_old.clear();
     v_old.reserve(nrows);
 

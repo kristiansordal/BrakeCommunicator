@@ -86,10 +86,8 @@ int main(int argv, char **argc) {
         M.n = rc[0];
     }
 
-    for (int i = 1; i < np; i++) {
-        if (rank == i) {
-            world.recv(0, i, M.n);
-        }
+    if (rank != 0) {
+        world.recv(0, rank, M.n);
     }
 
     mpi::broadcast(world, M.nrows, 0);
@@ -134,16 +132,14 @@ int main(int argv, char **argc) {
         tcomm += time.elapsed() - t1;
     }
 
-    for (int i = 1; i < np; i++) {
-        if (rank == i) {
-            world.recv(0, i, rb[i]);
-            world.recv(0, i, cb[i]);
-            world.recv(0, i, vb[i]);
+    if (rank != 0) {
+        world.recv(0, rank, rb[rank]);
+        world.recv(0, rank, cb[rank]);
+        world.recv(0, rank, vb[rank]);
 
-            M.row_ptr = rb[i];
-            M.col_ptr = cb[i];
-            M.vals = vb[i];
-        }
+        M.row_ptr = rb[rank];
+        M.col_ptr = cb[rank];
+        M.vals = vb[rank];
     }
 
     M.init_v_new();

@@ -177,7 +177,7 @@ int main(int argv, char **argc) {
         cout << "L2 norm:          " << sqrt(sum) << endl;
         cout << "OPS:              " << ops << endl;
         cout << "GFLOPS:           " << ops / (tcomp * 1e9) << endl;
-        cout << "GFLOPS (kernel):  " << ops / (tcomp_kernel * 1e9) << endl;
+        cout << "GFLOPS (kernel):  " << ops / (tcomp_kernel * np * 1e9) << endl;
     }
 
     return 0;

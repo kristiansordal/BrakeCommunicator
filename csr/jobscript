@@ -1,6 +1,6 @@
 #!/bin/bash
 
-#SBATCH -p fpgaq # partition (queue)
+#SBATCH -p rome16q # partition (queue)
 #SBATCH -N 1 # number of nodes
 #SBATCH --ntasks-per-node 4  # number of cores
 #SBATCH --cpus-per-task=1

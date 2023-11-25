@@ -81,13 +81,17 @@ int main(int argv, char **argc) {
             }
         }
 
+        vector<mpi::request> send_reqs;
         for (int i = 1; i < rc.size(); i++) {
-            world.send(i, i, rc[i]);
+            send_reqs.push_back(world.isend(i, i, rc[i]));
         }
+        mpi::wait_all(send_reqs.begin(), send_reqs.end());
 
         M.n = rc[0];
     } else {
-        world.recv(0, rank, M.n);
+        vector<mpi::request> recv_reqs;
+        recv_reqs.push_back(world.irecv(0, rank, M.n));
+        mpi::wait_all(recv_reqs.begin(), recv_reqs.end());
     }
 
     mpi::broadcast(world, M.nrows, 0);

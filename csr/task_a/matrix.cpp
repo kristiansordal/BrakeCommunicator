@@ -73,11 +73,11 @@ void Matrix::init_row_size() {
 
 void Matrix::init_v_old(int np) {
     // Seed the random number generator
-    random_device rd;
-    mt19937 gen(rd());
-    uniform_real_distribution<double> dis(-0.5, 0.5);
+    // random_device rd;
+    // mt19937 gen(rd());
+    // uniform_real_distribution<double> dis(-0.5, 0.5);
     for (int i = 0; i < nrows; i++) {
-        v_old.push_back(dis(gen));
+        v_old.push_back(1);
     }
 }
 

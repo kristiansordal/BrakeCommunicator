@@ -7,7 +7,6 @@ project(sparse_matrix
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O3 -ffast-math")
-set(OMP_NUM_THREADS 2)
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 find_package(Boost REQUIRED
@@ -29,7 +28,9 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(fast_matrix_market)
 
 file(GLOB TASK_A_SRC "task_a/*.cpp")
+file(GLOB TASK_B_SRC "task_b/*.cpp")
 add_executable(csr ${TASK_A_SRC})
+add_executable(seq ${TASK_B_SRC})
 
 target_include_directories(csr
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
@@ -37,5 +38,11 @@ target_include_directories(csr
 
 target_link_libraries(csr
     PRIVATE ${Boost_LIBRARIES}
+    PRIVATE OpenMP::OpenMP_CXX
+    PRIVATE fast_matrix_market::fast_matrix_market)
+
+target_include_directories(seq PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+target_link_libraries(seq
     PRIVATE OpenMP::OpenMP_CXX
     PRIVATE fast_matrix_market::fast_matrix_market)

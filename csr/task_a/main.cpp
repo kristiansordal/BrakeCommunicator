@@ -82,17 +82,20 @@ int main(int argv, char **argc) {
         }
 
         vector<mpi::request> send_reqs;
-        for (int i = 1; i < rc.size(); i++) {
-            send_reqs.push_back(world.isend(i, i, rc[i]));
+        for (int i = 0; i < np; i++) {
+            cout << "Sending " << rc[i] << " to " << i << endl;
+            world.send(i, i, rc[i]);
         }
+        cout << "Done with all sends" << endl;
         // cout << "Waiting for send" << endl;
         // mpi::wait_all(send_reqs.begin(), send_reqs.end());
         // cout << "Send completed" << endl;
 
         M.n = rc[0];
     } else {
-        auto req = world.irecv(0, rank, M.n);
-        req.wait();
+        cout << "Rank " << rank << " is waiting for recieve" << endl;
+        world.recv(0, rank, M.n);
+        cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     }
 
     mpi::broadcast(world, M.nrows, 0);

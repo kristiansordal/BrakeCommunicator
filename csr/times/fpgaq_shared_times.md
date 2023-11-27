@@ -1,22 +1,22 @@
 # 1 thread
-File:             1.56048
-Comp:             2.90094
-Comm:             3.6095e-05
-Total:            4.87588
+File:             1.45238
+Comp:             2.43105
+Comm:             1.2953e-05
+Total:            4.2583
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           1.32331
-GFLOPS (kernel):  1.82264
+GFLOPS:           1.57908
+GFLOPS (kernel):  1.7997
 
 # 2 threads
-File:             1.55928
-Comp:             2.58082
-Comm:             2.1997e-05
-Total:            4.56565
+File:             1.43848
+Comp:             2.2207
+Comm:             2.9044e-05
+Total:            4.01827
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           1.48745
-GFLOPS (kernel):  2.16646
+GFLOPS:           1.72866
+GFLOPS (kernel):  2.03253
 
 # 4 threads
 File:             1.55706

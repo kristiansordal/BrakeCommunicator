@@ -1,61 +1,79 @@
 # 1 Core
-File:             1.45412
-Comp:             2.38483
-Comm:             1.366e-05
-Total:            4.20183
+File:             1.43819
+Comp:             2.42851
+Comm:             1.502e-05
+Total:            4.22763
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           1.60969
-GFLOPS (kernel):  1.83357
+GFLOPS:           1.58074
+GFLOPS (kernel):  1.79702
 
 # 2 Cores
-File:             1.46086
-Comp:             2.2859
-Comm:             0.811338
-Total:            4.23023
+File:             1.4523
+Comp:             2.31565
+Comm:             0.81438
+Total:            4.24122
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           1.67936
-GFLOPS (kernel):  3.14211
+GFLOPS:           1.65778
+GFLOPS (kernel):  1.55414
 
 # 4 Cores
-File:             0.59274
-Comp:             2.8098
-Comm:             2.18158
-Total:            3.8996
+File:             0.606595
+Comp:             2.81679
+Comm:             2.17099
+Total:            3.9193
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           1.36623
-GFLOPS (kernel):  7.1233
+GFLOPS:           1.36284
+GFLOPS (kernel):  1.73431
 
 # 8 cores
-File:             0.603721
-Comp:             5.44963
-Comm:             5.07066
-Total:            6.63359
+File:             0.63111
+Comp:             5.58682
+Comm:             5.19863
+Total:            6.77588
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           0.704422
-GFLOPS (kernel):  11.9258
+GFLOPS:           0.687124
+GFLOPS (kernel):  1.488
 
 # 16 cores
-File:             0.606728
-Comp:             17.4083
-Comm:             17.1635
-Total:            18.6837
+File:             0.6406
+Comp:             15.5691
+Comm:             15.3598
+Total:            16.9037
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           0.220518
-GFLOPS (kernel):  17.8009
+GFLOPS:           0.246568
+GFLOPS (kernel):  1.17592
 
 # 24 cores
-File:             0.608994
-Comp:             50.6014
-Comm:             50.4912
-Total:            52.1374
+File:             0.601381
+Comp:             32.0491
+Comm:             31.9033
+Total:            33.5535
 L2 norm:          inf
 OPS:              3838838600
-GFLOPS:           0.0758643
-GFLOPS (kernel):  24.6817
+GFLOPS:           0.11978
+GFLOPS (kernel):  0.982533
 
 # 32 cores
+File:             0.639426
+Comp:             47.3535
+Comm:             47.3188
+Total:            49.0719
+L2 norm:          inf
+OPS:              3838838600
+GFLOPS:           0.0810677
+GFLOPS (kernel):  1.09548
+
+# 36 cores
+File:             0.60138
+Comp:             52.5582
+Comm:             52.5106
+Total:            71.878
+L2 norm:          inf
+OPS:              3838838600
+GFLOPS:           0.0730397
+GFLOPS (kernel):  0.830298

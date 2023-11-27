@@ -56,7 +56,6 @@ int main(int argv, char **argc) {
     ulli ops = 0;
 
     vector<i64> rc;
-    vector<ulli> send_counts;
     rc.assign(np, 0);
 
     ttots = time.elapsed();

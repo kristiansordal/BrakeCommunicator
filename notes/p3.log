@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  25 NOV 2023 13:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Homebrew) (preloaded format=pdflatex 2023.6.22)  27 NOV 2023 09:33
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1181,92 +1181,36 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )) (./p3.nav) [1
 
 {/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}]
-Overfull \hbox (24.0019pt too wide) in paragraph at lines 65--65
- [] 
- []
-
-
-Overfull \vbox (1.66855pt too high) detected at line 65
- []
-
-[2
-
-]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 62.
  (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 62.
  (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 115.
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 62.
  (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/jknapltx/ursfs.fd
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 )
-LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 115.
+LaTeX Font Info:    Trying to load font information for OT1+mathkerncmss on input line 62.
  (/opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mathkerncmss.
-) [3
+) [2
+
+] [3
 
 ] [4
 
-]
+] [5
 
-Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply log. on input line 226.
+] [6
 
- [warning /pgfplots/warning/illegal user argument in log axis]
-
-Overfull \hbox (0.65712pt too wide) in paragraph at lines 226--226
- [] 
- []
-
-[5
+] [7
 
 ]
-
-Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply log. on input line 279.
-
- [warning /pgfplots/warning/illegal user argument in log axis]
-
-Overfull \hbox (6.3608pt too wide) in paragraph at lines 279--279
+Overfull \hbox (0.38046pt too wide) in paragraph at lines 345--345
  [] 
- []
-
-
-Overfull \vbox (1.07085pt too high) detected at line 279
- []
-
-[6
-
-]
-
-Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply log. on input line 331.
-
- [warning /pgfplots/warning/illegal user argument in log axis]
-
-Overfull \hbox (6.3608pt too wide) in paragraph at lines 331--331
- [] 
- []
-
-
-Overfull \vbox (1.07079pt too high) detected at line 331
- []
-
-[7
-
-]
-
-Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply log. on input line 375.
-
- [warning /pgfplots/warning/illegal user argument in log axis]
-
-Overfull \hbox (6.36069pt too wide) in paragraph at lines 375--375
- [] 
- []
-
-
-Overfull \vbox (1.0709pt too high) detected at line 375
  []
 
 [8
@@ -1286,18 +1230,18 @@ Package rerunfilecheck Info: File `p3.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 45422 strings out of 476025
- 1067811 string characters out of 5779036
- 1887388 words of memory out of 5000000
- 64998 multiletter control sequences out of 15000+600000
- 528084 words of font info for 83 fonts, out of 8000000 for 9000
+ 45369 strings out of 476025
+ 1066450 string characters out of 5779036
+ 1877388 words of memory out of 5000000
+ 64946 multiletter control sequences out of 15000+600000
+ 527610 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,18n,134p,735b,2339s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on p3.pdf (8 pages, 78241 bytes).
+ 128i,18n,134p,735b,2347s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></opt/homebrew/Cellar/texlive/20230313_2/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+Output written on p3.pdf (8 pages, 93600 bytes).
 PDF statistics:
- 250 PDF objects out of 1000 (max. 8388607)
- 221 compressed objects within 3 object streams
+ 260 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
  17 named destinations out of 1000 (max. 500000)
  43 words of extra memory for PDF output out of 10000 (max. 10000000)
 

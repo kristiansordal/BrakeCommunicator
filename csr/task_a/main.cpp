@@ -69,7 +69,7 @@ int main(int argv, char **argc) {
         tfilee = time.elapsed();
 
         // Load balancing
-        double avg_load = (double)M.nnz / (double)np;
+        int avg_load = M.nnz / np;
         int core = 0;
 
         for (int i = 0; i < M.nrows; i++) {
@@ -81,20 +81,20 @@ int main(int argv, char **argc) {
         }
 
         vector<mpi::request> send_reqs;
-        for (int i = 0; i < np; i++) {
-            cout << "Sending " << rc[i] << " to " << i << endl;
+        for (int i = 1; i < np; i++) {
+            // cout << "Sending " << rc[i] << " to " << i << endl;
             world.send(i, i, rc[i]);
         }
-        cout << "Done with all sends" << endl;
+        // cout << "Done with all sends" << endl;
         // cout << "Waiting for send" << endl;
         // mpi::wait_all(send_reqs.begin(), send_reqs.end());
         // cout << "Send completed" << endl;
 
         M.n = rc[0];
     } else {
-        cout << "Rank " << rank << " is waiting for recieve" << endl;
+        // cout << "Rank " << rank << " is waiting for recieve" << endl;
         world.recv(0, rank, M.n);
-        cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
+        // cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     }
 
     mpi::broadcast(world, M.nrows, 0);
@@ -176,6 +176,7 @@ int main(int argv, char **argc) {
         cout << "L2 norm:          " << sqrt(sum) << endl;
         cout << "OPS:              " << ops << endl;
         cout << "GFLOPS:           " << ops / (tcomp * 1e9) << endl;
+        cout << "GFLOPS:           " << ops / tcomp / 1e9 << endl;
         cout << "GFLOPS (kernel):  " << ops / (tcomp_kernel * np * 1e9) << endl;
     }
 

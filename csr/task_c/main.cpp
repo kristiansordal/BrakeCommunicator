@@ -24,6 +24,7 @@ int main(int argc, char **argv) {
         MPI_Recv(&x, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         cout << "Rank: " << rank << " got " << x << endl;
     }
+    MPI_Finalize();
     return 0;
     // mpi::environment env;
     // mpi::communicator world;

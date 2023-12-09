@@ -44,6 +44,8 @@ int main(int argc, char **argv) {
 
     file.close();
 
+    // add a barrier
+    MPI_Barrier(MPI_COMM_WORLD);
     if (rank == 0) {
         cout << "Sending" << endl;
         for (int i = 0; i < np; i++) {
@@ -53,7 +55,8 @@ int main(int argc, char **argv) {
         }
     } else {
         n = 0;
-        MPI_Recv(&n, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        cout << "Rank " << rank << " is waiting for recieve, has n: " << n << endl;
+        MPI_Recv(&n, 1, MPI_INT, 0, rank, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         cout << rank << " has  " << n << endl;
     }
     // vector<i64> r;

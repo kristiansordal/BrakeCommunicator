@@ -37,18 +37,26 @@ int main(int argc, char **argv) {
 
     ffm::read_matrix_market_triplet(file, nrows, ncols, col_ptr, row_ptr, vals);
 
+    cout << "Successfully read file" << endl;
+
     int nnz = vals.size();
     int n = nrows;
 
     file.close();
 
+    // add a barrier
+    MPI_Barrier(MPI_COMM_WORLD);
     if (rank == 0) {
+        cout << "Sending" << endl;
         for (int i = 0; i < np; i++) {
-            MPI_Send(&n, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
+            if (i != rank) {
+                MPI_Send(&n, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
+            }
         }
     } else {
         n = 0;
-        MPI_Recv(&n, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        cout << "Rank " << rank << " is waiting for recieve, has n: " << n << endl;
+        MPI_Recv(&n, 1, MPI_INT, 0, rank, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
         cout << rank << " has  " << n << endl;
     }
     // vector<i64> r;

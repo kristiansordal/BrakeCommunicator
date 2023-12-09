@@ -83,7 +83,7 @@ int main(int argv, char **argc) {
         cout << "Load balancing completed" << endl;
 
         vector<mpi::request> send_reqs;
-        for (int i = 1; i < np; i++) {
+        for (int i = 0; i < np; i++) {
             cout << "Sending: " << rc[i] << " to " << i << endl;
             send_reqs.push_back(world.isend(i, i, rc[i]));
             cout << "Done sending: " << rc[i] << " to " << i << endl;
@@ -91,14 +91,15 @@ int main(int argv, char **argc) {
         wait_all(send_reqs.begin(), send_reqs.end());
 
         M.n = rc[0];
-    } else {
-        vector<mpi::request> recv_reqs;
-        cout << "Rank " << rank << " is waiting for recieve" << endl;
-        recv_reqs.push_back(world.irecv(0, rank, rc[rank]));
-        wait_all(recv_reqs.begin(), recv_reqs.end());
-        M.n = rc[rank];
-        cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
-    }
+    } // else {
+    world.barrier();
+    vector<mpi::request> recv_reqs;
+    cout << "Rank " << rank << " is waiting for recieve" << endl;
+    recv_reqs.push_back(world.irecv(0, rank, rc[rank]));
+    wait_all(recv_reqs.begin(), recv_reqs.end());
+    M.n = rc[rank];
+    cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
+    //}
 
     mpi::broadcast(world, M.nrows, 0);
     M.init_v_old(np);

@@ -25,7 +25,6 @@ class Matrix {
 
     void update(mpi::communicator &world, mpi::timer &time, int rank, double &tcomp_kernel, double &tcomm);
     void init_row_ptr();
-    void init_row_size();
     void init_v_old(int np);
     void init_v_new();
 };

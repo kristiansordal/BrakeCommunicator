@@ -9,13 +9,14 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
-find_package(Boost REQUIRED
-             COMPONENTS
-                 mpi
-                 program_options
-             REQUIRED)
+# find_package(Boost REQUIRED
+#              COMPONENTS
+#                  mpi
+#                  program_options
+#              REQUIRED)
 
 find_package(OpenMP REQUIRED)
+find_package(OpenMPI REQUIRED)
 find_package(METIS REQUIRED)
 
 include(FetchContent)
@@ -27,26 +28,26 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(fast_matrix_market)
 
-file(GLOB TASK_A_SRC "task_a/*.cpp")
+# file(GLOB TASK_A_SRC "task_a/*.cpp")
 file(GLOB TASK_C_SRC "task_c/*.cpp")
-add_executable(csr ${TASK_A_SRC})
+# add_executable(csr ${TASK_A_SRC})
 add_executable(test ${TASK_C_SRC})
 
 
-target_include_directories(csr
-    PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-    PRIVATE ${Boost_INCLUDE_DIRS})
+# target_include_directories(csr
+#     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+#     PRIVATE ${Boost_INCLUDE_DIRS})
 
-target_link_libraries(csr
-    PRIVATE ${Boost_LIBRARIES}
-    PRIVATE OpenMP::OpenMP_CXX
-    PRIVATE fast_matrix_market::fast_matrix_market)
+# target_link_libraries(csr
+#     PRIVATE ${Boost_LIBRARIES}
+#     PRIVATE OpenMP::OpenMP_CXX
+#     PRIVATE fast_matrix_market::fast_matrix_market)
 
 target_include_directories(test
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-    PRIVATE ${Boost_INCLUDE_DIRS})
+    )
 
 target_link_libraries(test
-    PRIVATE ${Boost_LIBRARIES}
     PRIVATE OpenMP::OpenMP_CXX
+    PRIVATE OpenMPI::openmpi
     PRIVATE fast_matrix_market::fast_matrix_market)

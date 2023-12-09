@@ -82,16 +82,16 @@ int main(int argv, char **argc) {
         }
         cout << "Load balancing completed" << endl;
 
-        for (int i = 0; i < np; i++) {
+        for (int i = 1; i < np; i++) {
             cout << "Sending: " << rc[i] << " to " << i << endl;
-            world.send(i, i, rc[i]);
+            world.isend(i, i, rc[i]);
             cout << "Done sending: " << rc[i] << " to " << i << endl;
         }
 
         M.n = rc[0];
     } else {
         cout << "Rank " << rank << " is waiting for recieve" << endl;
-        world.recv(0, rank, rc[rank]);
+        world.irecv(0, rank, rc[rank]);
         M.n = rc[rank];
         cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     }

@@ -16,7 +16,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 #              REQUIRED)
 
 find_package(OpenMP REQUIRED)
-find_package(OpenMPI REQUIRED)
+find_package(MPI REQUIRED)
 find_package(METIS REQUIRED)
 
 include(FetchContent)
@@ -43,11 +43,13 @@ add_executable(test ${TASK_C_SRC})
 #     PRIVATE OpenMP::OpenMP_CXX
 #     PRIVATE fast_matrix_market::fast_matrix_market)
 
+include_directories(SYSTEM ${MPI_INCLUDE_PATH})
+
 target_include_directories(test
     PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
     )
 
 target_link_libraries(test
     PRIVATE OpenMP::OpenMP_CXX
-    PRIVATE OpenMPI::openmpi
+    PRIVATE ${MPI_CXX_LIBRARIES}
     PRIVATE fast_matrix_market::fast_matrix_market)

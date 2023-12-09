@@ -44,20 +44,17 @@ int main(int argc, char **argv) {
 
     file.close();
 
-    // add a barrier
     MPI_Barrier(MPI_COMM_WORLD);
     if (rank == 0) {
-        cout << "Sending" << endl;
-        for (int i = 0; i < np; i++) {
-            if (i != rank) {
-                MPI_Send(&n, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
-            }
+        cout << np << endl;
+        for (int i = 1; i < np; i++) {
+            MPI_Send(&n, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
         }
+
     } else {
         n = 0;
-        cout << "Rank " << rank << " is waiting for recieve, has n: " << n << endl;
-        MPI_Recv(&n, 1, MPI_INT, 0, rank, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
-        cout << rank << " has  " << n << endl;
+        MPI_Recv(&n, 1, MPI_INT, 0, 0, MPI_COMM_WORLD, MPI_STATUS_IGNORE);
+        cout << rank << " has " << n << endl;
     }
     // vector<i64> r;
     // int count = 1;

@@ -1,0 +1,12 @@
+\documentclass{article}
+\input{preamble.tex}
+
+\title{Project Description}
+\begin{document}
+\maketitle
+
+The scope of this masters thesis includes implementation and analysis of various methods for SpMV, or \textbf{Sparse Matrix Vector Multiplication}. SpMV is important within many fields, including, but not limited to Computational Physics, Biomedical Simulations, Simulation of Seismic activity, Finite Element Analysis and Weather and Climate Modeling. Matrices used are usually very big, with row and column counts on the order of \( 10^{8} \), and non-zeros on the order of \( 10^{9} \). For this reason, programs that perform SpMV on such matrices, are paralellized, and ran on HPC machines. The implementations that are to be done in this project will center around distributed memory computation, and I will look into the various communication strategies that can be used.
+\medskip
+
+There are many methods for SpMV, each with their own strengths and weaknesses. This project aims to do a deep dive into these methods, and be as comprehensive as possible in regards to gathering performance metrics and implementation. The goal is to create clean and usable code that can be used by other people.
+\end{document}

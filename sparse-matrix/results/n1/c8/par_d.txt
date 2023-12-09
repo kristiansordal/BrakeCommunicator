@@ -1,0 +1,8 @@
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 29576 ON n053 CANCELLED AT 2023-10-30T10:12:16 ***
+slurmstepd: error: *** STEP 29576.0 ON n053 CANCELLED AT 2023-10-30T10:12:16 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 29588 ON n053 CANCELLED AT 2023-10-30T10:25:11 ***
+slurmstepd: error: *** STEP 29588.0 ON n053 CANCELLED AT 2023-10-30T10:25:11 ***
+par_d: /cm/shared/ex3-modules/0.6.1/pkgs/boost-1.73.0/include/boost/mpi/detail/request_handlers.hpp:179: boost::mpi::status boost::mpi::request::probe_handler<Data>::unpack(ompi_message_t*&, boost::mpi::status&) [with Data = boost::mpi::detail::dynamic_primitive_array_data<std::vector<double> >; MPI_Message = ompi_message_t*]: Assertion `_check_result == MPI_SUCCESS' failed.
+srun: error: n059: task 0: Aborted (core dumped)

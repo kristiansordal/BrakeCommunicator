@@ -1,0 +1,1265 @@
+rank: 0 waiting
+rank: 0 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 0 waiting
+rank: 0 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 0 waiting
+rank: 0 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 0 waiting
+rank: 0 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 0 waiting
+rank: 0 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 1 waiting
+rank: 1 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 2 waiting
+rank: 2 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 3 waiting
+rank: 3 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 4 waiting
+rank: 4 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 5 waiting
+rank: 5 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 6 waiting
+rank: 6 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 7 waiting
+rank: 7 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 8 waiting
+rank: 8 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 9 waiting
+rank: 9 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 10 waiting
+rank: 10 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 62 waiting
+rank: 63 waiting
+rank: 62 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 63 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 11 waiting
+rank: 11 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 12 waiting
+rank: 12 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 13 waiting
+rank: 13 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 63 waiting
+rank: 63 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 15 waiting
+rank: 15 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 14 waiting
+rank: 14 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 16 waiting
+rank: 16 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 17 waiting
+rank: 17 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 18 waiting
+rank: 18 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 19 waiting
+rank: 19 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 20 waiting
+rank: 20 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 21 waiting
+rank: 21 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 22 waiting
+rank: 22 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 24 waiting
+rank: 24 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 25 waiting
+rank: 25 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 23 waiting
+rank: 23 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 26 waiting
+rank: 26 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 63 waiting
+rank: 63 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 27 waiting
+rank: 27 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 35 waiting
+rank: 35 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 36 waiting
+rank: 36 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 37 waiting
+rank: 37 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 38 waiting
+rank: 38 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 39 waiting
+rank: 39 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 34 waiting
+rank: 34 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 33 waiting
+rank: 33 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 40 waiting
+rank: 40 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 28 waiting
+rank: 28 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 29 waiting
+rank: 29 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 32 waiting
+rank: 32 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 41 waiting
+rank: 41 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 30 waiting
+rank: 30 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 31 waiting
+rank: 31 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 63 waiting
+rank: 63 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 42 waiting
+rank: 42 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 43 waiting
+rank: 43 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 44 waiting
+rank: 44 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 45 waiting
+rank: 45 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 46 waiting
+rank: 46 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 47 waiting
+rank: 47 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 48 waiting
+rank: 48 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 49 waiting
+rank: 49 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 50 waiting
+rank: 50 done waiting
+rank: 63 waiting
+rank: 63 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 54 waiting
+rank: 54 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 55 waiting
+rank: 55 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 52 waiting
+rank: 52 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 53 waiting
+rank: 53 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 51 waiting
+rank: 51 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 56 waiting
+rank: 56 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 57 waiting
+rank: 57 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 61 waiting
+rank: 61 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 60 waiting
+rank: 60 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 59 waiting
+rank: 59 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 62 waiting
+rank: 62 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+rank: 58 waiting
+rank: 58 done waiting
+Time:    3.04621
+Comp:    0.445076
+Comm:    2.60114
+GFLOPS:  537848
+L2:      2.26347

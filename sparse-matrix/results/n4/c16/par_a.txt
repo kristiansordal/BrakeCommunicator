@@ -1,0 +1,13 @@
+Time:    454.736
+Comp:    6.60118
+Comm:    448.135
+GFLOPS:  28823.7
+L2:      2.75431
+Time:    454.696
+Comp:    6.61364
+Comm:    448.082
+GFLOPS:  28826.3
+L2:      2.75431
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 30987 ON n053 CANCELLED AT 2023-10-31T16:44:58 ***
+slurmstepd: error: *** STEP 30987.0 ON n053 CANCELLED AT 2023-10-31T16:44:58 ***

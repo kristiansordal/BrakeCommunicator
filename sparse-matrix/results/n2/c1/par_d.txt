@@ -1,0 +1,6 @@
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 29578 ON n055 CANCELLED AT 2023-10-30T10:12:16 ***
+slurmstepd: error: *** STEP 29578.0 ON n055 CANCELLED AT 2023-10-30T10:12:16 ***
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd: error: *** JOB 29590 ON n055 CANCELLED AT 2023-10-30T10:25:11 ***
+slurmstepd: error: *** STEP 29590.0 ON n055 CANCELLED AT 2023-10-30T10:25:11 ***

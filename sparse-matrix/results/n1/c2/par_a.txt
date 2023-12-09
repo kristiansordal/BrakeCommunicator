@@ -1,0 +1,12 @@
+Message size 2147483648 bigger than supported by selected transport. Max = 1073741824
+par_a: /cm/shared/ex3-modules/0.6.1/pkgs/boost-1.73.0/include/boost/mpi/collectives/all_gather.hpp:39: void boost::mpi::detail::all_gather_impl(const boost::mpi::communicator&, const T*, int, T*, mpl_::true_) [with T = double; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+Message size 2147483648 bigger than supported by selected transport. Max = 1073741824
+par_a: /cm/shared/ex3-modules/0.6.1/pkgs/boost-1.73.0/include/boost/mpi/collectives/all_gather.hpp:39: void boost::mpi::detail::all_gather_impl(const boost::mpi::communicator&, const T*, int, T*, mpl_::true_) [with T = double; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+srun: error: n052: task 0: Aborted (core dumped)
+srun: error: n052: task 1: Aborted (core dumped)
+Message size 2147483648 bigger than supported by selected transport. Max = 1073741824
+par_a: /cm/shared/ex3-modules/0.6.1/pkgs/boost-1.73.0/include/boost/mpi/collectives/all_gather.hpp:39: void boost::mpi::detail::all_gather_impl(const boost::mpi::communicator&, const T*, int, T*, mpl_::true_) [with T = double; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+Message size 2147483648 bigger than supported by selected transport. Max = 1073741824
+par_a: /cm/shared/ex3-modules/0.6.1/pkgs/boost-1.73.0/include/boost/mpi/collectives/all_gather.hpp:39: void boost::mpi::detail::all_gather_impl(const boost::mpi::communicator&, const T*, int, T*, mpl_::true_) [with T = double; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+srun: error: n051: task 0: Aborted (core dumped)
+srun: error: n051: task 1: Aborted (core dumped)

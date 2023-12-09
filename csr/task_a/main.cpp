@@ -82,9 +82,6 @@ int main(int argv, char **argc) {
         }
         cout << "Load balancing completed" << endl;
 
-        cout << "At the barrier" << endl;
-        world.barrier();
-        cout << "Past the barrier" << endl;
         for (int i = 1; i < np; i++) {
             cout << "Sending: " << rc[i] << " to " << i << endl;
             world.send(i, i, rc[i]);
@@ -93,9 +90,7 @@ int main(int argv, char **argc) {
 
         M.n = rc[0];
     } else {
-        cout << "Rank " << rank << " is at the barrier" << endl;
-        world.barrier();
-        cout << "Rank " << rank << " is past the barrier" << endl;
+        cout << "Rank " << rank << " is waiting for recieve" << endl;
         world.recv(0, rank, M.n);
         cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     }

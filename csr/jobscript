@@ -1,24 +1,24 @@
-#!/bin/bash
-
+#!/bin/bash -x
 #SBATCH -p rome16q # partition (queue)
-#SBATCH -N 2 # number of nodes
-#SBATCH --ntasks-per-node 4  # number of cores
-#SBATCH --cpus-per-task=4
-#SBATCH -t 0-00:10 # time (D-HH:MM)
+#SBATCH -N 2
+#SBATCH --ntasks-per-node 16   # number of cores
+#SBATCH --cpus-per-task=1
+#SBATCH -t 0-4:00 # time (D-HH:MM)
 #SBATCH -o slurm.%N.%j.out # STDOUT
-#SBATCH --exclusive
+
+ulimit -s 10240
 
 module load boost-1.73.0
 module load boost-mpi-1.73.0
 
+
 export OMPI_MCA_pml="^ucx"
-export OMPI_MCA_btl_openib_if_include="mlx5_1:1"
+export OMPI_MCA_btl_openib_if_include="mlx5_4:1"
+
+#export OMPI_MCA_pml="^ucx"
+#export OMPI_MCA_btl_openib_if_include="mlx5_1:1"
 export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
 export OMPI_MCA_btl_openib_allow_ib=1
+export OMPI_MCA_mpi_cuda_support=0
 
-
-export MV2_HOMOGENEOUS_CLUSTER=1
-export MV2_ENABLE_AFFINITY=0
-export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
-
-mpirun -np $SLURM_NTASKS build/debug/csr /home/krisor99/UiB-INF339/matrices/ML_Geer.mtx
+mpirun -np $SLURM_NTASKS build/debug/csr ~/UiB-INF339/matrices/ML_Geer.mtx

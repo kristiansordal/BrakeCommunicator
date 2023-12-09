@@ -4,10 +4,9 @@
 #SBATCH -N 1 # number of nodes
 #SBATCH --ntasks-per-node 4  # number of cores
 #SBATCH --cpus-per-task=1
-#SBATCH -t 0-00:01 # time (D-HH:MM)
+#SBATCH -t 0-00:10 # time (D-HH:MM)
 #SBATCH -o slurm.%N.%j.out # STDOUT
 #SBATCH --exclusive
-
 
 module purge
 module load slurm/21.08.8
@@ -27,4 +26,4 @@ export MV2_HOMOGENEOUS_CLUSTER=1
 export MV2_ENABLE_AFFINITY=0
 export OMP_NUM_THREADS=$SLURM_CPUS_PER_TASK
 
-mpirun -np $SLURM_NTASKS build/debug/csr /home/krisor99/UiB-INF339/matrices/circuit5M_dc.mtx
+mpirun -np $SLURM_NTASKS build/debug/csr /home/krisor99/UiB-INF339/matrices/ML_Geer.mtx

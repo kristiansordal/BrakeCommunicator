@@ -72,6 +72,7 @@ int main(int argv, char **argc) {
         int avg_load = M.nnz / np;
         int core = 0;
 
+        cout << "Performing Load Balancing" << endl;
         for (int i = 0; i < M.nrows; i++) {
             rc[core]++;
 
@@ -79,17 +80,22 @@ int main(int argv, char **argc) {
                 core++;
             }
         }
+        cout << "Load balancing completed" << endl;
 
+        cout << "At the barrier" << endl;
         world.barrier();
+        cout << "Past the barrier" << endl;
         for (int i = 1; i < np; i++) {
             cout << "Sending: " << rc[i] << " to " << i << endl;
             world.send(i, i, rc[i]);
+            cout << "Done sending: " << rc[i] << " to " << i << endl;
         }
 
         M.n = rc[0];
     } else {
-        cout << "Rank " << rank << " is waiting for recieve" << endl;
+        cout << "Rank " << rank << " is at the barrier" << endl;
         world.barrier();
+        cout << "Rank " << rank << " is past the barrier" << endl;
         world.recv(0, rank, M.n);
         cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     }

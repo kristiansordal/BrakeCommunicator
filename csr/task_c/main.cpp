@@ -4,6 +4,7 @@
 #include <fstream>
 #include <iostream>
 #include <mpi.h>
+#include <numeric>
 
 using i64 = long long int;
 using namespace std;
@@ -94,7 +95,7 @@ int main(int argc, char **argv) {
     vector<double> v_new(nrows, 0);
 
     // Get displacements and recvcounts for all gather later
-    int offset = std::accumulate(rc.begin(), rc.begin() + rank, 0);
+    int offset = accumulate(rc.begin(), rc.begin() + rank, 0);
     vector<int> displs(np, 0);
     MPI_Allgather(&offset, 1, MPI_INT, displs.data(), 1, MPI_INT, MPI_COMM_WORLD);
 

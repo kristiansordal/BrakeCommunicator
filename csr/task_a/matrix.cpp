@@ -34,6 +34,7 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
     vector<vector<double>> send_buff;
     send_buff.assign(world.size(), vector<double>());
     send_buff[rank] = v_new;
+
     t1 = time.elapsed();
     for (int i = 0; i < world.size(); i++) {
         if (i == rank) {

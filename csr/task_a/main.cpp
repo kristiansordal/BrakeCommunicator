@@ -92,7 +92,7 @@ int main(int argv, char **argc) {
     }
     world.barrier();
     cout << "Rank " << rank << " is waiting for recieve" << endl;
-    world.irecv(0, rank, rc[rank]);
+    world.recv(0, rank, rc[rank]);
     M.n = rc[rank];
     cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     //}

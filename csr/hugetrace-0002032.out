@@ -1,0 +1,226 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 32 build/debug/csr /home/krisor99/UiB-INF339/matrices/hugetrace-00020.mtx
+[n002:94507] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94489] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94511] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94515] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94528] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94490] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94498] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94502] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94505] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94518] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94522] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94487] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94488] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94492] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94486] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94497] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94525] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94564] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94532] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94536] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94548] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94567] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94509] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94546] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94513] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94540] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94535] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94551] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94520] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94575] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94557] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:94580] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Rank 31 is waiting for recieve
+Rank 7 is waiting for recieve
+Rank 6 is waiting for recieve
+Rank 14 is waiting for recieve
+Rank 17 is waiting for recieve
+Rank 18 is waiting for recieve
+Rank 19 is waiting for recieve
+Rank 22 is waiting for recieve
+Rank 27 is waiting for recieve
+Rank 30 is waiting for recieve
+Rank 1 is waiting for recieve
+Rank 2 is waiting for recieve
+Rank 24 is waiting for recieve
+Rank 25 is waiting for recieve
+Rank 26 is waiting for recieve
+Rank 28 is waiting for recieve
+Rank 29 is waiting for recieve
+SIZE:    32
+Rank 3 is waiting for recieve
+Rank 4 is waiting for recieve
+Rank 5 is waiting for recieve
+Rank 8 is waiting for recieve
+Rank 9 is waiting for recieve
+Rank 10 is waiting for recieve
+Rank 11 is waiting for recieve
+Rank 12 is waiting for recieve
+Rank 13 is waiting for recieve
+Rank 15 is waiting for recieve
+Rank 16 is waiting for recieve
+Rank 20 is waiting for recieve
+Rank 21 is waiting for recieve
+Rank 23 is waiting for recieve
+Opening file...
+File successfully opened
+Successfully read file hugetrace-00020.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 846610 to 1
+Done sending: 846610 to 1
+Sending: 806478 to 2
+Rank 1 has recieved, got: 846610
+Rank 2 has recieved, got: 806478
+Done sending: 806478 to 2
+Sending: 805509 to 3
+Done sending: 805509 to 3
+Sending: 795224 to 4
+Rank 3 has recieved, got: 805509
+Done sending: 795224 to 4
+Sending: 787817 to 5
+Rank 4 has recieved, got: 795224
+Done sending: 787817 to 5
+Sending: 824993 to 6
+Rank 5 has recieved, got: 787817
+Rank 6 has recieved, got: 824993
+Done sending: 824993 to 6
+Sending: 808913 to 7
+Done sending: 808913 to 7
+Sending: 832511 to 8
+Rank 7 has recieved, got: 808913
+Done sending: 832511 to 8
+Sending: 847423 to 9
+Rank 8 has recieved, got: 832511
+Done sending: 847423 to 9
+Sending: 879653 to 10
+Rank 9 has recieved, got: 847423
+Done sending: 879653 to 10
+Sending: 879287 to 11
+Rank 10 has recieved, got: 879653
+Done sending: 879287 to 11
+Sending: 845489 to 12
+Rank 11 has recieved, got: 879287
+Done sending: 845489 to 12
+Sending: 951772 to 13
+Rank 12 has recieved, got: 845489
+Done sending: 951772 to 13
+Sending: 854977 to 14
+Rank 13 has recieved, got: 951772
+Done sending: 854977 to 14
+Sending: 1114306 to 15
+Rank 14 has recieved, got: 854977
+Rank 15 has recieved, got: 1114306
+Done sending: 1114306 to 15
+Sending: 1499646 to 16
+Rank 16 has recieved, got: 1499646
+Done sending: 1499646 to 16
+Sending: 907383 to 17
+Done sending: 907383 to 17
+Sending: 0 to 18
+Rank 17 has recieved, got: 907383
+Done sending: 0 to 18
+Sending: 0 to 19
+Rank 18 has recieved, got: 0
+Done sending: 0 to 19
+Sending: 0 to 20
+Rank 19 has recieved, got: 0
+Done sending: 0 to 20
+Sending: 0 to 21
+Rank 20 has recieved, got: 0
+Done sending: 0 to 21
+Sending: 0 to 22
+Rank 21 has recieved, got: 0
+Rank 22 has recieved, got: 0
+Done sending: 0 to 22
+Sending: 0 to 23
+Done sending: 0 to 23
+Sending: 0 to 24
+Rank 23 has recieved, got: 0
+Done sending: 0 to 24
+Sending: 0 to 25
+Rank 24 has recieved, got: 0
+Done sending: 0 to 25
+Sending: 0 to 26
+Rank 25 has recieved, got: 0
+Done sending: 0 to 26
+Sending: 0 to 27
+Rank 26 has recieved, got: 0
+Done sending: 0 to 27
+Sending: 0 to 28
+Rank 27 has recieved, got: 0
+Rank 28 has recieved, got: 0
+Done sending: 0 to 28
+Sending: 0 to 29
+Done sending: 0 to 29
+Sending: 0 to 30
+Rank 29 has recieved, got: 0
+Done sending: 0 to 30
+Sending: 0 to 31
+Rank 30 has recieved, got: 0
+Done sending: 0 to 31
+Rank 31 has recieved, got: 0
+
+File:             17.35
+Comp:             393.536
+Comm:             774.039
+Total:            417.866
+L2 norm:          1.03019e+26
+OPS:              9599525200
+GFLOPS:           0.024393
+GFLOPS:           0.024393
+GFLOPS (kernel):  0.082654
++ ln -f nicename78564.out hugetrace-0002032.out
++ rm nicename78564.out

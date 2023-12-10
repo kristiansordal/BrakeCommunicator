@@ -73,6 +73,7 @@ int main(int argc, char **argv) {
 
     MPI_Barrier(MPI_COMM_WORLD);
 
+    cout << "Load Balancing start" << endl;
     // Start load balancing
     if (rank == 0) {
         int avg_load = nnz / np;
@@ -87,7 +88,9 @@ int main(int argc, char **argv) {
         }
     }
 
+    cout << "Broacasting load balance" << endl;
     MPI_Bcast(rc.data(), np * sizeof(int), MPI_INT, 0, MPI_COMM_WORLD);
+    cout << "End load balance" << endl;
     // End load balancing
 
     nrows = rc[rank];
@@ -134,13 +137,13 @@ int main(int argc, char **argv) {
         v_old.assign(n, 0);
 
         /*
-         * v_new.data() -> The newly computed data
-         * v            -> The size of the data to be sent
-         * MPI_DOUBLE   -> MPI Data type of the contents being sent
-         * v_old.data()  -> The buffer to receive the data
+         * v_new.data()      -> The newly computed data
+         * v                 -> The size of the data to be sent
+         * MPI_DOUBLE        -> MPI Data type of the contents being sent
+         * v_old.data()      -> The buffer to receive the data
          * recvcounts.data() -> The size of the data to be received
-         * displs.data() -> The displacement of the data to be received
-         * MPI_COMM_WORLD -> The communicator
+         * displs.data()     -> The displacement of the data to be received
+         * MPI_COMM_WORLD    -> The communicator
          *
          * */
 

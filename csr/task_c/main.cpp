@@ -58,6 +58,7 @@ int main(int argc, char **argv) {
     vector<i64> r;
     int count = 1;
 
+    cout << "Init row ptr" << endl;
     r.push_back(0);
     for (int i = 1; i < row_ids.size(); i++) {
         if (row_ids[i] == row_ids[i - 1]) {
@@ -69,6 +70,7 @@ int main(int argc, char **argv) {
 
     r.push_back(count);
     row_ptr = r;
+    cout << "Done init row ptr" << endl;
     // Done initializing row ptr
 
     MPI_Barrier(MPI_COMM_WORLD);

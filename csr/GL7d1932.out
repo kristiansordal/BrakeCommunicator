@@ -1,0 +1,230 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 32 build/debug/csr /home/krisor99/UiB-INF339/matrices/GL7d19.mtx
+[n004:72620] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72630] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72624] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72622] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72601] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72673] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72604] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72612] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72634] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72626] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72614] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72618] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72633] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72615] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72650] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72605] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72611] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72608] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72698] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72644] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72658] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72677] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72646] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72690] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72728] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72664] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72713] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72639] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72720] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72705] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72726] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:72730] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    32
+Opening file...
+File successfully opened
+Successfully read file GL7d19.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 38408 to 0
+Done sending: 38408 to 0
+Sending: 42863 to 1
+Done sending: 42863 to 1
+Sending: 45538 to 2
+Done sending: 45538 to 2
+Sending: 47535 to 3
+Done sending: 47535 to 3
+Sending: 49121 to 4
+Done sending: 49121 to 4
+Sending: 50566 to 5
+Done sending: 50566 to 5
+Sending: 51829 to 6
+Done sending: 51829 to 6
+Sending: 52890 to 7
+Done sending: 52890 to 7
+Sending: 54057 to 8
+Done sending: 54057 to 8
+Sending: 55003 to 9
+Done sending: 55003 to 9
+Sending: 55921 to 10
+Done sending: 55921 to 10
+Sending: 56826 to 11
+Done sending: 56826 to 11
+Sending: 57733 to 12
+Done sending: 57733 to 12
+Sending: 58621 to 13
+Done sending: 58621 to 13
+Sending: 59387 to 14
+Done sending: 59387 to 14
+Sending: 60261 to 15
+Done sending: 60261 to 15
+Sending: 61122 to 16
+Done sending: 61122 to 16
+Sending: 62010 to 17
+Done sending: 62010 to 17
+Sending: 62865 to 18
+Done sending: 62865 to 18
+Sending: 63745 to 19
+Done sending: 63745 to 19
+Sending: 64674 to 20
+Done sending: 64674 to 20
+Sending: 65707 to 21
+Done sending: 65707 to 21
+Sending: 66691 to 22
+Done sending: 66691 to 22
+Sending: 67749 to 23
+Done sending: 67749 to 23
+Sending: 68909 to 24
+Done sending: 68909 to 24
+Sending: 70025 to 25
+Done sending: 70025 to 25
+Sending: 71478 to 26
+Done sending: 71478 to 26
+Sending: 72955 to 27
+Done sending: 72955 to 27
+Sending: 74815 to 28
+Done sending: 74815 to 28
+Sending: 77177 to 29
+Done sending: 77177 to 29
+Sending: 80673 to 30
+Done sending: 80673 to 30
+Sending: 43976 to 31
+Done sending: 43976 to 31
+Rank 0 is waiting for recieve
+Rank 0 has recieved, got: 38408
+Rank 17 is waiting for recieve
+Rank 17 has recieved, got: 62010
+Rank 18 is waiting for recieve
+Rank 18 has recieved, got: 62865
+Rank 19 is waiting for recieve
+Rank 19 has recieved, got: 63745
+Rank 20 is waiting for recieve
+Rank 20 has recieved, got: 64674
+Rank 21 is waiting for recieve
+Rank 21 has recieved, got: 65707
+Rank 22 is waiting for recieve
+Rank 22 has recieved, got: 66691
+Rank 23 is waiting for recieve
+Rank 23 has recieved, got: 67749
+Rank 25 is waiting for recieve
+Rank 25 has recieved, got: 70025
+Rank 26 is waiting for recieve
+Rank 26 has recieved, got: 71478
+Rank 27 is waiting for recieve
+Rank 27 has recieved, got: 72955
+Rank 28 is waiting for recieve
+Rank 28 has recieved, got: 74815
+Rank 29 is waiting for recieve
+Rank 29 has recieved, got: 77177
+Rank 30 is waiting for recieve
+Rank 30 has recieved, got: 80673
+Rank 1 is waiting for recieve
+Rank 1 has recieved, got: 42863
+Rank 2 is waiting for recieve
+Rank 2 has recieved, got: 45538
+Rank 3 is waiting for recieve
+Rank 3 has recieved, got: 47535
+Rank 4 is waiting for recieve
+Rank 4 has recieved, got: 49121
+Rank 5 is waiting for recieve
+Rank 5 has recieved, got: 50566
+Rank 6 is waiting for recieve
+Rank 6 has recieved, got: 51829
+Rank 7 is waiting for recieve
+Rank 7 has recieved, got: 52890
+Rank 9 is waiting for recieve
+Rank 9 has recieved, got: 55003
+Rank 10 is waiting for recieve
+Rank 10 has recieved, got: 55921
+Rank 11 is waiting for recieve
+Rank 11 has recieved, got: 56826
+Rank 12 is waiting for recieve
+Rank 12 has recieved, got: 57733
+Rank 13 is waiting for recieve
+Rank 13 has recieved, got: 58621
+Rank 14 is waiting for recieve
+Rank 14 has recieved, got: 59387
+Rank 15 is waiting for recieve
+Rank 15 has recieved, got: 60261
+Rank 8 is waiting for recieve
+Rank 8 has recieved, got: 54057
+Rank 31 is waiting for recieve
+Rank 31 has recieved, got: 43976
+Rank 16 is waiting for recieve
+Rank 16 has recieved, got: 61122
+Rank 24 is waiting for recieve
+Rank 24 has recieved, got: 68909
+
+File:             17.3306
+Comp:             63.469
+Comm:             120.282
+Total:            90.4711
+L2 norm:          1.29448e+68
+OPS:              7464545000
+GFLOPS:           0.117609
+GFLOPS:           0.117609
+GFLOPS (kernel):  0.0553733
++ ln -f nicename78528.out GL7d1932.out
++ rm nicename78528.out

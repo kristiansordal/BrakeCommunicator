@@ -48,6 +48,7 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
         }
     }
     tcomm += time.elapsed() - t1;
+    cout << "TCOMM: " << tcomm << endl;
     v_old.clear();
     v_old.reserve(nrows);
     for (auto &i : send_buff) {

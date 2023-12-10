@@ -50,61 +50,57 @@
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
 + mpirun -np 8 build/debug/csr /home/krisor99/UiB-INF339/matrices/cage15.mtx
-[n002:64339] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64340] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64341] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64346] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64349] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64352] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64357] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64336] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84596] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84597] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84599] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84604] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84608] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84616] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84621] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84633] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
 SIZE:    8
+Rank 1 is waiting for recieve
+Rank 2 is waiting for recieve
+Rank 3 is waiting for recieve
+Rank 4 is waiting for recieve
+Rank 6 is waiting for recieve
+Rank 7 is waiting for recieve
+Rank 5 is waiting for recieve
 Opening file...
 File successfully opened
 Successfully read file cage15.mtx
 Performing Load Balancing
 Load balancing completed
-Sending: 859134 to 0
-Done sending: 859134 to 0
 Sending: 740717 to 1
 Done sending: 740717 to 1
 Sending: 646737 to 2
+Rank 1 has recieved, got: 740717
 Done sending: 646737 to 2
 Sending: 653113 to 3
+Rank 2 has recieved, got: 646737
 Done sending: 653113 to 3
+Rank 3 has recieved, got: 653113
 Sending: 592179 to 4
+Rank 4 has recieved, got: 592179
 Done sending: 592179 to 4
 Sending: 608364 to 5
 Done sending: 608364 to 5
 Sending: 558107 to 6
+Rank 5 has recieved, got: 608364
 Done sending: 558107 to 6
 Sending: 496508 to 7
-Done sending: 496508 to 7
-Rank 0 is waiting for recieve
-Rank 0 has recieved, got: 859134
-Rank 4 is waiting for recieve
-Rank 4 has recieved, got: 592179
-Rank 1 is waiting for recieve
-Rank 1 has recieved, got: 740717
-Rank 2 is waiting for recieve
-Rank 2 has recieved, got: 646737
-Rank 3 is waiting for recieve
-Rank 3 has recieved, got: 653113
-Rank 5 is waiting for recieve
-Rank 5 has recieved, got: 608364
-Rank 6 is waiting for recieve
 Rank 6 has recieved, got: 558107
-Rank 7 is waiting for recieve
+Done sending: 496508 to 7
 Rank 7 has recieved, got: 496508
 
-File:             65.7061
-Comp:             48.1382
-Comm:             53.0691
-Total:            128.08
+File:             47.444
+Comp:             33.1995
+Comm:             53.3642
+Total:            109.27
 L2 norm:          2270.43
 OPS:              19839910200
-GFLOPS:           0.412145
-GFLOPS:           0.412145
-GFLOPS (kernel):  0.111951
-+ ln -f nicename78379.out cage158.out
-+ rm nicename78379.out
+GFLOPS:           0.597597
+GFLOPS:           0.597597
+GFLOPS (kernel):  0.373439
++ ln -f nicename78547.out cage158.out
++ rm nicename78547.out

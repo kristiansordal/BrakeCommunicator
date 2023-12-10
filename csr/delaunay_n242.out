@@ -49,38 +49,28 @@
 + OMPI_MCA_btl_openib_allow_ib=1
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
-+ mpirun -np 4 build/debug/csr /home/krisor99/UiB-INF339/matrices/cage15.mtx
-[n004:84632] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n004:84671] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n004:84732] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n004:84829] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-Rank 3 is waiting for recieve
-Rank 2 is waiting for recieve
++ mpirun -np 2 build/debug/csr /home/krisor99/UiB-INF339/matrices/delaunay_n24.mtx
+[n004:88474] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:88465] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    2
 Rank 1 is waiting for recieve
-SIZE:    4
 Opening file...
 File successfully opened
-Successfully read file cage15.mtx
+Successfully read file delaunay_n24.mtx
 Performing Load Balancing
 Load balancing completed
-Sending: 1299850 to 1
-Rank 1 has recieved, got: 1299850
-Done sending: 1299850 to 1
-Sending: 1200543 to 2
-Rank 2 has recieved, got: 1200543
-Done sending: 1200543 to 2
-Sending: 1054615 to 3
-Done sending: 1054615 to 3
-Rank 3 has recieved, got: 1054615
+Sending: 1353141 to 1
+Rank 1 has recieved, got: 1353141
+Done sending: 1353141 to 1
 
-File:             58.1743
-Comp:             34.6283
-Comm:             34.1418
-Total:            115.044
-L2 norm:          2270.43
-OPS:              19839910200
-GFLOPS:           0.57294
-GFLOPS:           0.57294
-GFLOPS (kernel):  0.275956
-+ ln -f nicename78546.out cage154.out
-+ rm nicename78546.out
+File:             118.142
+Comp:             227.816
+Comm:             58.2403
+Total:            357.939
+L2 norm:          1.08107e+45
+OPS:              20132640400
+GFLOPS:           0.0883726
+GFLOPS:           0.0883726
+GFLOPS (kernel):  0.0540904
++ ln -f nicename78552.out delaunay_n242.out
++ rm nicename78552.out

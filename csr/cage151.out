@@ -50,28 +50,22 @@
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
 + mpirun -np 1 build/debug/csr /home/krisor99/UiB-INF339/matrices/cage15.mtx
---------------------------------------------------------------------------
-Open MPI tried to fork a new process via the "execve" system call but
-failed.  Open MPI checks many things before attempting to launch a
-child process, but nothing is perfect. This error may be indicative
-of another problem on the target host, or even something as silly as
-having specified a directory for your application. Your job will now
-abort.
+[n004:84615] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    1
+Opening file...
+File successfully opened
+Successfully read file cage15.mtx
+Performing Load Balancing
+Load balancing completed
 
-  Local host:        n002
-  Working dir:       /home/krisor99/BrakeCommunicator/csr
-  Application name:  build/debug/csr
-  Error:             Exec format error
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-mpirun was unable to start the specified application as it encountered an
-error:
-
-Error code: -125
-Error name: The specified application failed to start
-Node: n002
-
-when attempting to start process rank 0.
---------------------------------------------------------------------------
-+ ln -f nicename78390.out cage151.out
-+ rm nicename78390.out
+File:             152.537
+Comp:             215.092
+Comm:             0.606808
+Total:            381.482
+L2 norm:          2270.43
+OPS:              19839910200
+GFLOPS:           0.0922394
+GFLOPS:           0.0922394
+GFLOPS (kernel):  0.0928157
++ ln -f nicename78544.out cage151.out
++ rm nicename78544.out

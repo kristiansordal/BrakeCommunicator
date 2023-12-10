@@ -50,101 +50,97 @@
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
 + mpirun -np 16 build/debug/csr /home/krisor99/UiB-INF339/matrices/cage15.mtx
-[n002:64388] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64391] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64392] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64394] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64399] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64529] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64534] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64535] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64542] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64544] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64547] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64551] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64553] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64557] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64560] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-[n002:64540] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84639] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84679] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84751] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84840] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84897] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84944] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84955] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84956] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84969] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84979] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84982] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84986] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84988] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84991] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84994] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:84997] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Rank 11 is waiting for recieve
+Rank 12 is waiting for recieve
+Rank 13 is waiting for recieve
+Rank 14 is waiting for recieve
+Rank 1 is waiting for recieve
+Rank 3 is waiting for recieve
+Rank 4 is waiting for recieve
+Rank 6 is waiting for recieve
+Rank 9 is waiting for recieve
+Rank 7 is waiting for recieve
+Rank 10 is waiting for recieve
+Rank 15 is waiting for recieve
+Rank 2 is waiting for recieve
+Rank 5 is waiting for recieve
+Rank 8 is waiting for recieve
 SIZE:    16
 Opening file...
 File successfully opened
 Successfully read file cage15.mtx
 Performing Load Balancing
 Load balancing completed
-Sending: 478961 to 0
-Done sending: 478961 to 0
 Sending: 380173 to 1
+Rank 1 has recieved, got: 380173
 Done sending: 380173 to 1
 Sending: 387806 to 2
+Rank 2 has recieved, got: 387806
 Done sending: 387806 to 2
 Sending: 352911 to 3
 Done sending: 352911 to 3
 Sending: 335033 to 4
+Rank 3 has recieved, got: 352911
 Done sending: 335033 to 4
 Sending: 311704 to 5
+Rank 4 has recieved, got: 335033
 Done sending: 311704 to 5
 Sending: 317011 to 6
+Rank 5 has recieved, got: 311704
 Done sending: 317011 to 6
 Sending: 336102 to 7
+Rank 6 has recieved, got: 317011
+Rank 7 has recieved, got: 336102
 Done sending: 336102 to 7
 Sending: 304222 to 8
 Done sending: 304222 to 8
 Sending: 287957 to 9
+Rank 8 has recieved, got: 304222
 Done sending: 287957 to 9
 Sending: 313934 to 10
+Rank 9 has recieved, got: 287957
 Done sending: 313934 to 10
 Sending: 294430 to 11
+Rank 10 has recieved, got: 313934
 Done sending: 294430 to 11
 Sending: 277899 to 12
+Rank 11 has recieved, got: 294430
 Done sending: 277899 to 12
 Sending: 280208 to 13
+Rank 12 has recieved, got: 277899
 Done sending: 280208 to 13
 Sending: 243372 to 14
+Rank 13 has recieved, got: 280208
 Done sending: 243372 to 14
 Sending: 253136 to 15
-Done sending: 253136 to 15
-Rank 0 is waiting for recieve
-Rank 0 has recieved, got: 478961
-Rank 4 is waiting for recieve
-Rank 8 is waiting for recieve
-Rank 4 has recieved, got: 335033
-Rank 12 is waiting for recieve
-Rank 12 has recieved, got: 277899
-Rank 14 is waiting for recieve
-Rank 8 has recieved, got: 304222
-Rank 13 is waiting for recieve
-Rank 13 has recieved, got: 280208
-Rank 1 is waiting for recieve
-Rank 1 has recieved, got: 380173
-Rank 2 is waiting for recieve
-Rank 2 has recieved, got: 387806
-Rank 3 is waiting for recieve
-Rank 3 has recieved, got: 352911
-Rank 5 is waiting for recieve
-Rank 5 has recieved, got: 311704
-Rank 6 is waiting for recieve
-Rank 6 has recieved, got: 317011
-Rank 7 is waiting for recieve
-Rank 7 has recieved, got: 336102
 Rank 14 has recieved, got: 243372
-Rank 9 is waiting for recieve
-Rank 9 has recieved, got: 287957
-Rank 10 is waiting for recieve
-Rank 10 has recieved, got: 313934
-Rank 11 is waiting for recieve
-Rank 11 has recieved, got: 294430
-Rank 15 is waiting for recieve
+Done sending: 253136 to 15
 Rank 15 has recieved, got: 253136
 
-File:             68.5898
-Comp:             65.1896
-Comm:             114.206
-Total:            150.455
+File:             56.3338
+Comp:             73.9088
+Comm:             138.791
+Total:            151.302
 L2 norm:          2270.43
 OPS:              19839910200
-GFLOPS:           0.304342
-GFLOPS:           0.304342
-GFLOPS (kernel):  0.140577
-+ ln -f nicename78380.out cage1516.out
-+ rm nicename78380.out
+GFLOPS:           0.268438
+GFLOPS:           0.268438
+GFLOPS (kernel):  0.230855
++ ln -f nicename78548.out cage1516.out
++ rm nicename78548.out

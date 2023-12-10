@@ -49,27 +49,42 @@
 + OMPI_MCA_btl_openib_allow_ib=1
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
-+ mpirun -np 1 build/debug/csr /home/krisor99/UiB-INF339/matrices/ML_Geer.mtx
-[n002:71140] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
-SIZE:    1
++ mpirun -np 4 build/debug/csr /home/krisor99/UiB-INF339/matrices/IMDB.mtx
+[n004:45966] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46006] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46094] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46150] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    4
 Opening file...
 File successfully opened
-Successfully read file ML_Geer.mtx
+Successfully read file IMDB.mtx
 Performing Load Balancing
 Load balancing completed
-Sending: 1504002 to 0
-Done sending: 1504002 to 0
+Sending: 248079 to 0
+Done sending: 248079 to 0
+Sending: 180361 to 1
+Done sending: 180361 to 1
+Sending: 0 to 2
+Done sending: 0 to 2
+Sending: 0 to 3
+Done sending: 0 to 3
 Rank 0 is waiting for recieve
-Rank 0 has recieved, got: 1504002
+Rank 0 has recieved, got: 248079
+Rank 1 is waiting for recieve
+Rank 2 is waiting for recieve
+Rank 1 has recieved, got: 180361
+Rank 2 has recieved, got: 0
+Rank 3 is waiting for recieve
+Rank 3 has recieved, got: 0
 
-File:             138.757
-Comp:             195.553
-Comm:             0.139847
-Total:            359.253
-L2 norm:          nan
-OPS:              22175994400
-GFLOPS:           0.113402
-GFLOPS:           0.113402
-GFLOPS (kernel):  0.11358
-+ ln -f nicename78425.out ML_Geer1.out
-+ rm nicename78425.out
+File:             1.74623
+Comp:             2.99024
+Comm:             3.08702
+Total:            5.10052
+L2 norm:          4.5424e+63
+OPS:              756492600
+GFLOPS:           0.252987
+GFLOPS:           0.252987
+GFLOPS (kernel):  0.141336
++ ln -f nicename78475.out IMDB4.out
++ rm nicename78475.out

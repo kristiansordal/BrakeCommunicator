@@ -1,0 +1,110 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 8 build/debug/csr /home/krisor99/UiB-INF339/matrices/IMDB.mtx
+[n004:45946] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:45975] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:45954] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46012] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46087] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46140] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46207] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46263] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    8
+Opening file...
+File successfully opened
+Successfully read file IMDB.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 122946 to 0
+Done sending: 122946 to 0
+Sending: 125132 to 1
+Done sending: 125132 to 1
+Sending: 119772 to 2
+Done sending: 119772 to 2
+Sending: 60590 to 3
+Done sending: 60590 to 3
+Sending: 0 to 4
+Done sending: 0 to 4
+Sending: 0 to 5
+Done sending: 0 to 5
+Sending: 0 to 6
+Done sending: 0 to 6
+Sending: 0 to 7
+Done sending: 0 to 7
+Rank 0 is waiting for recieve
+Rank 0 has recieved, got: 122946
+Rank 1 is waiting for recieve
+Rank 1 has recieved, got: 125132
+Rank 2 is waiting for recieve
+Rank 2 has recieved, got: 119772
+Rank 3 is waiting for recieve
+Rank 3 has recieved, got: 60590
+Rank 4 is waiting for recieve
+Rank 4 has recieved, got: 0
+Rank 5 is waiting for recieve
+Rank 5 has recieved, got: 0
+Rank 6 is waiting for recieve
+Rank 6 has recieved, got: 0
+Rank 7 is waiting for recieve
+Rank 7 has recieved, got: 0
+
+File:             1.55525
+Comp:             3.52233
+Comm:             5.24382
+Total:            5.67675
+L2 norm:          4.5424e+63
+OPS:              756492600
+GFLOPS:           0.214771
+GFLOPS:           0.214771
+GFLOPS (kernel):  0.109792
++ ln -f nicename78476.out IMDB8.out
++ rm nicename78476.out

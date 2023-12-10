@@ -1,0 +1,255 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 16 build/debug/csr /home/krisor99/UiB-INF339/matrices/IMDB.mtx
+[n004:45962] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:45998] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46079] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46149] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46228] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46281] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46289] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46292] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46318] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46320] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46326] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46330] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46332] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46334] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46337] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:46342] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    16
+Opening file...
+File successfully opened
+Successfully read file IMDB.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 61526 to 0
+Done sending: 61526 to 0
+Sending: 61420 to 1
+Done sending: 61420 to 1
+Sending: 62889 to 2
+Done sending: 62889 to 2
+Sending: 62242 to 3
+Done sending: 62242 to 3
+Sending: 61466 to 4
+Done sending: 61466 to 4
+Sending: 58306 to 5
+Done sending: 58306 to 5
+Sending: 51065 to 6
+Done sending: 51065 to 6
+Sending: 9526 to 7
+Done sending: 9526 to 7
+Sending: 0 to 8
+Done sending: 0 to 8
+Sending: 0 to 9
+Done sending: 0 to 9
+Sending: 0 to 10
+Done sending: 0 to 10
+Sending: 0 to 11
+Done sending: 0 to 11
+Sending: 0 to 12
+Done sending: 0 to 12
+Sending: 0 to 13
+Done sending: 0 to 13
+Sending: 0 to 14
+Done sending: 0 to 14
+Sending: 0 to 15
+Done sending: 0 to 15
+Rank 0 is waiting for recieve
+Rank 0 has recieved, got: 61526
+Rank 1 is waiting for recieve
+Rank 1 has recieved, got: 61420
+Rank 3 is waiting for recieve
+Rank 3 has recieved, got: 62242
+Rank 4 is waiting for recieve
+Rank 4 has recieved, got: 61466
+Rank 5 is waiting for recieve
+Rank 7 is waiting for recieve
+Rank 7 has recieved, got: 9526
+Rank 8 is waiting for recieve
+Rank 8 has recieved, got: 0
+Rank 9 is waiting for recieve
+Rank 9 has recieved, got: 0
+Rank 10 is waiting for recieve
+Rank 10 has recieved, got: 0
+Rank 11 is waiting for recieve
+Rank 11 has recieved, got: 0
+Rank 12 is waiting for recieve
+Rank 12 has recieved, got: 0
+Rank 13 is waiting for recieve
+Rank 13 has recieved, got: 0
+Rank 14 is waiting for recieve
+Rank 14 has recieved, got: 0
+Rank 2 is waiting for recieve
+Rank 2 has recieved, got: 62889
+Rank 6 is waiting for recieve
+Rank 6 has recieved, got: 51065
+Rank 5 has recieved, got: 58306
+Rank 15 is waiting for recieve
+Rank 15 has recieved, got: 0
+csr: /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/include/boost/mpi/communicator.hpp:1466: boost::mpi::status boost::mpi::communicator::recv_vector(int, int, std::vector<_Tp, _Alloc>&, mpl_::true_) const [with T = double; A = std::allocator<double>; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+csr: /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/include/boost/mpi/communicator.hpp:1466: boost::mpi::status boost::mpi::communicator::recv_vector(int, int, std::vector<_Tp, _Alloc>&, mpl_::true_) const [with T = double; A = std::allocator<double>; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+[n004:45998] *** Process received signal ***
+[n004:45998] Signal: Aborted (6)
+[n004:45998] Signal code:  (-6)
+csr: /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/include/boost/mpi/communicator.hpp:1466: boost::mpi::status boost::mpi::communicator::recv_vector(int, int, std::vector<_Tp, _Alloc>&, mpl_::true_) const [with T = double; A = std::allocator<double>; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+[n004:46079] *** Process received signal ***
+[n004:46079] Signal: Aborted (6)
+[n004:46079] Signal code:  (-6)
+csr: /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/include/boost/mpi/communicator.hpp:1466: boost::mpi::status boost::mpi::communicator::recv_vector(int, int, std::vector<_Tp, _Alloc>&, mpl_::true_) const [with T = double; A = std::allocator<double>; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+[n004:46149] *** Process received signal ***
+[n004:46149] Signal: Aborted (6)
+[n004:46149] Signal code:  (-6)
+csr: /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/include/boost/mpi/communicator.hpp:1466: boost::mpi::status boost::mpi::communicator::recv_vector(int, int, std::vector<_Tp, _Alloc>&, mpl_::true_) const [with T = double; A = std::allocator<double>; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+csr: /cm/shared/ex3-modules/0.6.1/pkgs/boost-mpi-1.73.0/include/boost/mpi/communicator.hpp:1466: boost::mpi::status boost::mpi::communicator::recv_vector(int, int, std::vector<_Tp, _Alloc>&, mpl_::true_) const [with T = double; A = std::allocator<double>; mpl_::true_ = mpl_::bool_<true>]: Assertion `_check_result == MPI_SUCCESS' failed.
+[n004:46281] *** Process received signal ***
+[n004:46281] Signal: Aborted (6)
+[n004:46281] Signal code:  (-6)
+[n004:46228] *** Process received signal ***
+[n004:46228] Signal: Aborted (6)
+[n004:46228] Signal code:  (-6)
+[n004:45962] *** Process received signal ***
+[n004:46149] [ 0] [n004:45998] [ 0] [n004:46079] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:46079] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:46149] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:45998] [ 1] [ 1] [n004:46281] [ 0] [n004:46228] [ 0] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7ffff5e6e9fc]
+[n004:46149] [ 2] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7ffff5e6e9fc]
+[n004:46079] [ 2] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7ffff5e6e9fc]
+[n004:45998] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7ffff5e1a476]
+[n004:45998] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:46281] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:46228] [ 1] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7ffff5e1a476]
+[n004:46149] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7ffff5e007f3]
+[n004:46149] [ 4] [ 3] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7ffff5e1a476]
+[n004:46079] [ 3] /lib/x86_64-linux-gnu/libc.so.6(+0x2871b)[0x7ffff5e0071b]
+[n004:46149] [ 5] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7ffff5e007f3]
+[n004:45998] [ 4] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7ffff5e6e9fc]
+[n004:46281] [ 2] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7ffff5e6e9fc]
+[n004:46228] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7ffff5e1a476]
+[n004:46228] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7ffff5e007f3]
+[n004:46079] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x39e96)[0x7ffff5e11e96]
+[n004:46149] [ 6] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7ffff5e1a476]
+[n004:46281] [ 3] build/debug/csr[0x4238fe]
+[n004:46149] [ 7] build/debug/csr[0x41e669]
+[n004:46149] [ 8] build/debug/csr[0x44c4c9]
+[n004:46149] [ 9] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7ffff5e007f3]
+[n004:46228] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x2871b)[0x7ffff5e0071b]
+[n004:46079] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x2871b)[0x7ffff5e0071b]
+[n004:45998] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x39e96)[0x7ffff5e11e96]
+[n004:45998] [ 6] build/debug/csr[0x4238fe]
+[n004:45998] [ 7] build/debug/csr[0x410163]
+[n004:46149] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x2871b)[0x7ffff5e0071b]
+[n004:46228] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x39e96)[0x7ffff5e11e96]
+[n004:46079] [ 6] build/debug/csr[0x4238fe]
+[n004:46079] [ 7] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7ffff5e007f3]
+[n004:46281] [ 4] build/debug/csr[0x41e669]
+[n004:46079] [ 8] build/debug/csr[0x44c4c9]
+[n004:46079] [ 9] build/debug/csr[0x410163]
+[n004:46079] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x2871b)[0x7ffff5e0071b]
+[n004:46281] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x39e96)[0x7ffff5e11e96]
+build/debug/csr[0x41e669]
+[n004:45998] [ 8] build/debug/csr[0x44c4c9]
+[n004:45998] [ 9] build/debug/csr[0x410163]
+[n004:45998] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:46149] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:46149] [12] build/debug/csr[0x40f1b5]
+[n004:46149] *** End of error message ***
+/lib/x86_64-linux-gnu/libc.so.6(+0x39e96)[0x7ffff5e11e96]
+[n004:46228] [ 6] build/debug/csr[0x4238fe]
+[n004:46228] [ 7] build/debug/csr[0x41e669]
+[n004:46228] [ 8] build/debug/csr[0x44c4c9]
+[n004:46228] [ 9] [n004:46281] [ 6] build/debug/csr[0x4238fe]
+[n004:46281] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:45998] [11] build/debug/csr[0x410163]
+[n004:46228] [10] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:45998] [12] build/debug/csr[0x41e669]
+[n004:46281] [ 8] build/debug/csr[0x44c4c9]
+[n004:46281] [ 9] build/debug/csr[0x410163]
+[n004:46281] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:46079] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:46079] [12] build/debug/csr[0x40f1b5]
+[n004:46079] *** End of error message ***
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:46228] [11] build/debug/csr[0x40f1b5]
+[n004:45998] *** End of error message ***
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:46228] [12] build/debug/csr[0x40f1b5]
+[n004:46228] *** End of error message ***
+/lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:46281] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:46281] [12] build/debug/csr[0x40f1b5]
+[n004:46281] *** End of error message ***
+[n004:45962] Signal: Aborted (6)
+[n004:45962] Signal code:  (-6)
+[n004:45962] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:45962] [ 1] /lib/x86_64-linux-gnu/libc.so.6(pthread_kill+0x12c)[0x7ffff5e6e9fc]
+[n004:45962] [ 2] /lib/x86_64-linux-gnu/libc.so.6(raise+0x16)[0x7ffff5e1a476]
+[n004:45962] [ 3] /lib/x86_64-linux-gnu/libc.so.6(abort+0xd3)[0x7ffff5e007f3]
+[n004:45962] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x2871b)[0x7ffff5e0071b]
+[n004:45962] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x39e96)[0x7ffff5e11e96]
+[n004:45962] [ 6] build/debug/csr[0x4238fe]
+[n004:45962] [ 7] build/debug/csr[0x41e669]
+[n004:45962] [ 8] build/debug/csr[0x44c4c9]
+[n004:45962] [ 9] build/debug/csr[0x410163]
+[n004:45962] [10] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:45962] [11] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:45962] [12] build/debug/csr[0x40f1b5]
+[n004:45962] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 46149 on node n004 exited on signal 6 (Aborted).
+--------------------------------------------------------------------------
++ ln -f nicename78477.out IMDB16.out
++ rm nicename78477.out

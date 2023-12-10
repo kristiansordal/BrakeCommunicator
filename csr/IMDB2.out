@@ -49,32 +49,32 @@
 + OMPI_MCA_btl_openib_allow_ib=1
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
-+ mpirun -np 8 build/debug/csr /home/krisor99/UiB-INF339/matrices/circuit5M.mtx
---------------------------------------------------------------------------
-Open MPI tried to fork a new process via the "execve" system call but
-failed.  Open MPI checks many things before attempting to launch a
-child process, but nothing is perfect. This error may be indicative
-of another problem on the target host, or even something as silly as
-having specified a directory for your application. Your job will now
-abort.
++ mpirun -np 2 build/debug/csr /home/krisor99/UiB-INF339/matrices/IMDB.mtx
+[n004:45944] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n004:45940] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    2
+Opening file...
+File successfully opened
+Successfully read file IMDB.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 428440 to 0
+Done sending: 428440 to 0
+Sending: 0 to 1
+Done sending: 0 to 1
+Rank 0 is waiting for recieve
+Rank 0 has recieved, got: 428440
+Rank 1 is waiting for recieve
+Rank 1 has recieved, got: 0
 
-  Local host:        n002
-  Working dir:       /home/krisor99/BrakeCommunicator/csr
-  Application name:  build/debug/csr
-  Error:             Exec format error
---------------------------------------------------------------------------
---------------------------------------------------------------------------
-mpirun was unable to start the specified application as it encountered an
-error:
-
-Error code: -125
-Error name: The specified application failed to start
-Node: n002
-
-when attempting to start process rank 0.
---------------------------------------------------------------------------
-[n002:68324] 7 more processes have sent help message help-orte-odls-default.txt / execve error
-[n002:68324] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
-8 total processes failed to start
-+ ln -f nicename78386.out circuit5M8.out
-+ rm nicename78386.out
+File:             3.48404
+Comp:             8.1925
+Comm:             1.37658
+Total:            12.9307
+L2 norm:          4.5424e+63
+OPS:              756492600
+GFLOPS:           0.0923397
+GFLOPS:           0.0923397
+GFLOPS (kernel):  0.0511998
++ ln -f nicename78474.out IMDB2.out
++ rm nicename78474.out

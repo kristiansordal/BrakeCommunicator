@@ -49,27 +49,29 @@
 + OMPI_MCA_btl_openib_allow_ib=1
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
-+ mpirun -np 1 build/debug/csr /home/krisor99/UiB-INF339/matrices/ML_Geer.mtx
-[n002:71140] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
++ mpirun -np 1 build/debug/csr /home/krisor99/UiB-INF339/matrices/arabic2005.mtx
+[n004:50657] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
 SIZE:    1
 Opening file...
-File successfully opened
-Successfully read file ML_Geer.mtx
-Performing Load Balancing
-Load balancing completed
-Sending: 1504002 to 0
-Done sending: 1504002 to 0
-Rank 0 is waiting for recieve
-Rank 0 has recieved, got: 1504002
-
-File:             138.757
-Comp:             195.553
-Comm:             0.139847
-Total:            359.253
-L2 norm:          nan
-OPS:              22175994400
-GFLOPS:           0.113402
-GFLOPS:           0.113402
-GFLOPS (kernel):  0.11358
-+ ln -f nicename78425.out ML_Geer1.out
-+ rm nicename78425.out
+Error: Could not open file.
+[n004:50657] *** Process received signal ***
+[n004:50657] Signal: Segmentation fault (11)
+[n004:50657] Signal code: Address not mapped (1)
+[n004:50657] Failing at address: 0xa65000
+[n004:50657] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x7fffde0cc877]
+[n004:50657] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n004:50657] [ 2] build/debug/csr[0x44c81f]
+[n004:50657] [ 3] build/debug/csr[0x40f767]
+[n004:50657] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x29d90)[0x7ffff5e01d90]
+[n004:50657] [ 5] /lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0x80)[0x7ffff5e01e40]
+[n004:50657] [ 6] build/debug/csr[0x40f1b5]
+[n004:50657] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 50657 on node n004 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
++ ln -f nicename78488.out arabic20051.out
++ rm nicename78488.out

@@ -21,7 +21,7 @@ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0
 export OMPI_MCA_btl_openib_allow_ib=1
 export OMPI_MCA_mpi_cuda_support=0
 
-mpirun -np $SLURM_NTASKS build/debug/csr ~/UiB-INF339/matrices/hugetrace-00020.mtx
+mpirun -np $SLURM_NTASKS build/debug/csr ~/UiB-INF339/matrices/ljournal-2008.mtx
 
-ln -f nicename${SLURM_JOB_ID}.out hugetrace-00020${SLURM_NTASKS}.out
+ln -f nicename${SLURM_JOB_ID}.out ljournal-2008${SLURM_NTASKS}.out
 rm nicename${SLURM_JOB_ID}.out

@@ -1,0 +1,84 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 2 build/debug/csr /home/krisor99/UiB-INF339/matrices/ljournal-2008.mtx
+[n002:104288] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104289] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    2
+Rank 1 is waiting for recieve
+Opening file...
+File successfully opened
+Successfully read file ljournal-2008.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 2408062 to 1
+Rank 1 has recieved, got: 2408062
+Done sending: 2408062 to 1
+[n002:104289] *** Process received signal ***
+[n002:104289] Signal: Segmentation fault (11)
+[n002:104289] Signal code: Address not mapped (1)
+[n002:104289] Failing at address: (nil)
+[n002:104289] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x7fffdd8cc877]
+[n002:104289] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n002:104289] [ 2] build/debug/csr[0x44cab4]
+[n002:104289] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/gcc-8.4.0/lib64/libgomp.so.1(+0x174ce)[0x7ffff68174ce]
+[n002:104289] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x94ac3)[0x7ffff5e6cac3]
+[n002:104289] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x126660)[0x7ffff5efe660]
+[n002:104289] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 1 with PID 104289 on node n002 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
++ ln -f nicename78581.out ljournal-20082.out
++ rm nicename78581.out

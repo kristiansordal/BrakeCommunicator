@@ -1,0 +1,154 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 16 build/debug/csr /home/krisor99/UiB-INF339/matrices/ljournal-2008.mtx
+[n002:104316] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104351] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104438] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104488] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104564] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104625] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104643] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104657] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104672] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104295] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104302] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104683] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104687] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104690] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104694] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104695] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Rank 15 is waiting for recieve
+Rank 12 is waiting for recieve
+Rank 13 is waiting for recieve
+Rank 3 is waiting for recieve
+Rank 10 is waiting for recieve
+Rank 7 is waiting for recieve
+Rank 4 is waiting for recieve
+Rank 9 is waiting for recieve
+Rank 1 is waiting for recieve
+Rank 2 is waiting for recieve
+Rank 6 is waiting for recieve
+Rank 8 is waiting for recieve
+Rank 11 is waiting for recieve
+Rank 14 is waiting for recieve
+Rank 5 is waiting for recieve
+SIZE:    16
+Opening file...
+File successfully opened
+Successfully read file ljournal-2008.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 318229 to 1
+Done sending: 318229 to 1
+Sending: 271755 to 2
+Rank 1 has recieved, got: 318229
+Rank 2 has recieved, got: 271755
+Done sending: 271755 to 2
+Sending: 297008 to 3
+Done sending: 297008 to 3
+Sending: 473634 to 4
+Rank 3 has recieved, got: 297008
+Rank 4 has recieved, got: 473634
+Done sending: 473634 to 4
+Sending: 402850 to 5
+Rank 5 has recieved, got: 402850
+Done sending: 402850 to 5
+Sending: 401968 to 6
+Rank 6 has recieved, got: 401968
+Done sending: 401968 to 6
+Sending: 404813 to 7
+Rank 7 has recieved, got: 404813
+Done sending: 404813 to 7
+Sending: 400280 to 8
+Rank 8 has recieved, got: 400280
+Done sending: 400280 to 8
+Sending: 345050 to 9
+Done sending: 345050 to 9
+Sending: 286985 to 10
+Rank 9 has recieved, got: 345050
+Done sending: 286985 to 10
+Sending: 342120 to 11
+Rank 10 has recieved, got: 286985
+Done sending: 342120 to 11
+Sending: 303764 to 12
+Rank 11 has recieved, got: 342120
+Rank 12 has recieved, got: 303764
+Done sending: 303764 to 12
+Sending: 157978 to 13
+Rank 13 has recieved, got: 157978
+Done sending: 157978 to 13
+Sending: 27350 to 14
+Done sending: 27350 to 14
+Rank 14 has recieved, got: 27350
+Sending: 175486 to 15
+Rank 15 has recieved, got: 175486
+Done sending: 175486 to 15
+[n002:104695] *** Process received signal ***
+[n002:104695] Signal: Segmentation fault (11)
+[n002:104695] Signal code:  (128)
+[n002:104695] Failing at address: (nil)
+[n002:104695] [ 0] /cm/shared/ex3-modules/0.6.1/pkgs/libfabric-1.11.1/lib/libfabric.so.1(+0xcc877)[0x7fffdd8cc877]
+[n002:104695] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff5e1a520]
+[n002:104695] [ 2] build/debug/csr[0x44caeb]
+[n002:104695] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/gcc-8.4.0/lib64/libgomp.so.1(+0x174ce)[0x7ffff68174ce]
+[n002:104695] [ 4] /lib/x86_64-linux-gnu/libc.so.6(+0x94ac3)[0x7ffff5e6cac3]
+[n002:104695] [ 5] /lib/x86_64-linux-gnu/libc.so.6(+0x126660)[0x7ffff5efe660]
+[n002:104695] *** End of error message ***
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 15 with PID 104695 on node n002 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
++ ln -f nicename78584.out ljournal-200816.out
++ rm nicename78584.out

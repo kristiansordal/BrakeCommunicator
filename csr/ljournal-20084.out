@@ -1,0 +1,108 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 4 build/debug/csr /home/krisor99/UiB-INF339/matrices/ljournal-2008.mtx
+[n002:104375] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104459] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104536] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:104609] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+Rank 3 is waiting for recieve
+Rank 2 is waiting for recieve
+SIZE:    4
+Rank 1 is waiting for recieve
+Opening file...
+File successfully opened
+Successfully read file ljournal-2008.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 1683265 to 1
+Rank 1 has recieved, got: 1683265
+Done sending: 1683265 to 1
+Sending: 1374435 to 2
+Done sending: 1374435 to 2
+Sending: 664582 to 3
+Rank 2 has recieved, got: 1374435
+Done sending: 664582 to 3
+Rank 3 has recieved, got: 664582
+[n002:104609] *** Process received signal ***
+[n002:104609] *** Process received signal ***
+[n002:104609] *** Process received signal ***
+[n002:104609] *** Process received signal ***
+[n002:104609] *** Process received signal ***
+[n002:104609] *** Process received signal ***
+[n002:104609] Signal: Segmentation fault (11)
+[n002:104609] Signal code: Address not mapped (1)
+[n002:104609] Failing at address: 0xc7aa0
+[n002:104609] Signal: Segmentation fault (11)
+[n002:104609] Signal code: Address not mapped (1)
+[n002:104609] Failing at address: 0xa8a60
+[n002:104609] Signal: Segmentation fault (11)
+[n002:104609] Signal code: Address not mapped (1)
+[n002:104609] Failing at address: (nil)
+[n002:104609] Signal: Segmentation fault (11)
+[n002:104609] Signal code: Address not mapped (1)
+[n002:104609] Failing at address: 0x177b8
+[n002:104609] Signal: Segmentation fault (11)
+[n002:104609] Signal code: Address not mapped (1)
+[n002:104609] Failing at address: 0x51d70
+[n002:104609] *** Process received signal ***
+[n002:104609] Signal: Segmentation fault (11)
+[n002:104609] Signal code: Address not mapped (1)
+[n002:104609] Failing at address: 0xe5a90
+--------------------------------------------------------------------------
+Primary job  terminated normally, but 1 process returned
+a non-zero exit code. Per user-direction, the job has been aborted.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun noticed that process rank 3 with PID 104609 on node n002 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------
++ ln -f nicename78582.out ljournal-20084.out
++ rm nicename78582.out

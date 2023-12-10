@@ -153,8 +153,16 @@ int main(int argc, char **argv) {
          *
          * */
 
+        if (rank == 0) {
+            cout << "Start allgather" << endl;
+        }
+
         MPI_Allgatherv(v_new.data(), v, MPI_DOUBLE, v_old.data(), recvcounts.data(), displs.data(), MPI_DOUBLE,
                        MPI_COMM_WORLD);
+
+        if (rank == 0) {
+            cout << "End allgather" << endl;
+        }
     }
     ttend = MPI_Wtime();
 

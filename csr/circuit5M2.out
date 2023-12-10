@@ -49,7 +49,7 @@
 + OMPI_MCA_btl_openib_allow_ib=1
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
-+ mpirun -np 1 build/debug/csr /home/krisor99/UiB-INF339/matrices/cage15.mtx
++ mpirun -np 2 build/debug/csr /home/krisor99/UiB-INF339/matrices/circuit5M.mtx
 --------------------------------------------------------------------------
 Open MPI tried to fork a new process via the "execve" system call but
 failed.  Open MPI checks many things before attempting to launch a
@@ -73,5 +73,8 @@ Node: n002
 
 when attempting to start process rank 0.
 --------------------------------------------------------------------------
-+ ln -f nicename78390.out cage151.out
-+ rm nicename78390.out
+[n002:68229] 1 more process has sent help message help-orte-odls-default.txt / execve error
+[n002:68229] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+2 total processes failed to start
++ ln -f nicename78384.out circuit5M2.out
++ rm nicename78384.out

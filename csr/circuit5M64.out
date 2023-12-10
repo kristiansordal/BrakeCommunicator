@@ -49,7 +49,7 @@
 + OMPI_MCA_btl_openib_allow_ib=1
 + export OMPI_MCA_mpi_cuda_support=0
 + OMPI_MCA_mpi_cuda_support=0
-+ mpirun -np 1 build/debug/csr /home/krisor99/UiB-INF339/matrices/cage15.mtx
++ mpirun -np 64 build/debug/csr /home/krisor99/UiB-INF339/matrices/circuit5M.mtx
 --------------------------------------------------------------------------
 Open MPI tried to fork a new process via the "execve" system call but
 failed.  Open MPI checks many things before attempting to launch a
@@ -73,5 +73,35 @@ Node: n002
 
 when attempting to start process rank 0.
 --------------------------------------------------------------------------
-+ ln -f nicename78390.out cage151.out
-+ rm nicename78390.out
+[n002:68502] 12 more processes have sent help message help-orte-odls-default.txt / execve error
+[n002:68502] Set MCA parameter "orte_base_help_aggregate" to 0 to see all help / error messages
+[n002:68502] *** Process received signal ***
+[n002:68502] Signal: Segmentation fault (11)
+[n002:68502] Signal code: Address not mapped (1)
+[n002:68502] Failing at address: (nil)
+[n002:68502] [ 0] /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x7ffff681a520]
+[n002:68502] [ 1] /lib/x86_64-linux-gnu/libc.so.6(+0x19d5fd)[0x7ffff69755fd]
+[n002:68502] [ 2] /lib/x86_64-linux-gnu/libc.so.6(__strdup+0x13)[0x7ffff6880583]
+[n002:68502] [ 3] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-rte.so.40(orte_odls_base_spawn_proc+0x17b)[0x7ffff7c5cf5b]
+[n002:68502] [ 4] /cm/shared/ex3-modules/0.6.1/pkgs/libevent-2.1.11-stable/lib/libevent_core-2.1.so.7(+0x1d2c5)[0x7ffff6e1d2c5]
+[n002:68502] [ 5] /cm/shared/ex3-modules/0.6.1/pkgs/libevent-2.1.11-stable/lib/libevent_core-2.1.so.7(event_base_loop+0x53f)[0x7ffff6e1db0f]
+[n002:68502] [ 6] /cm/shared/ex3-modules/0.6.1/pkgs/openmpi-4.0.5/lib/libopen-pal.so.40(+0x32a0e)[0x7ffff7832a0e]
+[n002:68502] [ 7] /lib/x86_64-linux-gnu/libc.so.6(+0x94ac3)[0x7ffff686cac3]
+[n002:68502] [ 8] --------------------------------------------------------------------------
+Open MPI tried to fork a new process via the "execve" system call but
+failed.  Open MPI checks many things before attempting to launch a
+child process, but nothing is perfect. This error may be indicative
+of another problem on the target host, or even something as silly as
+having specified a directory for your application. Your job will now
+abort.
+
+  Local host:        n002
+  Working dir:       /home/krisor99/BrakeCommunicator/csr
+  Application name:  build/debug/csr
+  Error:             Exec format error
+--------------------------------------------------------------------------
+/lib/x86_64-linux-gnu/libc.so.6(+0x126660)[0x7ffff68fe660]
+[n002:68502] *** End of error message ***
+/cm/local/apps/slurm/var/spool/job78389/slurm_script: line 24: 68502 Segmentation fault      (core dumped) mpirun -np $SLURM_NTASKS build/debug/csr ~/UiB-INF339/matrices/circuit5M.mtx
++ ln -f nicename78389.out circuit5M64.out
++ rm nicename78389.out

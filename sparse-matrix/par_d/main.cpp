@@ -25,6 +25,7 @@ int main() {
     if (ellpack.rank == 0) {
         double ops = (long long)n * 8ll * 100ll;
         double l2 = 0;
+
         for (auto &v : vv) {
             l2 += v * v;
         }

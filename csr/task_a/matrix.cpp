@@ -53,7 +53,6 @@ void Matrix::update(mpi::communicator &world, mpi::timer &time, int rank, double
     for (auto &i : send_buff) {
         v_old.insert(v_old.end(), i.begin(), i.end());
     }
-    tcomm += time.elapsed() - t1;
 }
 
 void Matrix::init_row_ptr() {

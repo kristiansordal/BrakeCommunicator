@@ -89,11 +89,11 @@ int main(int argv, char **argc) {
         }
 
         M.n = rc[0];
-    }else{
-    cout << "Rank " << rank << " is waiting for recieve" << endl;
-    world.recv(0, rank, rc[rank]);
-    M.n = rc[rank];
-    cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
+    } else {
+        cout << "Rank " << rank << " is waiting for recieve" << endl;
+        world.recv(0, rank, rc[rank]);
+        M.n = rc[rank];
+        cout << "Rank " << rank << " has recieved, got: " << M.n << endl;
     }
 
     mpi::broadcast(world, M.nrows, 0);

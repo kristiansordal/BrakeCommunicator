@@ -93,7 +93,6 @@ int main(int argc, char **argv) {
     cout << "Broacasting load balance" << endl;
     MPI_Bcast(rc.data(), np * sizeof(int), MPI_INT, 0, MPI_COMM_WORLD);
     cout << "End load balance" << endl;
-    // End load balancing
 
     nrows = rc[rank];
     vector<double> v_old(n, 1);
@@ -118,12 +117,17 @@ int main(int argc, char **argv) {
     // Finally start the computation
     MPI_Barrier(MPI_COMM_WORLD);
 
+    if (rank == 0) {
+        cout << "Start computation" << endl;
+    }
     // Perform 100 multiplications
     for (int r = 0; r < 100; r++) {
+        if (rank == 0) {
+            cout << r << "%" << endl;
+        }
         int start = row_ptr[0];
 
         // Use OpenMP to parallelize the for loop
-#pragma omp parallel for schedule(dynamic, 1024)
         for (int row = 0; row < nrows; row++) {
             double sum = 0.0;
 

@@ -1,0 +1,150 @@
++ ulimit -s 10240
++ module load boost-1.73.0
++ _module_raw load boost-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ module load boost-mpi-1.73.0
++ _module_raw load boost-mpi-1.73.0
++ unset _mlshdbg
++ '[' 0 = 1 ']'
++ unset _mlre _mlIFS
++ '[' -n x ']'
++ _mlIFS=' 	
+'
++ IFS=' '
++ '[' -n '' ']'
+++ /usr/bin/tclsh /cm/local/apps/environment-modules/4.5.3/libexec/modulecmd.tcl bash load boost-mpi-1.73.0
++ eval
++ _mlstatus=0
++ '[' -n x ']'
++ IFS=' 	
+'
++ unset _mlre _mlv _mlrv _mlIFS
++ '[' -n '' ']'
++ unset _mlshdbg
++ return 0
++ export 'OMPI_MCA_pml=^ucx'
++ OMPI_MCA_pml='^ucx'
++ export OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ OMPI_MCA_btl_openib_if_include=mlx5_4:1
++ export OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ OMPI_MCA_btl_tcp_if_exclude=docker0,docker_gwbridge,eno1,eno2,lo,enp196s0f0np0,enp196s0f1np1,ib0,ib1,veth030713f,veth07ce296,veth50ead6f,veth73c0310,veth9e2a12b,veth9e2cc2e,vethecc4600,ibp65s0f1,enp129s0f0np0,enp129s0f1np1,ibp65s0f0
++ export OMPI_MCA_btl_openib_allow_ib=1
++ OMPI_MCA_btl_openib_allow_ib=1
++ export OMPI_MCA_mpi_cuda_support=0
++ OMPI_MCA_mpi_cuda_support=0
++ mpirun -np 16 build/debug/csr /home/krisor99/UiB-INF339/matrices/ML_Geer.mtx
+[n002:58590] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58594] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58595] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58596] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58602] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58604] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58607] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58610] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58618] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58619] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58621] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58627] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58630] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58633] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58612] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+[n002:58634] mca_base_component_repository_open: unable to open mca_osc_ucx: libbfd-2.30-system.so: cannot open shared object file: No such file or directory (ignored)
+SIZE:    16
+Opening file...
+File successfully opened
+Successfully read file ML_Geer.mtx
+Performing Load Balancing
+Load balancing completed
+Sending: 94338 to 0
+Done sending: 94338 to 0
+Sending: 93936 to 1
+Done sending: 93936 to 1
+Sending: 93868 to 2
+Done sending: 93868 to 2
+Sending: 93834 to 3
+Done sending: 93834 to 3
+Sending: 94125 to 4
+Done sending: 94125 to 4
+Sending: 93904 to 5
+Done sending: 93904 to 5
+Sending: 93909 to 6
+Done sending: 93909 to 6
+Sending: 93913 to 7
+Done sending: 93913 to 7
+Sending: 93921 to 8
+Done sending: 93921 to 8
+Sending: 93915 to 9
+Done sending: 93915 to 9
+Sending: 93927 to 10
+Done sending: 93927 to 10
+Sending: 93930 to 11
+Done sending: 93930 to 11
+Sending: 93934 to 12
+Done sending: 93934 to 12
+Sending: 93944 to 13
+Done sending: 93944 to 13
+Sending: 93944 to 14
+Done sending: 93944 to 14
+Sending: 94660 to 15
+Done sending: 94660 to 15
+Rank 4 is waiting for recieve
+Rank 4 has recieved, got: 94125
+Rank 5 is waiting for recieve
+Rank 5 has recieved, got: 93904
+Rank 6 is waiting for recieve
+Rank 6 has recieved, got: 93909
+Rank 7 is waiting for recieve
+Rank 7 has recieved, got: 93913
+Rank 8 is waiting for recieve
+Rank 8 has recieved, got: 93921
+Rank 9 is waiting for recieve
+Rank 9 has recieved, got: 93915
+Rank 10 is waiting for recieve
+Rank 10 has recieved, got: 93927
+Rank 11 is waiting for recieve
+Rank 11 has recieved, got: 93930
+Rank 12 is waiting for recieve
+Rank 12 has recieved, got: 93934
+Rank 13 is waiting for recieve
+Rank 14 is waiting for recieve
+Rank 0 is waiting for recieve
+Rank 0 has recieved, got: 94338
+Rank 1 is waiting for recieve
+Rank 1 has recieved, got: 93936
+Rank 2 is waiting for recieve
+Rank 2 has recieved, got: 93868
+Rank 3 is waiting for recieve
+Rank 3 has recieved, got: 93834
+Rank 14 has recieved, got: 93944
+Rank 13 has recieved, got: 93944
+Rank 15 is waiting for recieve
+Rank 15 has recieved, got: 94660
+
+File:             69.5155
+Comp:             31.3842
+Comm:             48.2094
+Total:            114.896
+L2 norm:          nan
+OPS:              22175994400
+GFLOPS:           0.706596
+GFLOPS:           0.706596
+GFLOPS (kernel):  0.165908
++ ln -f nicename78371.out ML_Geer16.out
++ rm nicename78371.out
